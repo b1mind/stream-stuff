@@ -1,0 +1,63 @@
+//Stream list
+Questions:
+
+Todo: 
+  ☐ try a hosted sveltekit page as overlay from portfolio
+  ☐ find design ideas and see what others are doing for frame overlay
+  ☐ create better Panels: Bio - About - Story for below stream
+  ☐ make a profile banner and panel banners
+  ☐ learn how to do custom overlay alerts (GSAP in StreamElements? or hosted?)
+  ☐ AHK script like capslock to tell me active scene on main screen
+  ☐ mask for keeb cam
+  ☐ picture for main overlay frame
+  ☐ think about what to do for redemtion points
+  ☐ custom.Cycle take two vsc commands.. Font for terminal needs ++
+  ☐ powertoys window docking - want locked window set ups to toggle
+
+  Stream Flow: 
+    ☐ Focus mode - have cmd for chat
+    ☐ On screen timer baked into overlay & scene.
+    ☐ learn how to chat and code at the same time. 
+      (find advice, pay attention to others)
+    
+  Cam/Overlay Ideas:
+    ☐ Night/Insomnia Mode - Muted* ? or just don't stream at night...
+    ☐ Mute icon for all scenes? Can I detect mute?
+    ☐ Better AFK scene - {timeAFK} and improve with stream info and design into interface
+    ☐ overlay for QMK or Kris inputs vs cam
+    ☐ Conversation scene - for chatting to chat *visible overlay
+    ☐ gaming overlay + scene
+
+  Chat commands:
+    ☐ !so shout out feature for other Twitch streamers
+    ☐ !extensions - probably going to ask about nVim and others?
+    ☐ !focus (tell people I am in focus mode doing x)
+    ☐ !figs - link to bare repo?
+    ☐ !pc specs simple
+    ☐ !tools - "Milwaukee Drills are best"
+    ☐ !fontUp - vsc cycle.FontToggle
+    ☐ !todo - show chat todo?  
+    ☐ !change song
+    ☐ !volume of music
+
+Wishlist:
+  ☐ how to handle gif's for alerts? or just animations?
+    (https://streamparrot.com/ or https://showmy.chat/)
+  ☐ AFK game - something for chat? cats away mice will play?
+  ☐ cmGriffing mentioned sound and maybe hooking it to AHK or QMK
+  ☐ setup auto hosting to my fav streamers if I am offline?
+  ☐ talk with Chantastic about how he does discord voice setup
+  ☐ look into snapchat filters (https://snapcamera.snapchat.com)
+  ☐ animated SVG based on voice patterns to mimic talking
+  ☐ comicate with vsCode via chat commands (call commands!)
+  ☐ keyboard io - kris software plug-in for lighting connect to chat?
+  ☐ make layer for "streamdeck" in QMK
+  ☐ look into DIY streamdecks (yt history has good ones?)
+
+Archive:
+  ✔ configured mic/aux filters for noise suppression without Krisp. @done(22-02-01 19:14) @project(Todo)
+  ✔ one last round of sound checks (Krisp) @done(22-02-01 18:50) @project(Todo)
+  ✔ blur screen scene or overlay to block sensitive data. @done(22-02-01 19:02) @project(Todo)
+  ✔ add keybinding for scene switching @done(22-02-01 22:17) @project(Todo)
+  ✔ AFK scene @done(22-02-02 22:02) @project(Todo.Cam/Overlay Ideas)
+  ✔ Blur scene animates a cover or something for keeb cam @done(22-02-02 22:02) @project(Todo.Cam/Overlay Ideas)

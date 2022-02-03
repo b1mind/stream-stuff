@@ -2,14 +2,16 @@
 Questions:
 
 Todo: 
-  ☐ try a hosted sveltekit page as overlay from portfolio
+  ✔ try a hosted/local sveltekit page as overlay from portfolio @done(22-02-03 10:36)
+  ☐ figure out best way to host scenes (local/vps)
   ☐ find design ideas and see what others are doing for frame overlay
-  ☐ create better Panels: Bio - About - Story for below stream
-  ☐ make a profile banner and panel banners
-  ☐ learn how to do custom overlay alerts (GSAP in StreamElements? or hosted?)
+  ☐ create better Panel copywrite: Bio - About - Story for below stream
+  ☐ make a profile banner and panel banner graphics
+  ☐ learn how to do custom overlay alerts using wrapper api of some short
   ☐ AHK script like capslock to tell me active scene on main screen
-  ☐ mask for keeb cam
-  ☐ picture for main overlay frame
+  ☐ keybind for mute and with AHK notification
+  ☐ mask for keeb cam 
+  ✔ picture for main overlay frame @done(22-02-03 10:37)
   ☐ think about what to do for redemtion points
   ☐ custom.Cycle take two vsc commands.. Font for terminal needs ++
   ☐ powertoys window docking - want locked window set ups to toggle

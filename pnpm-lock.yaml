@@ -5,6 +5,7 @@ specifiers:
   '@sveltejs/adapter-node': ^1.0.0-next.67
   '@sveltejs/kit': next
   autoprefixer: ^10.4.2
+  comfy.js: ^1.1.13
   postcss: ^8.4.6
   postcss-combine-media-query: ^1.0.1
   prettier: ^2.4.1
@@ -22,6 +23,7 @@ devDependencies:
   '@sveltejs/adapter-node': 1.0.0-next.67
   '@sveltejs/kit': 1.0.0-next.260_sass@1.49.7+svelte@3.46.3
   autoprefixer: 10.4.2_postcss@8.4.6
+  comfy.js: 1.1.13
   postcss: 8.4.6
   postcss-combine-media-query: 1.0.1
   prettier: 2.5.1
@@ -213,6 +215,17 @@ packages:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /comfy.js/1.1.13:
+    resolution: {integrity: sha512-n65d2ePaeFRxqOfLfy/4tRc8kBvOsv6sOszfK+9hwh9mThW8dKDzCM4fylSc1YH+9wQSKWxt5+DcemIM4SOH6g==}
+    dependencies:
+      node-fetch: 2.6.7
+      tmi.js: 1.8.5
+    transitivePeerDependencies:
+      - bufferutil
+      - encoding
+      - utf-8-validate
     dev: true
 
   /concat-map/0.0.1:
@@ -580,7 +593,6 @@ packages:
         optional: true
     dependencies:
       whatwg-url: 5.0.0
-    dev: false
 
   /node-releases/2.0.1:
     resolution: {integrity: sha512-CqyzN6z7Q6aMeF/ktcMVTzhAHCEpf8SOarwpzpf8pNBY2k5/oM34UHldUwp8VKI7uxct2HxSRdJjBaZeESzcxA==}
@@ -842,7 +854,6 @@ packages:
       - bufferutil
       - encoding
       - utf-8-validate
-    dev: false
 
   /to-regex-range/5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
@@ -853,7 +864,6 @@ packages:
 
   /tr46/0.0.3:
     resolution: {integrity: sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=}
-    dev: false
 
   /vite/2.7.13_sass@1.49.7:
     resolution: {integrity: sha512-Mq8et7f3aK0SgSxjDNfOAimZGW9XryfHRa/uV0jseQSilg+KhYDSoNb9h1rknOy6SuMkvNDLKCYAYYUMCE+IgQ==}
@@ -882,14 +892,12 @@ packages:
 
   /webidl-conversions/3.0.1:
     resolution: {integrity: sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE=}
-    dev: false
 
   /whatwg-url/5.0.0:
     resolution: {integrity: sha1-lmRU6HZUYuN2RNNib2dCzotwll0=}
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
-    dev: false
 
   /wrappy/1.0.2:
     resolution: {integrity: sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=}
@@ -906,4 +914,3 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
-    dev: false

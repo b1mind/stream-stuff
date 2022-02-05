@@ -1,4 +1,4 @@
-// /** @type {import('@sveltejs/kit').Config} */
+/** @type {import('@sveltejs/kit').Config} */
 import adapter from '@sveltejs/adapter-node'
 import preprocess from 'svelte-preprocess'
 import autoprefixer from 'autoprefixer'

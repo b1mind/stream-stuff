@@ -5,6 +5,8 @@ Todo:
   ✔ find design ideas and see what others are doing for frame overlay @done(22-02-05 01:30)
   ☐ keeb build pictures just put in profile url /stream/keeb/ *placeholder Made*
   ☐ powertoys window docking - want locked window set ups to toggle
+  ☐ Twitch-Cli mock server working!
+  ☐ import GSAP and use timelines for alerts
 
   QoL for all:
     ☐ Move mic to other side so if looking at chat I am talking into mic
@@ -19,13 +21,6 @@ Todo:
     ☐ create better Panel copywrite: Bio - About - Story for below stream
     ☐ make a profile banner and panel banner graphics
 
-  AHK / QMK:
-    ☐ AHK script like capslock to tell me active scene on main screen
-    ☐ keybind for mute and with AHK notification
-    ☐ cmGriffing mentioned sound and maybe hooking it to AHK or QMK
-    ☐ overlay for QMK or Kris inputs vs cam
-      // QMK input checker website?
-
   RedemtionsPoints:
     ☐ think about what to do for redemtion points
     ☐ highlight alert with msg on screen
@@ -34,11 +29,14 @@ Todo:
   Cam/Overlay Ideas:
     ✔ Focus,ghost,chat mode - have cmd for chat @done(22-02-05 01:30)
     ✔ Night/Insomnia Mode - Muted* ? or just don't stream at night... @done(22-02-04 20:15)
+    ☐ !focus alert gif https://media.giphy.com/media/u6xMPnzIyJB84/giphy.gif
+    ☐ !ghost gif https://media.giphy.com/media/3o7buhsTerQAmHRztC/giphy.gif
     ☐ On screen timer baked into overlay & scene. (I see it on 2cnd window?)
     ☐ Better AFK scene 
       // {timeAFK} and improve with stream info and design into interface
     ☐ Conversation scene - for chatting to chat *visible overlay
     ☐ gaming overlay + scene
+
 
   Chat commands:
     ✔ !focus could have msg or title @done(22-02-05 18:15)
@@ -56,17 +54,27 @@ Todo:
     ☐ !unmute command
 
   VIP / Subonly:
+    ☐ !yuki (same as highlight but no points?)
     ☐ !fish // !learn Learning any thing new is hard, like fishing it can take a lifetime
      // https://media.giphy.com/media/BIDRtK21FsrPG/giphy.gif
     ☐ !try https://media.giphy.com/media/EC2JvlspR35q8/giphy.gif
     ☐ !nope - https://media.giphy.com/media/USNlL9p2fxY6Q/giphy.gif
     ☐ !food https://media.giphy.com/media/11KzOet1ElBDz2/giphy.gif
 
+  AHK / QMK:
+    ☐ AHK script like capslock to tell me active scene on main screen
+    ☐ keybind for mute and with AHK notification
+    ☐ cmGriffing mentioned sound and maybe hooking it to AHK or QMK
+    ☐ overlay for QMK or Kris inputs vs cam
+      // QMK input checker website?
+
+Refactor:
+  ☐ Mode need function and better flag check
+  ☐ Alerts needs abstracted
+
 Questions:
-  ☐ Decide on raid gif -
-  https://media.giphy.com/media/HTdJGKmtLdCkE/giphy.gif
-   https://media.giphy.com/media/p7QJSVvU4bMWc/giphy.gif
-  ☐ should I make a mask for keeb cam 
+  ☐ Decide on raid gif?
+  ☐ should I make a mask for keeb cam ?
   ☐ how to handle gif's for alerts? or just animations?
     // (https://streamparrot.com/ or https://showmy.chat/)
 
@@ -84,6 +92,7 @@ Wishlist:
   ☐ animated SVG based on voice patterns to mimic talking
   ☐ make layer for "streamdeck" in QMK
   ☐ look into DIY streamdecks (yt history has good ones?)
+  
 
 Archive:
   ✔ try a hosted/local sveltekit page as overlay from portfolio @done(22-02-03 10:36) @project(Todo)

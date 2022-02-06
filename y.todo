@@ -9,6 +9,7 @@ Todo:
   ☐ AHK script like capslock to tell me active scene on main screen
   ☐ keybind for mute and with AHK notification
   ☐ think about what to do for redemtion points
+    will require oAuth to work
   ☐ custom.Cycle take two vsc commands.. Font for terminal needs ++
   ☐ powertoys window docking - want locked window set ups to toggle
   ☐ BETTER LIGHTING FOR KEEB CAM
@@ -30,6 +31,8 @@ Todo:
     ☐ gaming overlay + scene
 
   Chat commands:
+    ✔ !focus could have msg or title @done(22-02-05 18:15)
+    ✔ !chat should accept msg or have title @done(22-02-05 18:15)
     ☐ !so shout out feature for other Twitch streamers
     ☐ !extensions - probably going to ask about nVim and others?
     ☐ !figs - link to bare repo?
@@ -40,6 +43,7 @@ Todo:
     ☐ !todo - show chat todo?  
     ☐ !change song
     ☐ !volume of music
+    ☐ !unmute command
 
 Questions:
   ☐ should I make a mask for keeb cam 

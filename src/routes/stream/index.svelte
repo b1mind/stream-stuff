@@ -7,6 +7,11 @@
   let isChat = true
   let isGhost = false
   let isFocus = false
+  let isSub = false
+  let subscriber = {
+    user: 'testUser',
+    subTime: 'subscribed for 69months',
+  }
 
   if (browser) {
     ;async () => {
@@ -31,7 +36,18 @@
       console.dir(extra)
       //todo function to check if broadcaster and mod/sub ect.
 
-      //todo refactor clearing way switch or better function
+      if (command === 'sub') {
+        console.log(`Faux Sub ${user}`)
+
+        subscriber = {
+          user: user,
+          subTime: 'subTierInfo',
+        }
+
+        isSub = true
+      }
+
+      //todo refactor cleaner way switch or better function
       if (flags.broadcaster && command === 'chat') {
         isChat = true
         isGhost = false
@@ -68,7 +84,11 @@
     <p in:fly>No mode selected</p>
   {/if}
 
-  <h1>We are cooking with Sveltekit and Twitch API now! Let's have some fun!</h1>
+  {#if isSub}
+    <h1>{subscriber.user} - {subscriber.subTime}</h1>
+  {:else}
+    <h1>We are cooking with Sveltekit and Twitch API now! Let's have some fun!</h1>
+  {/if}
 </main>
 
 <style lang="scss">
@@ -80,7 +100,7 @@
   main {
     height: 100%;
     display: grid;
-    grid-template-columns: 420px 1fr 160px;
+    grid-template-columns: 420px 1fr 154px;
     grid-template-rows: 450px 1fr auto;
     grid-template-areas:
       '. . .'

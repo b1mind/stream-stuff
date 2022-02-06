@@ -4,8 +4,10 @@ Todo:
   ✔ import comfy.js if browser but in svelte not html dom @done(22-02-05 01:30)
   ✔ find design ideas and see what others are doing for frame overlay @done(22-02-05 01:30)
   ☐ Move mic to other side so if looking at chat I am talking into mic
+  ☐ get Krisp working better so I don't sound underwater and quiet
   ☐ create better Panel copywrite: Bio - About - Story for below stream
   ☐ make a profile banner and panel banner graphics
+  ☐ keeb build pictures just put in profile url /stream/keeb/
   ☐ AHK script like capslock to tell me active scene on main screen
   ☐ keybind for mute and with AHK notification
   ☐ think about what to do for redemtion points

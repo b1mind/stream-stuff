@@ -1,3 +1,16 @@
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-primary-bg: #18141F;
+  --clr-secondary-bg: #242035;
+  --clr-highlight: #514b6b;
+  
+  --clr-white: #cecece;
+}
+
 html {
   height: 100%;
 }

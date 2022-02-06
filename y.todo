@@ -4,6 +4,7 @@ Todo:
   ✔ import comfy.js if browser but in svelte not html dom @done(22-02-05 01:30)
   ✔ find design ideas and see what others are doing for frame overlay @done(22-02-05 01:30)
   ☐ Move mic to other side so if looking at chat I am talking into mic
+    // really need to get a usbHub? Have extensions go find it lazy arse
   ☐ get Krisp working better so I don't sound underwater and quiet
   ☐ create better Panel copywrite: Bio - About - Story for below stream
   ☐ make a profile banner and panel banner graphics
@@ -11,7 +12,7 @@ Todo:
   ☐ AHK script like capslock to tell me active scene on main screen
   ☐ keybind for mute and with AHK notification
   ☐ think about what to do for redemtion points
-    will require oAuth to work
+    // will require oAuth to work
   ☐ custom.Cycle take two vsc commands.. Font for terminal needs ++
   ☐ powertoys window docking - want locked window set ups to toggle
   ☐ BETTER LIGHTING FOR KEEB CAM
@@ -20,26 +21,26 @@ Todo:
     ✔ Focus,ghost,chat mode - have cmd for chat @done(22-02-05 01:30)
     ☐ On screen timer baked into overlay & scene.
     ☐ learn how to chat and code at the same time. 
-      (find advice, pay attention to others)
+      // (find advice, pay attention to others)
     
   Cam/Overlay Ideas:
     ✔ Night/Insomnia Mode - Muted* ? or just don't stream at night... @done(22-02-04 20:15)
     ☐ Mute icon for all scenes? Can I detect mute?
     ☐ Better AFK scene 
-      {timeAFK} and improve with stream info and design into interface
+      // {timeAFK} and improve with stream info and design into interface
     ☐ overlay for QMK or Kris inputs vs cam
-      QMK input checker website?
+      // QMK input checker website?
     ☐ Conversation scene - for chatting to chat *visible overlay
     ☐ gaming overlay + scene
 
   Chat commands:
     ✔ !focus could have msg or title @done(22-02-05 18:15)
     ✔ !chat should accept msg or have title @done(22-02-05 18:15)
+    ✔ !cam - let people why no face cam @done(22-02-05 01:37)
+    ✔ !pc specs simple @done(22-02-05 01:37)
     ☐ !so shout out feature for other Twitch streamers
     ☐ !extensions - probably going to ask about nVim and others?
     ☐ !figs - link to bare repo?
-    ✔ !cam - let people why no face cam @done(22-02-05 01:37)
-    ✔ !pc specs simple @done(22-02-05 01:37)
     ☐ !tools - "Milwaukee Drills are best"
     ☐ !fontUp - vsc cycle.FontToggle
     ☐ !todo - show chat todo?  
@@ -47,12 +48,24 @@ Todo:
     ☐ !volume of music
     ☐ !unmute command
 
+  Subonly:
+    ☐ !fish // !learn Learning any thing new is hard, like fishing it can take a lifetime
+     // https://media.giphy.com/media/BIDRtK21FsrPG/giphy.gif
+    ☐ !try https://media.giphy.com/media/EC2JvlspR35q8/giphy.gif
+    ☐ !nope - https://media.giphy.com/media/USNlL9p2fxY6Q/giphy.gif
+    ☐ !food https://media.giphy.com/media/11KzOet1ElBDz2/giphy.gif
+
 Questions:
+  
+  ☐ Decide on raid gif -
+  https://media.giphy.com/media/HTdJGKmtLdCkE/giphy.gif
+   https://media.giphy.com/media/p7QJSVvU4bMWc/giphy.gif
   ☐ should I make a mask for keeb cam 
   ☐ how to handle gif's for alerts? or just animations?
-    (https://streamparrot.com/ or https://showmy.chat/)
+    // (https://streamparrot.com/ or https://showmy.chat/)
 
 Wishlist:
+  ☐ Get incoming raid's channel title, not have to ask but can get right to it
   ☐ AFK game - something for chat, cats away mice will play
   ☐ cmGriffing mentioned sound and maybe hooking it to AHK or QMK
   ☐ setup auto hosting to my fav streamers if I am offline

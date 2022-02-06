@@ -49,7 +49,7 @@
       subscriber = {
         user: user,
         subType: subTierInfo,
-        msg: 'message',
+        msg: message,
       }
 
       isSub = true
@@ -65,7 +65,7 @@
         subscriber = {
           user: user,
           subType: 'subscribed',
-          msg: 'subTierInfo',
+          msg: '6 months, 3 months streak',
         }
 
         isSub = true
@@ -115,9 +115,7 @@
       <b in:slide={{ y: '-1rem', delay: 1000 }}>{subscriber.subType}</b>
       <article in:fly={{ x: 400, duration: 550 }} class="alerts">
         <header>
-          <h2>
-            {subscriber.user}
-          </h2>
+          <h2>{subscriber.user}</h2>
           <i>{subscriber.msg}</i>
         </header>
 
@@ -127,9 +125,22 @@
         />
 
         <figure>
-          <img src="https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif" alt="" />
+          <img src="https://media.giphy.com/media/pNx09ajeVCJ3O/giphy.gif" alt="Guts following" />
           <figcaption>Follow</figcaption>
         </figure>
+
+        <figure>
+          <img
+            src="https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif"
+            alt="Tribute to the river"
+          />
+          <figcaption>Follow</figcaption>
+        </figure>
+
+        <!-- <figure>
+          <img src="https://media.giphy.com/media/fsoCk5kgOcYMM/giphy.gif" alt="Cyborg typing" />
+          <figcaption>Focus</figcaption>
+        </figure> -->
 
         <!-- todo make a end stream scene with this -->
         <!-- <img
@@ -152,15 +163,16 @@
           alt="Mugen Hiding from Tengu into Field"
         />
 
-        <img
+        <!-- <img
           src="https://media.giphy.com/media/aZzXDWIjefE5y/giphy.gif"
           alt="Ed from Cowboy Bebop watering the garden"
-        />
+        /> -->
 
-        <img
+        <!-- <img
           src="https://media.giphy.com/media/z9pV5qD0KEca4/giphy.gif"
           alt="Fey hallucinating in the bathroom swimming with fishes"
-        />
+        /> -->
+
         <!-- todo make for keyboard only gif -->
         <!-- <img
           src="https://c.tenor.com/dSPOmUJ6_t4AAAAC/mugen-samurai.gif"

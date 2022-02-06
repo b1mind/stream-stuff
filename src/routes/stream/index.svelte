@@ -47,7 +47,7 @@
         isSub = true
       }
 
-      //todo refactor cleaner way switch or better function
+      //todo refactor cleaner with switch or better function
       if (flags.broadcaster && command === 'chat') {
         isChat = true
         isGhost = false
@@ -100,20 +100,22 @@
   main {
     height: 100%;
     display: grid;
-    grid-template-columns: 420px 1fr 154px;
-    grid-template-rows: 450px 1fr auto;
+    grid-template-columns: 420px 1fr 296px 154px;
+    grid-template-rows: 1fr 1fr 54px 92px;
     grid-template-areas:
-      '. . .'
-      '. . modes'
-      'info msg .';
+      '. . . .'
+      '. . . modes'
+      '. . . .'
+      'info msg . .';
     color: #514b6b;
     font-family: Helvetica, sans-serif;
 
     h1 {
       grid-area: msg;
-      margin-left: 100px;
-      align-self: center;
+      max-width: 50ch;
+      place-self: center;
       font-size: 1.5rem;
+      // text-align: center;
     }
 
     p {

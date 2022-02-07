@@ -1,5 +1,5 @@
 <script>
-  import { browser } from '$app/env'
+  import { browser, dev } from '$app/env'
   import { fly, slide } from 'svelte/transition'
   import Modes from '$lib/component/Modes.svelte'
 
@@ -111,33 +111,35 @@
 </script>
 
 <main>
-  <!-- todo refactor into component with env check -->
-  <div class="test-controls">
-    <label for="isSub">
-      SubTest
-      <input bind:checked={isSub} type="checkbox" name="isSub" />
-    </label>
+  {#if dev}
+    <!-- todo ENV refactor into component with dev/pub check -->
+    <div class="test-controls">
+      <label for="isSub">
+        SubTest
+        <input bind:checked={isSub} type="checkbox" name="isSub" />
+      </label>
 
-    <label for="isRaid">
-      RaidTest
-      <input bind:checked={isRaid} type="checkbox" name="isRaid" />
-    </label>
+      <label for="isRaid">
+        RaidTest
+        <input bind:checked={isRaid} type="checkbox" name="isRaid" />
+      </label>
 
-    <label for="isChat">
-      ChatTest
-      <input bind:checked={isChat} type="checkbox" name="isChat" />
-    </label>
+      <label for="isChat">
+        ChatTest
+        <input bind:checked={isChat} type="checkbox" name="isChat" />
+      </label>
 
-    <label for="isGhost">
-      GhostTest
-      <input bind:checked={isGhost} type="checkbox" name="isGhost" />
-    </label>
+      <label for="isGhost">
+        GhostTest
+        <input bind:checked={isGhost} type="checkbox" name="isGhost" />
+      </label>
 
-    <label for="isFocus">
-      FocusTest
-      <input bind:checked={isFocus} type="checkbox" name="isFocus" />
-    </label>
-  </div>
+      <label for="isFocus">
+        FocusTest
+        <input bind:checked={isFocus} type="checkbox" name="isFocus" />
+      </label>
+    </div>
+  {/if}
 
   <div class="modes">
     <Modes active={isChat} modeType="chat" />

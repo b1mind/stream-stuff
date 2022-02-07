@@ -11,7 +11,7 @@
   let isRaid = false
 
   let raid = {
-    user: 'user',
+    user: 'raidUserName',
     viewers: 100,
   }
 
@@ -112,7 +112,8 @@
 
   <section class="alerts-wrap">
     {#if isSub}
-      <b in:slide={{ y: '-1rem', delay: 1000 }}>{subscriber.subType}</b>
+      <b in:slide={{ y: '-1rem', delay: 800 }}>{subscriber.subType}</b>
+
       <article in:fly={{ x: 400, duration: 550 }} class="alerts">
         <header>
           <h2>{subscriber.user}</h2>
@@ -123,11 +124,6 @@
           src="https://media.giphy.com/media/p7QJSVvU4bMWc/giphy.gif"
           alt="Ed & Ein Excited Thank You"
         />
-
-        <figure>
-          <img src="https://media.giphy.com/media/pNx09ajeVCJ3O/giphy.gif" alt="Guts following" />
-          <figcaption>Follow</figcaption>
-        </figure>
 
         <figure>
           <img
@@ -151,7 +147,8 @@
         <!-- todo use for raid? -->
       </article>
     {:else if isRaid}
-      <b in:slide={{ y: '-1rem', delay: 1000 }}>raid</b>
+      <b in:slide={{ y: '-1rem', delay: 800 }}>raid</b>
+
       <article in:fly={{ x: 400, duration: 550 }} class="alerts">
         <header>
           <h2>{raid.user}</h2>
@@ -182,17 +179,29 @@
     {/if}
   </section>
 
-  {#if isChat}
-    <p in:fly>Chat Mode: Working on something and talking with chat.</p>
-  {:else if isGhost}
-    <p in:fly>Ghost Mode: Mic is off for family privacy but will type in chat.</p>
-  {:else if isFocus}
-    <p in:fly>Focus Mode: Not going to see chat as often</p>
-  {:else}
-    <p in:fly>No mode selected</p>
+  {#if subscriber}
+    <p>
+      {raid.user} - Raided with a party of {raid.viewers} viewers
+    </p>
+  {:else if raid}
+    <p>
+      <i>Last {subscriber.subType} :</i>
+
+      {subscriber.user}
+    </p>
   {/if}
 
-  <h1>Finally getting back into this</h1>
+  <!-- {#if isChat}
+    <p in:slide>Chat Mode: Working on something and talking with chat.</p>
+  {:else if isGhost}
+    <p in:slide>Ghost Mode: Mic is off for family privacy but will type in chat.</p>
+  {:else if isFocus}
+    <p in:slide>Focus Mode: Not going to see chat as often</p>
+  {:else}
+    <p in:slide>No mode selected</p>
+  {/if} -->
+
+  <h1>Finally getting the hang of this</h1>
 </main>
 
 <style lang="scss">
@@ -234,7 +243,8 @@
 
   .modes {
     grid-area: modes;
-    align-self: center;
+    align-self: start;
+    padding-top: 50px;
     display: grid;
     gap: 20px;
     place-content: center;
@@ -286,6 +296,12 @@
       // max-width: 292px;
       // aspect-ratio: 16/9;
       border: 9px solid var(--clr-primary-bg);
+    }
+  }
+
+  .test-controls {
+    input:checked {
+      outline: 1px solid var(--clr-highlight);
     }
   }
 </style>

@@ -4,21 +4,39 @@
   import Modes from '$lib/component/Modes.svelte'
 
   //todo handle isMode better: Maybe object for names/props?
+  // turn into an [] or {} for easier reference in a forEach?
   let isChat = false
-  let isGhost = true
+  let isGhost = false
   let isFocus = false
   let isSub = false
   let isRaid = false
 
-  let raid = {
-    user: 'raidUserName',
-    viewers: 100,
-  }
+  let alerts = {
+    raid: {
+      user: 'raidUserName',
+      viewers: 100,
+    },
 
-  let subscriber = {
-    user: 'testLongLongSubName',
-    subType: 'subscribed',
-    msg: '69 months - 6 month streak',
+    subscriber: {
+      user: 'testLongLongSubName',
+      subType: 'subscribed',
+      msg: '69 months - 6 month streak',
+    },
+
+    chat: {
+      alert: 'chat',
+      msg: 'Chat mode: Let us have a chat as I try to be productive',
+    },
+
+    ghost: {
+      alert: 'ghost',
+      msg: 'Ghost mode: Mic off for privacy of the house, music will be louder.',
+    },
+
+    focus: {
+      alert: 'focus',
+      msg: 'Focus mode: Being productive, might not respond to chat.',
+    },
   }
 
   if (browser) {
@@ -32,7 +50,7 @@
       console.dir(user)
       console.dir(extra)
 
-      raid = {
+      alerts.raid = {
         user: user,
         viewers: viewers,
       }
@@ -46,7 +64,7 @@
       console.dir(subTierInfo)
       console.dir(extra)
 
-      subscriber = {
+      alerts.subscriber = {
         user: user,
         subType: subTierInfo,
         msg: message,
@@ -63,7 +81,7 @@
       if (command === 'sub') {
         console.log(`Faux Sub ${user}`)
 
-        subscriber = {
+        alerts.subscriber = {
           user: user,
           subType: 'subscribed',
           msg: '6 months, 3 months streak',
@@ -93,7 +111,8 @@
 </script>
 
 <main>
-  <!-- <div class="test-controls">
+  <!-- todo refactor into component with env check -->
+  <div class="test-controls">
     <label for="isSub">
       SubTest
       <input bind:checked={isSub} type="checkbox" name="isSub" />
@@ -103,7 +122,22 @@
       RaidTest
       <input bind:checked={isRaid} type="checkbox" name="isRaid" />
     </label>
-  </div> -->
+
+    <label for="isChat">
+      ChatTest
+      <input bind:checked={isChat} type="checkbox" name="isChat" />
+    </label>
+
+    <label for="isGhost">
+      GhostTest
+      <input bind:checked={isGhost} type="checkbox" name="isGhost" />
+    </label>
+
+    <label for="isFocus">
+      FocusTest
+      <input bind:checked={isFocus} type="checkbox" name="isFocus" />
+    </label>
+  </div>
 
   <div class="modes">
     <Modes active={isChat} modeType="chat" />
@@ -111,14 +145,15 @@
     <Modes active={isFocus} modeType="focus" />
   </div>
 
+  <!-- todo refactor into component -->
   <section class="alerts-wrap">
     {#if isSub}
-      <b in:slide={{ y: '-1rem', delay: 800 }}>{subscriber.subType}</b>
+      <b in:slide={{ y: '-1rem', delay: 800 }}>{alerts.subscriber.subType}</b>
 
       <article in:fly={{ x: 400, duration: 550 }} class="alerts">
         <header>
-          <h2>{subscriber.user}</h2>
-          <i>{subscriber.msg}</i>
+          <h2>{alerts.subscriber.user}</h2>
+          <i>{alerts.subscriber.msg}</i>
         </header>
 
         <img
@@ -126,39 +161,74 @@
           alt="Ed & Ein Excited Thank You"
         />
 
-        <figure>
-          <img
-            src="https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif"
-            alt="Tribute to the river"
-          />
-          <figcaption>Follow</figcaption>
-        </figure>
+        <img
+          src="https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif"
+          alt="Tribute to the river"
+        />
 
-        <!-- <figure>
-          <img src="https://media.giphy.com/media/fsoCk5kgOcYMM/giphy.gif" alt="Cyborg typing" />
-          <figcaption>Focus</figcaption>
-        </figure> -->
-
-        <!-- todo make a end stream scene with this -->
+        <!-- // make a end stream scene with this -->
         <!-- <img
           src="https://media.giphy.com/media/D05oEJk20L09a/giphy.gif"
           alt="Ed riding into the sunset with pin wheel in background"
         /> -->
-
-        <!-- todo use for raid? -->
       </article>
     {:else if isRaid}
       <b in:slide={{ y: '-1rem', delay: 800 }}>raid</b>
 
       <article in:fly={{ x: 400, duration: 550 }} class="alerts">
         <header>
-          <h2>{raid.user}</h2>
-          <i>Raided with a party of {raid.viewers} viewers </i>
+          <h2>{alerts.raid.user}</h2>
+          <i>Raided with a party of {alerts.raid.viewers} viewers </i>
         </header>
 
         <img
           src="https://c.tenor.com/4g2pk3Cgf70AAAAC/mugen-pt.gif"
           alt="Mugen Hiding from Tengu into Field"
+        />
+
+        <!-- <img
+          src="https://media.giphy.com/media/z9pV5qD0KEca4/giphy.gif"
+          alt="Fey hallucinating in the bathroom swimming with fishes"
+        /> -->
+
+        <!-- // make for keyboard only gif -->
+        <!-- <img
+          src="https://c.tenor.com/dSPOmUJ6_t4AAAAC/mugen-samurai.gif"
+          alt="Mugen only needs his hands to code"
+        /> -->
+      </article>
+    {:else if isChat}
+      <b in:slide={{ y: '-1rem', delay: 800 }}>chat</b>
+
+      <article in:fly={{ x: 400, duration: 550 }} class="alerts">
+        <header>
+          <i>{alerts.chat.msg}</i>
+        </header>
+
+        <!-- todo replace with a chat gif -->
+        <img src="https://media.giphy.com/media/fsoCk5kgOcYMM/giphy.gif" alt="Cyborg typing" />
+      </article>
+    {:else if isGhost}
+      <b in:slide={{ y: '-1rem', delay: 800 }}>ghost</b>
+
+      <article in:fly={{ x: 400, duration: 550 }} class="alerts">
+        <header>
+          <i>{alerts.ghost.msg}</i>
+        </header>
+
+        <img src="https://media.giphy.com/media/fsoCk5kgOcYMM/giphy.gif" alt="Cyborg typing" />
+      </article>
+    {:else if isFocus}
+      <b in:slide={{ y: '-1rem', delay: 800 }}>focus</b>
+
+      <article in:fly={{ x: 400, duration: 550 }} class="alerts">
+        <header>
+          <i>{alerts.focus.msg}</i>
+        </header>
+
+        <img
+          src="https://c.tenor.com/CD_F_Qh26z0AAAAC/asimov-solensan-bloody-eye.gif"
+          alt="Red Eye - Cowboy Bebop"
         />
 
         <!-- <img
@@ -171,7 +241,7 @@
           alt="Fey hallucinating in the bathroom swimming with fishes"
         /> -->
 
-        <!-- todo make for keyboard only gif -->
+        <!-- // make for keyboard only gif -->
         <!-- <img
           src="https://c.tenor.com/dSPOmUJ6_t4AAAAC/mugen-samurai.gif"
           alt="Mugen only needs his hands to code"
@@ -180,15 +250,15 @@
     {/if}
   </section>
 
-  {#if subscriber}
+  {#if alerts.subscriber}
     <p>
-      {raid.user} - Raided with a party of {raid.viewers} viewers
+      {alerts.raid.user} - Raided with a party of {alerts.raid.viewers} viewers
     </p>
-  {:else if raid}
+  {:else if alerts.raid}
     <p>
-      <i>Last {subscriber.subType} :</i>
+      <i>Last {alerts.subscriber.subType} :</i>
 
-      {subscriber.user}
+      {alerts.subscriber.user}
     </p>
   {/if}
 
@@ -208,7 +278,6 @@
 <style lang="scss">
   h1,
   h2,
-  figure,
   p {
     margin: 0;
   }
@@ -301,6 +370,8 @@
   }
 
   .test-controls {
+    position: absolute;
+    z-index: 99;
     input:checked {
       outline: 1px solid var(--clr-highlight);
     }

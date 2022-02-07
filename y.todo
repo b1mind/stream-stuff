@@ -3,14 +3,18 @@ Todo:
   ✔ learn how to do custom overlay alerts using wrapper api of some short @done(22-02-04 21:15)
   ✔ import comfy.js if browser but in svelte not html dom @done(22-02-05 01:30)
   ✔ find design ideas and see what others are doing for frame overlay @done(22-02-05 01:30)
-  ☐ import GSAP and use timelines for alerts
   ✔ color a11y checks for interface @done(22-02-06 16:54)
   ☐ Twitch-Cli mock server working! //so close yet so far.... get help!
+    // stuck here how to I slurp the Post data https://youtu.be/omBzmgAppYQ?t=2109
+    //$ twitch event trigger subscribe -F https://localhost:3000/api/eventsub/
+    Post "https://localhost:3000/api/eventsub/": http: server gave HTTP response to HTTPS client
+
+  ☐ import GSAP and use timelines for alerts
   ☐ keeb build pictures just put in profile url /stream/keeb/ *placeholder Made*
   ☐ powertoys window docking - want locked window set ups to toggle
 
   QoL for all:
-    ✔ Improve cam quality, lighting, and resolution @done(22-02-06 16:54)
+    ✔ Improve cam quality, lighting, and resolution @done(22-02-06 21:23)
     ☐ Move mic to other side so if looking at chat I am talking into mic
       // really need to get a usbHub? _Have extensions go find it lazy arse_
     ☐ BETTER LIGHTING FOR KEEB CAM
@@ -20,6 +24,7 @@ Todo:
       // (find advice, pay attention to others)
 
   twitch info:
+    //make banners based on UI design so it matchs... but get copy up!
     ☐ create better Panel copywrite: Bio - About - Story for below stream
     ☐ make a profile banner and panel banner graphics
     ☐ spice up logo for meta data

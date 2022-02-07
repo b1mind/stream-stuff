@@ -3,6 +3,7 @@ Todo:
   ✔ test postcss plugins to make sure they work @done(21-06-21 02:37)
   ☐ home page/lander for root domain 1mind.dev 
   ☐ favicon for app.html
+  ☐ need to install a img crunch / svg omg package for vite/sveltekit
   ☐ import gsap back into project
   ☐ start designing basic projects section.. Professional vs Playground
 

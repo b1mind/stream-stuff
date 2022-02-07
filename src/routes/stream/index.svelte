@@ -4,8 +4,8 @@
   import Modes from '$lib/component/Modes.svelte'
 
   //todo handle isMode better: Maybe object for names/props?
-  let isChat = true
-  let isGhost = false
+  let isChat = false
+  let isGhost = true
   let isFocus = false
   let isSub = false
   let isRaid = false
@@ -52,6 +52,7 @@
         msg: message,
       }
 
+      //not having a timer atm is kinda nice cause if it works.. it should stay
       isSub = true
     }
 
@@ -92,7 +93,7 @@
 </script>
 
 <main>
-  <div class="test-controls">
+  <!-- <div class="test-controls">
     <label for="isSub">
       SubTest
       <input bind:checked={isSub} type="checkbox" name="isSub" />
@@ -102,7 +103,7 @@
       RaidTest
       <input bind:checked={isRaid} type="checkbox" name="isRaid" />
     </label>
-  </div>
+  </div> -->
 
   <div class="modes">
     <Modes active={isChat} modeType="chat" />

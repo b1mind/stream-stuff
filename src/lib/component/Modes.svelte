@@ -2,7 +2,7 @@
   export let active = false
   export let modeType = 'chat'
 
-  let icon = `mode.svg#${modeType}`
+  let icon = `/mode.svg#${modeType}`
 </script>
 
 <svg>

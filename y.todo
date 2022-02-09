@@ -5,17 +5,22 @@ Todo:
   ✔ find design ideas and see what others are doing for frame overlay @done(22-02-05 01:30)
   ✔ color a11y checks for interface @done(22-02-06 16:54)
   ✔ import GSAP and use timelines for alerts @done(22-02-07 12:59)
-  ✔ refactor alerts/modes better @done(22-02-08 20:29)
   ☐ Twitch-Cli mock server working! //so close yet so far.. get help!(Prince?)
     // stuck here how to I slurp the Post data https://youtu.be/omBzmgAppYQ?t=2109
     //$ twitch event trigger subscribe -F https://localhost:3000/api/eventsub/
     Post "https://localhost:3000/api/eventsub/": http: server gave HTTP response to HTTPS client
-
-  ☐ make a svelte store for alert state
-  ☐ alerts animation with GSAP yoyo baby
   ☐ keeb build pictures just put in profile url /stream/keeb/ *placeholder Made*
     //just need the page made pictures moved to static/img/keeb/
   ☐ powertoys window docking - want locked window set ups to toggle
+
+  Refactor:
+    ✔ Mode need function and better flag check @done(22-02-08 20:32)
+    ✔ refactor alerts/modes better @done(22-02-08 20:29)
+    ✔ ~~Alerts needs abstracted~~ or do they @done(22-02-08 20:32)
+    ✔ temp timer (made till gsap is used) @done(22-02-08 20:33)
+    ✔ svelte out animation @done(22-02-08 20:47)
+    ☐ make a svelte store for alert state
+    ☐ need to make alerts async for stacked alerts... 
 
   QoL for all:
     ✔ BETTER LIGHTING FOR KEEB CAM (ordered on the way!) @done(22-02-07 11:53)
@@ -41,14 +46,14 @@ Todo:
     ✔ Night/Insomnia Mode - Muted* ? or just don't stream at night... @done(22-02-04 20:15)
     ✔ !focus alert gif https://media.giphy.com/media/u6xMPnzIyJB84/giphy.gif @done(22-02-06 23:32)
     ✔ !ghost gif https://media.giphy.com/media/3o7buhsTerQAmHRztC/giphy.gif @done(22-02-06 23:32)
-    ☐ env var for testing alert overlay
+    ✔ env var for testing alert overlay @done(22-02-08 20:48)
+    ☐ alerts animations tied into interface/overlay with GSAP better easing+yoyo
     ☐ On screen timer baked into overlay & scene. (I see it on 2cnd window?)
     ☐ use StreamElements for sound alerts or bake my own
     ☐ Better AFK scene 
       // {timeAFK} and improve with stream info and design into interface
     ☐ Conversation scene - for chatting to chat *visible overlay
     ☐ gaming overlay + scene
-
 
   Chat commands:
     ✔ !focus could have msg or title @done(22-02-05 18:15)
@@ -79,10 +84,6 @@ Todo:
     ☐ cmGriffing mentioned sound and maybe hooking it to AHK or QMK
     ☐ overlay for QMK or Kris inputs vs cam
       // QMK input checker website?
-
-Refactor:
-  ☐ Mode need function and better flag check
-  ☐ Alerts needs abstracted
 
 Questions:
   ☐ Should !today different than !title ?

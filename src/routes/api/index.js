@@ -15,7 +15,6 @@ export async function get({ params, fetch, request }) {
 }
 
 export async function post({ params, fetch, request }) {
-  //todo get response from twitch-cli server https://localhost:9000/eventSub *
   //CORs issue? 500 response?
 
   console.log(params, 'params')

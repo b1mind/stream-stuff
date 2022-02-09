@@ -4,13 +4,17 @@ Todo:
   ✔ import comfy.js if browser but in svelte not html dom @done(22-02-05 01:30)
   ✔ find design ideas and see what others are doing for frame overlay @done(22-02-05 01:30)
   ✔ color a11y checks for interface @done(22-02-06 16:54)
+  ✔ import GSAP and use timelines for alerts @done(22-02-07 12:59)
+  ✔ refactor alerts/modes better @done(22-02-08 20:29)
   ☐ Twitch-Cli mock server working! //so close yet so far.. get help!(Prince?)
     // stuck here how to I slurp the Post data https://youtu.be/omBzmgAppYQ?t=2109
     //$ twitch event trigger subscribe -F https://localhost:3000/api/eventsub/
     Post "https://localhost:3000/api/eventsub/": http: server gave HTTP response to HTTPS client
 
-  ☐ import GSAP and use timelines for alerts
+  ☐ make a svelte store for alert state
+  ☐ alerts animation with GSAP yoyo baby
   ☐ keeb build pictures just put in profile url /stream/keeb/ *placeholder Made*
+    //just need the page made pictures moved to static/img/keeb/
   ☐ powertoys window docking - want locked window set ups to toggle
 
   QoL for all:

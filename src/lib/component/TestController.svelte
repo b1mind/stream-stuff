@@ -6,6 +6,7 @@
   export let isFocus
 </script>
 
+<!-- todo testController working again / use input=text to enter alert type? -->
 <label for="isSub">
   SubTest
   <input bind:checked={isSub} type="checkbox" name="isSub" />

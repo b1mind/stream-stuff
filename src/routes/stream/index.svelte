@@ -4,12 +4,14 @@
   import Modes from '$lib/component/Modes.svelte'
   // import TestController from '$lib/component/TestController.svelte'
 
+  let modes = ['chat', 'ghost', 'focus']
   let alerts = {
     active: false,
     type: 'ghost',
+    mode: 'ghost',
     raid: {
       user: 'raidTestUser',
-      msg: `Raiding with 100 test viewers`,
+      msg: `Raiding with 420 test viewers`,
       url: 'https://c.tenor.com/4g2pk3Cgf70AAAAC/mugen-pt.gif',
     },
 
@@ -22,33 +24,36 @@
     },
 
     chat: {
-      msg: 'Chat mode: Let us have a chat as I try to be productive',
-      url: 'https://media.giphy.com/media/p7QJSVvU4bMWc/giphy.gif',
+      msg: 'Chat mode: Just chating, ask me questions or help me code.',
+      url: 'https://c.tenor.com/v3yWYLX8eC4AAAAC/jet-black-cowboy-bebop.gif',
     },
 
     ghost: {
-      msg: 'Ghost mode: Mic off for privacy of the house, music will be louder.',
-      url: 'https://media.giphy.com/media/fsoCk5kgOcYMM/giphy.gif',
+      msg: 'Ghost mode: Mic off for families privacy, music will be louder.',
+      url: 'https://c.tenor.com/MyrFCo_WTwIAAAAd/disappear-invisible.gif',
     },
 
     focus: {
-      msg: 'Focus mode: Being productive, might not respond to chat.',
+      msg: 'Focus mode: Being productive, might not respond to chat as much.',
       url: 'https://c.tenor.com/CD_F_Qh26z0AAAAC/asimov-solensan-bloody-eye.gif',
     },
   }
 
-  function runAlert(alertType, user, msg) {
-    alerts.type = alertType
-    if (user) alerts[alertType].user = user
-    if (msg) alerts[alertType].msg = msg
-    alerts.active = true
-
+  //fixme alerts async: need to stack and not cancel each other out.
+  // will gsap help with this? using callback hook?
+  async function runAlert(alertType, user, msg) {
     let times = 1
     setTimeout(function tick() {
       if (times === 0) return (alerts.active = false)
       times--
       setTimeout(tick, 10000)
     }, 0)
+
+    alerts.type = alertType
+    if (modes.includes(alertType)) alerts.mode = alertType
+    if (user) alerts[alertType].user = user
+    if (msg) alerts[alertType].msg = msg
+    alerts.active = true
   }
 
   if (browser) {
@@ -72,7 +77,7 @@
       console.dir(subTierInfo)
       console.dir(extra)
 
-      runAlert(command, user, message)
+      runAlert(command, user, subTierInfo || message)
     }
 
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
@@ -82,7 +87,6 @@
       const vipList = ['broadcaster', 'moderator', 'vip']
       const cmdList = ['chat', 'ghost', 'focus', 'raid', 'sub']
 
-      //todo refactor cleaner with switch or better function
       if (flags.broadcaster && cmdList.includes(command)) {
         runAlert(command, user, message)
       }
@@ -104,9 +108,9 @@
   {/if}
 
   <div class="modes">
-    <Modes active={alerts.type === 'chat'} modeType="chat" />
-    <Modes active={alerts.type === 'ghost'} modeType="ghost" />
-    <Modes active={alerts.type === 'focus'} modeType="focus" />
+    {#each modes as mode}
+      <Modes active={alerts.mode === mode} modeType={mode} />
+    {/each}
   </div>
 
   <section class="alerts-wrap">
@@ -133,17 +137,11 @@
     {/if}
   </section>
 
-  <p>Testing Modes</p>
-
-  <!-- {#if isChat}
-    <p in:slide>Chat Mode: Working on something and talking with chat.</p>
-  {:else if isGhost}
-    <p in:slide>Ghost Mode: Mic is off for family privacy but will type in chat.</p>
-  {:else if isFocus}
-    <p in:slide>Focus Mode: Not going to see chat as often</p>
+  {#if alerts.mode}
+    <p>{alerts[alerts.mode].msg}</p>
   {:else}
-    <p in:slide>No mode selected</p>
-  {/if} -->
+    <p>No mode: Please set a productivity mode.</p>
+  {/if}
 
   <h1>Working on making this overlay better. WIP</h1>
 </main>

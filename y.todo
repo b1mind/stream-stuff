@@ -1,34 +1,17 @@
 //Stream list
 Todo: 
-  ✔ learn how to do custom overlay alerts using wrapper api of some short @done(22-02-04 21:15)
-  ✔ import comfy.js if browser but in svelte not html dom @done(22-02-05 01:30)
-  ✔ find design ideas and see what others are doing for frame overlay @done(22-02-05 01:30)
-  ✔ color a11y checks for interface @done(22-02-06 16:54)
-  ✔ import GSAP and use timelines for alerts @done(22-02-07 12:59)
   ☐ Twitch-Cli mock server working! //so close yet so far.. get help!(Prince?)
     // stuck here how to I slurp the Post data https://youtu.be/omBzmgAppYQ?t=2109
     //$ twitch event trigger subscribe -F https://localhost:3000/api/eventsub/
     Post "https://localhost:3000/api/eventsub/": http: server gave HTTP response to HTTPS client
-  ☐ keeb build pictures just put in profile url /stream/keeb/ *placeholder Made*
-    //just need the page made pictures moved to static/img/keeb/
+
+  ☐ On screen timer baked into overlay & scene. (I see it on 2cnd window?)
+  ☐ design decisions for timer and non-alert gifs
   ☐ powertoys window docking - want locked window set ups to toggle
+    //installed but need to configure 
 
   Refactor:
-    ✔ Mode need function and better flag check @done(22-02-08 20:32)
-    ✔ refactor alerts/modes better @done(22-02-08 20:29)
-    ✔ ~~Alerts needs abstracted~~ or do they @done(22-02-08 20:32)
-    ✔ temp timer (made till gsap is used) @done(22-02-08 20:33)
-    ✔ svelte out animation @done(22-02-08 20:47)
-    ☐ make a svelte store for alert state
-    ☐ need to make alerts async for stacked alerts... 
-
-  QoL for all:
-    ✔ BETTER LIGHTING FOR KEEB CAM (ordered on the way!) @done(22-02-07 11:53)
-    ✔ Improve cam quality, lighting, and resolution @done(22-02-06 21:23)
-    ☐ get Krisp working better so I don't sound underwater and quiet
-    ☐ Mute icon for all scenes? Can I detect mute?
-    ☐ Move mic to other side so if looking at chat I am talking into mic
-      // really need to get a usbHub (ordered) _Have USBextension some where.. find it_
+    ☐ need queue for alerts to stack https://www.javascripttutorial.net/javascript-queue/
 
   twitch info:
     //make banners based on UI design so it matchs... but get copy up!
@@ -39,16 +22,10 @@ Todo:
   RedemtionsPoints:
     ☐ think about what to do for redemtion points
     ☐ highlight alert with msg on screen
-    // will require oAuth to work
+    // will require oAuth to work with comfyJS
 
   Cam/Overlay Ideas:
-    ✔ Focus,ghost,chat mode - have cmd for chat @done(22-02-05 01:30)
-    ✔ Night/Insomnia Mode - Muted* ? or just don't stream at night... @done(22-02-04 20:15)
-    ✔ !focus alert gif https://media.giphy.com/media/u6xMPnzIyJB84/giphy.gif @done(22-02-06 23:32)
-    ✔ !ghost gif https://media.giphy.com/media/3o7buhsTerQAmHRztC/giphy.gif @done(22-02-06 23:32)
-    ✔ env var for testing alert overlay @done(22-02-08 20:48)
     ☐ alerts animations tied into interface/overlay with GSAP better easing+yoyo
-    ☐ On screen timer baked into overlay & scene. (I see it on 2cnd window?)
     ☐ use StreamElements for sound alerts or bake my own
     ☐ Better AFK scene 
       // {timeAFK} and improve with stream info and design into interface
@@ -56,10 +33,6 @@ Todo:
     ☐ gaming overlay + scene
 
   Chat commands:
-    ✔ !focus could have msg or title @done(22-02-05 18:15)
-    ✔ !chat should accept msg or have title @done(22-02-05 18:15)
-    ✔ !cam - let people why no face cam @done(22-02-05 01:37)
-    ✔ !pc specs simple @done(22-02-05 01:37)
     ☐ !so shout out feature for other Twitch streamers
     ☐ !extensions - probably going to ask about nVim and others?
     ☐ !figs - link to bare repo?
@@ -86,6 +59,8 @@ Todo:
       // QMK input checker website?
 
 Questions:
+  ☐ Mute icon for all scenes? Can I detect mute?
+    mute with bind in scene
   ☐ Should !today different than !title ?
   ☐ Decide on raid gif?
   ☐ playing sounds via StreamElements or custom?
@@ -97,6 +72,7 @@ Questions:
 Wishlist:
   ☐ backgrounds behind Yuki and I (hot,cold, river, underwater, ninja, focus?)
   ☐ Get incoming raid's channel title, not have to ask but can get right to it
+  ☐ finish keeb page with captions/text explaining more.. later into blog post
   ☐ AFK game - something for chat, cats away mice will play
   ☐ custom.Cycle take two vsc commands.. Font for terminal needs ++
   ☐ setup auto hosting to my fav streamers if I am offline
@@ -109,8 +85,35 @@ Wishlist:
   ☐ make layer for "streamdeck" in QMK
   ☐ look into DIY streamdecks (yt history has good ones?)
   
-
 Archive:
+  ✔ learn how to do custom overlay alerts using wrapper api of some short @done(22-02-04 21:15) @project(Todo)
+  ✔ import comfy.js if browser but in svelte not html dom @done(22-02-05 01:30) @project(Todo)
+  ✔ find design ideas and see what others are doing for frame overlay @done(22-02-05 01:30) @project(Todo)
+  ✔ color a11y checks for interface @done(22-02-06 16:54) @project(Todo)
+  ✔ import GSAP and use timelines for alerts @done(22-02-07 12:59) @project(Todo)
+  ✔ keeb build pictures just put in profile url /stream/keeb/ *placeholder Made* @done(22-02-09 00:31) @project(Todo)
+  ✔ Mode need function and better flag check @done(22-02-08 20:32) @project(Todo.Refactor)
+  ✔ refactor alerts/modes better @done(22-02-08 20:29) @project(Todo.Refactor)
+  ✔ ~~Alerts needs abstracted~~ or do they @done(22-02-08 20:32) @project(Todo.Refactor)
+  ✔ temp timer (made till gsap is used) @done(22-02-08 20:33) @project(Todo.Refactor)
+  ✔ svelte out animation @done(22-02-08 20:47) @project(Todo.Refactor)
+  ✔ make a svelte store for alert state @done(22-02-09 12:46) @project(Todo.Refactor)
+  ✘ need to make alerts async for stacked alerts... @cancelled(22-02-09 13:08) @project(Todo.Refactor)
+  ✔ BETTER LIGHTING FOR KEEB CAM (ordered on the way!) @done(22-02-07 11:53) @project(Todo.QoL for all)
+  ✔ Improve cam quality, lighting, and resolution @done(22-02-06 21:23) @project(Todo.QoL for all)
+  ✔ mute for AFK scene @done(22-02-09 13:16) @project(Todo.QoL for all)
+  ✔ Move mic to other side so if looking at chat I am talking into mic @done(22-02-09 13:23) @project(Todo.QoL for all)
+  ✔ really need to get a usbHub (ordered) _Have USBextension some where.. find it_ @done(22-02-09 13:23) @project(Todo.QoL for all)
+  ✔ get Krisp working better so I don't sound underwater and quiet @done(22-02-09 13:37) @project(Todo.QoL for all)
+  ✔ Focus,ghost,chat mode - have cmd for chat @done(22-02-05 01:30) @project(Todo.Cam/Overlay Ideas)
+  ✔ Night/Insomnia Mode - Muted* ? or just don't stream at night... @done(22-02-04 20:15) @project(Todo.Cam/Overlay Ideas)
+  ✔ !focus alert gif https://media.giphy.com/media/u6xMPnzIyJB84/giphy.gif @done(22-02-06 23:32) @project(Todo.Cam/Overlay Ideas)
+  ✔ !ghost gif https://media.giphy.com/media/3o7buhsTerQAmHRztC/giphy.gif @done(22-02-06 23:32) @project(Todo.Cam/Overlay Ideas)
+  ✔ env var for testing alert overlay @done(22-02-08 20:48) @project(Todo.Cam/Overlay Ideas)
+  ✔ !focus could have msg or title @done(22-02-05 18:15) @project(Todo.Chat commands)
+  ✔ !chat should accept msg or have title @done(22-02-05 18:15) @project(Todo.Chat commands)
+  ✔ !cam - let people why no face cam @done(22-02-05 01:37) @project(Todo.Chat commands)
+  ✔ !pc specs simple @done(22-02-05 01:37) @project(Todo.Chat commands)
   ✔ try a hosted/local sveltekit page as overlay from portfolio @done(22-02-03 10:36) @project(Todo)
   ✔ figure out best way to host scenes (local/vps) @done(22-02-04 14:02i) @project(Todo)
   ✔ picture for main overlay frame @done(22-02-03 10:37) @project(Todo)

@@ -50,10 +50,15 @@
     }, 0)
 
     alerts.type = alertType
-    if (modes.includes(alertType)) alerts.mode = alertType
+    alerts.active = true
+
+    if (modes.includes(alertType)) {
+      alerts.mode = alertType
+      return
+    }
+
     if (user) alerts[alertType].user = user
     if (msg) alerts[alertType].msg = msg
-    alerts.active = true
   }
 
   if (browser) {
@@ -157,7 +162,7 @@
     height: 100%;
     display: grid;
     grid-template-columns: 420px 1fr 296px 153px;
-    grid-template-rows: 1fr 420px 56px 92px;
+    grid-template-rows: 1fr 420px 54px 92px;
     grid-template-areas:
       '. . . modes'
       '. . alerts .'

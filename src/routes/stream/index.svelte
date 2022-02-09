@@ -1,64 +1,31 @@
 <script>
   import { browser, dev } from '$app/env'
   import { fly, slide } from 'svelte/transition'
+  import { alerts } from '$lib/data/alerts'
   import Modes from '$lib/component/Modes.svelte'
   // import TestController from '$lib/component/TestController.svelte'
 
   let modes = ['chat', 'ghost', 'focus']
-  let alerts = {
-    active: false,
-    type: 'ghost',
-    mode: 'ghost',
-    raid: {
-      user: 'raidTestUser',
-      msg: `Raiding with 420 test viewers`,
-      url: 'https://c.tenor.com/4g2pk3Cgf70AAAAC/mugen-pt.gif',
-    },
 
-    sub: {
-      user: 'testLongLongSubName',
-      msg: '69 months - 6 month streak',
-      url: 'https://media.giphy.com/media/p7QJSVvU4bMWc/giphy.gif',
-      //follower gif
-      // url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
-    },
-
-    chat: {
-      msg: 'Chat mode: Just chating, ask me questions or help me code.',
-      url: 'https://c.tenor.com/v3yWYLX8eC4AAAAC/jet-black-cowboy-bebop.gif',
-    },
-
-    ghost: {
-      msg: 'Ghost mode: Mic off for families privacy, music will be louder.',
-      url: 'https://c.tenor.com/MyrFCo_WTwIAAAAd/disappear-invisible.gif',
-    },
-
-    focus: {
-      msg: 'Focus mode: Being productive, might not respond to chat as much.',
-      url: 'https://c.tenor.com/CD_F_Qh26z0AAAAC/asimov-solensan-bloody-eye.gif',
-    },
-  }
-
-  //fixme alerts async: need to stack and not cancel each other out.
-  // will gsap help with this? using callback hook?
-  async function runAlert(alertType, user, msg) {
+  //fixme alerts queued: need to stack and not cancel each other out.
+  function runAlert(alertType, user, msg) {
     let times = 1
     setTimeout(function tick() {
-      if (times === 0) return (alerts.active = false)
+      if (times === 0) return ($alerts.active = false)
       times--
-      setTimeout(tick, 10000)
+      setTimeout(tick, 15000)
     }, 0)
 
-    alerts.type = alertType
-    alerts.active = true
+    $alerts.type = alertType
+    $alerts.active = true
 
     if (modes.includes(alertType)) {
-      alerts.mode = alertType
+      $alerts.mode = alertType
       return
     }
 
-    if (user) alerts[alertType].user = user
-    if (msg) alerts[alertType].msg = msg
+    if (user) $alerts[alertType].user = user
+    if (msg) $alerts[alertType].msg = msg
   }
 
   if (browser) {
@@ -106,7 +73,7 @@
     <div class="test-controls">
       <label for="alert">
         AlertTest
-        <input bind:checked={alerts.active} type="checkbox" name="alert" />
+        <input bind:checked={$alerts.active} type="checkbox" name="alert" />
       </label>
       <!-- <TestController /> -->
     </div>
@@ -114,17 +81,14 @@
 
   <div class="modes">
     {#each modes as mode}
-      <Modes active={alerts.mode === mode} modeType={mode} />
+      <Modes active={$alerts.mode === mode} modeType={mode} />
     {/each}
   </div>
 
   <section class="alerts-wrap">
-    {#if alerts.active}
-      <b
-        in:slide={{ y: '-1rem', delay: 800 }}
-        out:slide={{ y: '1rem', duration: 550 }}
-      >
-        {alerts.type}
+    {#if $alerts.active}
+      <b in:slide={{ y: '-1rem', delay: 800 }} out:slide={{ y: '1rem', duration: 550 }}>
+        {$alerts.type}
       </b>
 
       <article
@@ -133,17 +97,17 @@
         class="alerts"
       >
         <header>
-          <h2>{alerts[alerts.type].user || ''}</h2>
-          <i>{alerts[alerts.type].msg}</i>
+          <h2>{$alerts[$alerts.type].user || ''}</h2>
+          <i>{$alerts[$alerts.type].msg}</i>
         </header>
 
-        <img src={alerts[alerts.type].url} alt="Gif for {alerts.type}" />
+        <img src={$alerts[$alerts.type].url} alt="Gif for {$alerts.type}" />
       </article>
     {/if}
   </section>
 
-  {#if alerts.mode}
-    <p>{alerts[alerts.mode].msg}</p>
+  {#if $alerts.mode}
+    <p>{$alerts[$alerts.mode].msg}</p>
   {:else}
     <p>No mode: Please set a productivity mode.</p>
   {/if}
@@ -168,7 +132,7 @@
       '. . alerts .'
       '. . . .'
       'info msg . .';
-    color: var(--clr-white);
+    color: var(--clr-highlight-text);
     font-family: Helvetica, sans-serif;
 
     h1 {

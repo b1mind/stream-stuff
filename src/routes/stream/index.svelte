@@ -2,7 +2,7 @@
   import { browser, dev } from '$app/env'
   import { fly, slide } from 'svelte/transition'
   import Modes from '$lib/component/Modes.svelte'
-  import TestController from '$lib/component/TestController.svelte'
+  // import TestController from '$lib/component/TestController.svelte'
 
   let alerts = {
     active: false,
@@ -37,17 +37,18 @@
     },
   }
 
-  let times = 1
-
-  function runAlert(alertType) {
+  function runAlert(alertType, user, msg) {
     alerts.type = alertType
+    if (user) alerts[alertType].user = user
+    if (msg) alerts[alertType].msg = msg
     alerts.active = true
 
+    let times = 1
     setTimeout(function tick() {
       if (times === 0) return (alerts.active = false)
       times--
       setTimeout(tick, 10000)
-    }, 100)
+    }, 0)
   }
 
   if (browser) {
@@ -61,9 +62,8 @@
       console.dir(user)
       console.dir(extra)
 
-      alerts.raid.user = user
-      alerts.raid.msg = `Raiding with ${viewers} viewers`
-      runAlert(command)
+      let msg = `Raiding with ${viewers} viewers`
+      runAlert(command, user, msg)
     }
 
     ComfyJS.onSub = (user, message, subTierInfo, extra) => {
@@ -72,10 +72,7 @@
       console.dir(subTierInfo)
       console.dir(extra)
 
-      alerts.sub.user = user
-      alerts.sub.msg = message
-      //not having a timer atm is kinda nice cause if it works.. it should stay
-      runAlert(command)
+      runAlert(command, user, message)
     }
 
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
@@ -87,12 +84,7 @@
 
       //todo refactor cleaner with switch or better function
       if (flags.broadcaster && cmdList.includes(command)) {
-        runAlert(command)
-      }
-
-      if (command === 'sub') {
-        console.log(`Faux Sub ${user}`)
-        alerts.sub.user = user
+        runAlert(command, user, message)
       }
     }
 
@@ -119,18 +111,28 @@
 
   <section class="alerts-wrap">
     {#if alerts.active}
-      <b in:slide={{ y: '-1rem', delay: 800 }}>{alerts.type}</b>
+      <b
+        in:slide={{ y: '-1rem', delay: 800 }}
+        out:slide={{ y: '1rem', duration: 550 }}
+      >
+        {alerts.type}
+      </b>
 
-      <article in:fly={{ x: 400, duration: 550 }} class="alerts">
+      <article
+        in:fly={{ x: 400, duration: 550 }}
+        out:slide={{ y: '1rem', delay: 350 }}
+        class="alerts"
+      >
         <header>
           <h2>{alerts[alerts.type].user || ''}</h2>
           <i>{alerts[alerts.type].msg}</i>
         </header>
 
-        <img src={alerts[alerts.type].url} alt="Gif for alert" />
+        <img src={alerts[alerts.type].url} alt="Gif for {alerts.type}" />
       </article>
     {/if}
   </section>
+
   <p>Testing Modes</p>
 
   <!-- {#if isChat}
@@ -143,7 +145,7 @@
     <p in:slide>No mode selected</p>
   {/if} -->
 
-  <h1>Finally getting the hang of this</h1>
+  <h1>Working on making this overlay better. WIP</h1>
 </main>
 
 <style lang="scss">
@@ -157,13 +159,13 @@
     height: 100%;
     display: grid;
     grid-template-columns: 420px 1fr 296px 153px;
-    grid-template-rows: 1fr 420px 58px 92px;
+    grid-template-rows: 1fr 420px 56px 92px;
     grid-template-areas:
       '. . . modes'
       '. . alerts .'
       '. . . .'
       'info msg . .';
-    color: var(--clr-highlight);
+    color: var(--clr-white);
     font-family: Helvetica, sans-serif;
 
     h1 {

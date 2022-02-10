@@ -7,43 +7,49 @@
 
   let modes = ['chat', 'ghost', 'focus']
   let alertsQue = []
-  // need length of queue alertsQue.length
-  let times = alertsQue.length
+  let currentAlert
 
-  // function Queue() {
-  //   this.elements = []
-  // }
+  function storeAlert(alert) {}
+
+  function removeAlert(alert) {}
+  alertsQue = alertsQue.filter((a) => {
+    a !== alert
+  })
 
   //fixme alerts queued: need to stack and not cancel each other out.
   function runAlert(alertType, user, msg) {
-    // return current queue alert to alerts store in the timeOut
-    // ?? each alert needs to check active ??
-    // let times = 1
-
     // store params for alerts.type to alertsQue
-    let currentAlert = { type: alertType, user: user, msg: msg }
+    // return current queue alert to alerts store
+    // need to check length of queue alertsQue.length
+    // pop(filter) last run alert from alertsQue
+    // function to setStoreAlert
+
+    currentAlert = { type: alertType, user: user, msg: msg }
     alertsQue = [currentAlert, ...alertsQue]
     console.log(alertsQue, 'start')
 
+    let times = 1
     setTimeout(function tick() {
       if (times === 0) {
-        return ($alerts.active = false)
+        $alerts.active = false
+        return
       }
 
-      // pop(remove) last run alert from alertsQue
-      alertsQue = alertsQue.filter((a) => {
-        a !== currentAlert
-      })
-
+      times--
       console.log(alertsQue, 'loop')
       setTimeout(tick, 15000)
     }, 0)
+
+    removeAlert(currentAlert)
+
+    //todo saveAlert to store needs finished
+    storeAlert(currentAlert)
 
     $alerts.type = currentAlert.type
     $alerts.active = true
 
     if (modes.includes(alertType)) {
-      $alerts.mode = currentAlert.typeType
+      $alerts.mode = currentAlert.type
       return
     }
 

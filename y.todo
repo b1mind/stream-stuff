@@ -33,12 +33,13 @@ Todo:
     ☐ gaming overlay + scene
 
   Chat commands:
-    ☐ !so shout out feature for other Twitch streamers
+    ☐ !project | !today - explain current project as to inform new viewers
+    ☐ !so shout out feature for other Twitch streamers | streamElements or Fossabot can handle
     ☐ !extensions - probably going to ask about nVim and others?
     ☐ !figs - link to bare repo?
     ☐ !tools - "Milwaukee Drills are best"
     ☐ !fontUp - vsc cycle.FontToggle
-    ☐ !todo - show chat todo?  
+    ☐ !todo - show chat todo | goals from that todo  
     ☐ !change song
     ☐ !volume of music
     ☐ !unmute command

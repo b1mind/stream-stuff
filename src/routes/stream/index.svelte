@@ -6,26 +6,51 @@
   // import TestController from '$lib/component/TestController.svelte'
 
   let modes = ['chat', 'ghost', 'focus']
+  let alertsQue = []
+  // need length of queue alertsQue.length
+  let times = alertsQue.length
+
+  // function Queue() {
+  //   this.elements = []
+  // }
 
   //fixme alerts queued: need to stack and not cancel each other out.
   function runAlert(alertType, user, msg) {
-    let times = 1
+    // return current queue alert to alerts store in the timeOut
+    // ?? each alert needs to check active ??
+    // let times = 1
+
+    // store params for alerts.type to alertsQue
+    let currentAlert = { type: alertType, user: user, msg: msg }
+    alertsQue = [currentAlert, ...alertsQue]
+    console.log(alertsQue, 'start')
+
     setTimeout(function tick() {
-      if (times === 0) return ($alerts.active = false)
-      times--
+      if (times === 0) {
+        return ($alerts.active = false)
+      }
+
+      // pop(remove) last run alert from alertsQue
+      alertsQue = alertsQue.filter((a) => {
+        a !== currentAlert
+      })
+
+      console.log(alertsQue, 'loop')
       setTimeout(tick, 15000)
     }, 0)
 
-    $alerts.type = alertType
+    $alerts.type = currentAlert.type
     $alerts.active = true
 
     if (modes.includes(alertType)) {
-      $alerts.mode = alertType
+      $alerts.mode = currentAlert.typeType
       return
     }
 
-    if (user) $alerts[alertType].user = user
-    if (msg) $alerts[alertType].msg = msg
+    if (user) $alerts[currentAlert.type].user = currentAlert.user
+    if (msg) $alerts[alertcurrentAlert.type].msg = currentAlert.msg
+
+    console.log(alertsQue, 'end')
   }
 
   if (browser) {

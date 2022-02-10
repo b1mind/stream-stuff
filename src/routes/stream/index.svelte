@@ -5,19 +5,34 @@
   import Modes from '$lib/component/Modes.svelte'
   // import TestController from '$lib/component/TestController.svelte'
 
-  let modes = ['chat', 'ghost', 'focus']
+  let modes = ['chat', 'ghost', 'focus', 'game']
   let alertsQue = []
   let currentAlert
 
-  function storeAlert(alert) {}
+  function storeAlert(alert) {
+    let { type, user, msg } = alert
+    $alerts.type = type
 
-  function removeAlert(alert) {}
-  alertsQue = alertsQue.filter((a) => {
-    a !== alert
-  })
+    if (user) $alerts[type].user = user
+    if (msg) $alerts[type].msg = msg
+
+    if (modes.includes(type)) {
+      $alerts.mode = type
+      return
+    }
+  }
+
+  function removeAlert(alert) {
+    //fixme filter removing all
+    alertsQue = alertsQue.filter((a) => {
+      console.log(alert === a)
+      a !== alert
+    })
+    console.log(alertsQue, 'remove')
+  }
 
   //fixme alerts queued: need to stack and not cancel each other out.
-  function runAlert(alertType, user, msg) {
+  async function runAlert(alertType, user, msg) {
     // store params for alerts.type to alertsQue
     // return current queue alert to alerts store
     // need to check length of queue alertsQue.length
@@ -28,33 +43,23 @@
     alertsQue = [currentAlert, ...alertsQue]
     console.log(alertsQue, 'start')
 
+    //fixme stacking but not sync
     let times = 1
-    setTimeout(function tick() {
-      if (times === 0) {
-        $alerts.active = false
-        return
-      }
 
-      times--
-      console.log(alertsQue, 'loop')
-      setTimeout(tick, 15000)
-    }, 0)
+    await alertsQue.forEach((alert) => {
+      setTimeout(function tick() {
+        $alerts.active = true
+        storeAlert({ ...currentAlert })
+        if (times === 0) {
+          $alerts.active = false
+          removeAlert(currentAlert)
+          return
+        }
 
-    removeAlert(currentAlert)
-
-    //todo saveAlert to store needs finished
-    storeAlert(currentAlert)
-
-    $alerts.type = currentAlert.type
-    $alerts.active = true
-
-    if (modes.includes(alertType)) {
-      $alerts.mode = currentAlert.type
-      return
-    }
-
-    if (user) $alerts[currentAlert.type].user = currentAlert.user
-    if (msg) $alerts[alertcurrentAlert.type].msg = currentAlert.msg
+        times--
+        setTimeout(tick, 15000)
+      }, 0)
+    })
 
     console.log(alertsQue, 'end')
   }
@@ -88,7 +93,7 @@
 
       //todo function to check if broadcaster and mod/sub ect.
       const vipList = ['broadcaster', 'moderator', 'vip']
-      const cmdList = ['chat', 'ghost', 'focus', 'raid', 'sub']
+      const cmdList = ['chat', 'ghost', 'focus', 'raid', 'sub', 'game']
 
       if (flags.broadcaster && cmdList.includes(command)) {
         runAlert(command, user, message)

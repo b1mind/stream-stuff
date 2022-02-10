@@ -32,6 +32,11 @@ const data = {
     msg: 'Focus mode: Being productive, might not respond to chat as much.',
     url: 'https://c.tenor.com/CD_F_Qh26z0AAAAC/asimov-solensan-bloody-eye.gif',
   },
+
+  game: {
+    msg: 'Game mode: Chill stream just gaming and letting my mind breath.',
+    url: 'https://c.tenor.com/OWa77lYqkmoAAAAd/portal-shot-portal.gif',
+  },
 }
 
 export const alerts = writable(data)

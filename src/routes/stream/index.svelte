@@ -103,7 +103,7 @@
       }
 
       if (flags.broadcaster && command === 'focus') {
-        startTimer(3)
+        startTimer(1)
       }
     }
 
@@ -154,8 +154,8 @@
   {#if $alerts.mode}
     <p>
       {$alerts[$alerts.mode].msg}
-      {#if countDownMinutes}
-        <b>{countDownMinutes}:{countDownSeconds}</b>
+      {#if countDown}
+        <b>{countDownMinutes || '00'}:{countDownSeconds || '00'}</b>
       {/if}
     </p>
   {:else}

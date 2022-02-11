@@ -5,19 +5,18 @@ Todo:
     //$ twitch event trigger subscribe -F https://localhost:3000/api/eventsub/
     Post "https://localhost:3000/api/eventsub/": http: server gave HTTP response to HTTPS client
 
-  ☐ On screen timer baked into overlay & scene. (I see it on 2cnd window?)
+  ✔ On screen timer baked into overlay & scene. (I see it on 2cnd window?) @done(22-02-11 11:54)
+  ☐ needs seconds exception for 1digit to have 0 in front
   ☐ design decisions for timer and non-alert gifs
   ☐ powertoys window docking - want locked window set ups to toggle
     //installed but need to configure 
-
-  Refactor:
-    ✔ need queue for alerts to stack https://www.javascripttutorial.net/javascript-queue/ @done(22-02-10 18:35)
 
   twitch info:
     //make banners based on UI design so it matchs... but get copy up!
     ☐ create better Panel copywrite: Bio - About - Story for below stream
     ☐ make a profile banner and panel banner graphics
     ☐ spice up logo for meta data
+    ☐ image when offline or recordings
 
   RedemtionsPoints:
     ☐ think about what to do for redemtion points
@@ -87,6 +86,7 @@ Wishlist:
   ☐ look into DIY streamdecks (yt history has good ones?)
   
 Archive:
+  ✔ need queue for alerts to stack https://www.javascripttutorial.net/javascript-queue/ @done(22-02-10 18:35) @project(Todo.Refactor)
   ✔ learn how to do custom overlay alerts using wrapper api of some short @done(22-02-04 21:15) @project(Todo)
   ✔ import comfy.js if browser but in svelte not html dom @done(22-02-05 01:30) @project(Todo)
   ✔ find design ideas and see what others are doing for frame overlay @done(22-02-05 01:30) @project(Todo)

@@ -6,8 +6,7 @@
   // import TestController from '$lib/component/TestController.svelte'
 
   let modes = ['chat', 'ghost', 'focus', 'game']
-  let alertsQue = []
-  let currentAlert
+  $: alertsQue = []
 
   function storeAlert(alert) {
     let { type, user, msg } = alert
@@ -23,45 +22,45 @@
   }
 
   function removeAlert(alert) {
-    //fixme filter removing all
+    $alerts.active = false
     alertsQue = alertsQue.filter((a) => {
-      console.log(alert === a)
-      a !== alert
+      return a !== alert
     })
     console.log(alertsQue, 'remove')
   }
 
   //fixme alerts queued: need to stack and not cancel each other out.
-  async function runAlert(alertType, user, msg) {
+  function runAlert(alertType, user, msg) {
     // store params for alerts.type to alertsQue
     // return current queue alert to alerts store
     // need to check length of queue alertsQue.length
     // pop(filter) last run alert from alertsQue
     // function to setStoreAlert
 
-    currentAlert = { type: alertType, user: user, msg: msg }
-    alertsQue = [currentAlert, ...alertsQue]
+    let currentAlert = { type: alertType, user: user, msg: msg }
+    alertsQue = [...alertsQue, currentAlert]
     console.log(alertsQue, 'start')
 
-    //fixme stacking but not sync
-    let times = 1
+    alertsQue.forEach((alert) => {
+      let times = alertsQue.length
 
-    await alertsQue.forEach((alert) => {
+      //fixme storeAlert only write if active alert
+      storeAlert(alert)
+
       setTimeout(function tick() {
         $alerts.active = true
-        storeAlert({ ...currentAlert })
+
         if (times === 0) {
-          $alerts.active = false
-          removeAlert(currentAlert)
+          removeAlert(alert)
           return
         }
 
         times--
-        setTimeout(tick, 15000)
-      }, 0)
+        console.log('callback timer')
+        setTimeout(tick, 10000)
+      }, 10)
+      console.log('end loop')
     })
-
-    console.log(alertsQue, 'end')
   }
 
   if (browser) {
@@ -122,6 +121,7 @@
   </div>
 
   <section class="alerts-wrap">
+    <!-- {#if alertsQue.length > 0} -->
     {#if $alerts.active}
       <b in:slide={{ y: '-1rem', delay: 800 }} out:slide={{ y: '1rem', duration: 550 }}>
         {$alerts.type}

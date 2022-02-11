@@ -1,6 +1,7 @@
 <script>
   import { browser, dev } from '$app/env'
   import { fly, slide } from 'svelte/transition'
+
   import { alerts } from '$lib/data/alerts'
   import Modes from '$lib/component/Modes.svelte'
   // import TestController from '$lib/component/TestController.svelte'
@@ -18,6 +19,8 @@
 
     if (modes.includes(type)) {
       $alerts.mode = type
+      if (type !== 'focus') countDown = 0
+
       return
     }
 

@@ -43,14 +43,13 @@
 
     let times = alertsQue.length
 
-    //fixme storeAlert only write if active alert
-    storeAlert(currentAlert)
-
     setTimeout(function tick() {
+      //fixme storeAlert only write if active alert
+      storeAlert(alertsQue[0])
       $alerts.active = true
 
       if (times === 0) {
-        removeAlert(currentAlert)
+        removeAlert(alertsQue[0])
         return
       }
 

@@ -12,47 +12,38 @@
     let { type, user, msg } = alert
     $alerts.type = type
 
-    if (user) $alerts[type].user = user
-    if (msg) $alerts[type].msg = msg
-
     if (modes.includes(type)) {
       $alerts.mode = type
       return
     }
+
+    if (user) $alerts[type].user = user
+    if (msg) $alerts[type].msg = msg
   }
 
   function removeAlert(alert) {
-    $alerts.active = false
     alertsQue = alertsQue.filter((a) => {
       return a !== alert
     })
-    console.log(alertsQue, 'remove')
   }
 
-  //fixme alerts queued: need to stack and not cancel each other out.
-  function runAlert(alertType, user, msg) {
-    // store params for alerts.type to alertsQue
-    // return current queue alert to alerts store
-    // need to check length of queue alertsQue.length
-    // pop(filter) last run alert from alertsQue
-    // function to setStoreAlert
-
-    let currentAlert = { type: alertType, user: user, msg: msg }
+  function runAlert(type, user, msg) {
+    let currentAlert = { type: type, user: user, msg: msg }
     alertsQue = [...alertsQue, currentAlert]
+
     let times = alertsQue.length
     setTimeout(function tick() {
-      //fixme storeAlert only write if active alert
       storeAlert(alertsQue[0])
       $alerts.active = true
 
       if (times === 0) {
+        $alerts.active = false
         removeAlert(alertsQue[0])
         return
       }
 
       times--
-      console.log('callback timer')
-      setTimeout(tick, 10000)
+      setTimeout(tick, 13000)
     }, 0)
   }
 
@@ -63,21 +54,18 @@
     }
 
     ComfyJS.onRaid = (user, viewers, extra) => {
-      console.dir(viewers)
-      console.dir(user)
       console.dir(extra)
 
       let msg = `Raiding with ${viewers} viewers`
-      runAlert(command, user, msg)
+      runAlert('raid', user, msg)
     }
 
     ComfyJS.onSub = (user, message, subTierInfo, extra) => {
       console.dir(message)
-      console.dir(user)
       console.dir(subTierInfo)
       console.dir(extra)
 
-      runAlert(command, user, subTierInfo || message)
+      runAlert('sub', user, message || subTierInfo)
     }
 
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
@@ -85,7 +73,7 @@
 
       //todo function to check if broadcaster and mod/sub ect.
       const vipList = ['broadcaster', 'moderator', 'vip']
-      const cmdList = ['chat', 'ghost', 'focus', 'raid', 'sub', 'game']
+      const cmdList = [...modes, 'raid', 'sub']
 
       if (flags.broadcaster && cmdList.includes(command)) {
         runAlert(command, user, message)

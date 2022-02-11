@@ -11,7 +11,7 @@ Todo:
     //installed but need to configure 
 
   Refactor:
-    ☐ need queue for alerts to stack https://www.javascripttutorial.net/javascript-queue/
+    ✔ need queue for alerts to stack https://www.javascripttutorial.net/javascript-queue/ @done(22-02-10 18:35)
 
   twitch info:
     //make banners based on UI design so it matchs... but get copy up!

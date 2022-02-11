@@ -60,8 +60,8 @@
         clearInterval(interval)
       } else {
         countDown -= 1000
-        countDownMinutes = countDown / 1000 / 60
-        countDownSeconds = (countDown / 1000) % 60
+        countDownMinutes = padInt(parseInt(countDown / 1000 / 60))
+        countDownSeconds = padInt(parseInt((countDown / 1000) % 60))
       }
     }, 1000)
   }
@@ -155,7 +155,7 @@
     <p>
       {$alerts[$alerts.mode].msg}
       {#if countDown}
-        <b>{padInt(parseInt(countDownMinutes))}:{padInt(parseInt(countDownSeconds))}</b>
+        <b>{countDownMinutes}:{countDownSeconds}</b>
       {/if}
     </p>
   {:else}

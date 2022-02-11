@@ -7,6 +7,10 @@
 
   let modes = ['chat', 'ghost', 'focus', 'game']
   let alertsQue = []
+  let initialTimer = 24000 * 60
+  let countDown
+  let countDownMinutes
+  let countDownSeconds
 
   function storeAlert(alert) {
     let { type, user, msg } = alert
@@ -31,20 +35,40 @@
     let currentAlert = { type: type, user: user, msg: msg }
     alertsQue = [...alertsQue, currentAlert]
 
-    let times = alertsQue.length
+    let alertCount = alertsQue.length
     setTimeout(function tick() {
       storeAlert(alertsQue[0])
       $alerts.active = true
 
-      if (times === 0) {
+      if (alertCount === 0) {
         $alerts.active = false
         removeAlert(alertsQue[0])
         return
       }
 
-      times--
+      alertCount--
       setTimeout(tick, 13000)
     }, 0)
+  }
+
+  function startTimer(time) {
+    if (time) initialTimer = time * 1000 * 60
+    countDown = initialTimer
+
+    setInterval(function () {
+      if (countDown <= 0) {
+        clearInterval(this)
+        countDown = 'Times Up'
+      } else {
+        console.log('interval', initialTimer)
+
+        countDown -= 1000
+        countDownMinutes = (countDown / 60000).toFixed()
+        countDownSeconds = (countDown / 1000) % 60
+      }
+    }, 1000)
+
+    console.log(initialTimer)
   }
 
   if (browser) {
@@ -78,6 +102,10 @@
       if (flags.broadcaster && cmdList.includes(command)) {
         runAlert(command, user, message)
       }
+
+      if (flags.broadcaster && command === 'focus') {
+        startTimer(1)
+      }
     }
 
     ComfyJS.Init('b1mind')
@@ -103,6 +131,7 @@
 
   <section class="alerts-wrap">
     <!-- {#if alertsQue.length > 0} -->
+
     {#if $alerts.active}
       <b in:slide={{ y: '-1rem', delay: 800 }} out:slide={{ y: '1rem', duration: 550 }}>
         {$alerts.type}
@@ -124,7 +153,12 @@
   </section>
 
   {#if $alerts.mode}
-    <p>{$alerts[$alerts.mode].msg}</p>
+    <p>
+      {$alerts[$alerts.mode].msg}
+      {#if countDown}
+        <b>{countDownMinutes}:{countDownSeconds}</b>
+      {/if}
+    </p>
   {:else}
     <p>No mode: Please set a productivity mode.</p>
   {/if}

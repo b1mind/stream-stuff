@@ -103,7 +103,7 @@
       }
 
       if (flags.broadcaster && command === 'focus') {
-        startTimer(1)
+        startTimer(20)
       }
     }
 

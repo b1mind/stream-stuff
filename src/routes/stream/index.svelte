@@ -154,7 +154,7 @@
   {#if $alerts.mode}
     <p>
       {$alerts[$alerts.mode].msg}
-      {#if countDown}
+      {#if countDownMinutes}
         <b>{countDownMinutes}:{countDownSeconds}</b>
       {/if}
     </p>

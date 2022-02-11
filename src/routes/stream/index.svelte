@@ -41,26 +41,24 @@
     alertsQue = [...alertsQue, currentAlert]
     console.log(alertsQue, 'start')
 
-    alertsQue.forEach((alert) => {
-      let times = alertsQue.length
+    let times = alertsQue.length
 
-      //fixme storeAlert only write if active alert
-      storeAlert(alert)
+    //fixme storeAlert only write if active alert
+    storeAlert(currentAlert)
 
-      setTimeout(function tick() {
-        $alerts.active = true
+    setTimeout(function tick() {
+      $alerts.active = true
 
-        if (times === 0) {
-          removeAlert(alert)
-          return
-        }
+      if (times === 0) {
+        removeAlert(currentAlert)
+        return
+      }
 
-        times--
-        console.log('callback timer')
-        setTimeout(tick, 10000)
-      }, 10)
-      console.log('end loop')
-    })
+      times--
+      console.log('callback timer')
+      setTimeout(tick, 10000)
+    }, 10)
+    console.log('end loop')
   }
 
   if (browser) {

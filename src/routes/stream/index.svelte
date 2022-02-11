@@ -6,7 +6,7 @@
   // import TestController from '$lib/component/TestController.svelte'
 
   let modes = ['chat', 'ghost', 'focus', 'game']
-  $: alertsQue = []
+  let alertsQue = []
 
   function storeAlert(alert) {
     let { type, user, msg } = alert
@@ -39,10 +39,7 @@
 
     let currentAlert = { type: alertType, user: user, msg: msg }
     alertsQue = [...alertsQue, currentAlert]
-    console.log(alertsQue, 'start')
-
     let times = alertsQue.length
-
     setTimeout(function tick() {
       //fixme storeAlert only write if active alert
       storeAlert(alertsQue[0])
@@ -56,8 +53,7 @@
       times--
       console.log('callback timer')
       setTimeout(tick, 10000)
-    }, 10)
-    console.log('end loop')
+    }, 0)
   }
 
   if (browser) {

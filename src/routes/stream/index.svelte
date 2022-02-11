@@ -55,20 +55,19 @@
     if (time) initialTimer = time * 1000 * 60
     countDown = initialTimer
 
-    setInterval(function () {
+    let interval = setInterval(function () {
       if (countDown <= 0) {
-        clearInterval(this)
-        countDown = 'Times Up'
+        clearInterval(interval)
       } else {
-        console.log('interval', initialTimer)
-
         countDown -= 1000
-        countDownMinutes = (countDown / 60000).toFixed()
+        countDownMinutes = countDown / 1000 / 60
         countDownSeconds = (countDown / 1000) % 60
       }
     }, 1000)
+  }
 
-    console.log(initialTimer)
+  function padInt(int) {
+    return int > 9 ? int : '0' + int
   }
 
   if (browser) {
@@ -104,7 +103,7 @@
       }
 
       if (flags.broadcaster && command === 'focus') {
-        startTimer(1)
+        startTimer(3)
       }
     }
 
@@ -156,7 +155,7 @@
     <p>
       {$alerts[$alerts.mode].msg}
       {#if countDown}
-        <b>{countDownMinutes}:{countDownSeconds}</b>
+        <b>{padInt(parseInt(countDownMinutes))}:{padInt(parseInt(countDownSeconds))}</b>
       {/if}
     </p>
   {:else}

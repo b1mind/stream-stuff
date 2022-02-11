@@ -6,7 +6,7 @@ Todo:
     Post "https://localhost:3000/api/eventsub/": http: server gave HTTP response to HTTPS client
 
   ✔ On screen timer baked into overlay & scene. (I see it on 2cnd window?) @done(22-02-11 11:54)
-  ☐ needs seconds exception for 1digit to have 0 in front
+  ✔ Fix timer bugs | fixmes @done(22-02-11 12:57)
   ☐ design decisions for timer and non-alert gifs
   ☐ powertoys window docking - want locked window set ups to toggle
     //installed but need to configure 
@@ -26,8 +26,8 @@ Todo:
   Cam/Overlay Ideas:
     ☐ alerts animations tied into interface/overlay with GSAP better easing+yoyo
     ☐ use StreamElements for sound alerts or bake my own
-    ☐ Better AFK scene 
-      // {timeAFK} and improve with stream info and design into interface
+    ☐ AFK scene SVG custom for 16:9
+    ✔ Better AFK scene - added timer && made svg larger on screen. @done(22-02-11 12:56)
     ☐ Conversation scene - for chatting to chat *visible overlay
     ☐ gaming overlay + scene
 

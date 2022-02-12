@@ -7,6 +7,7 @@ Todo:
 
   ✔ On screen timer baked into overlay & scene. (I see it on 2cnd window?) @done(22-02-11 11:54)
   ✔ Fix timer bugs | fixmes @done(22-02-11 12:57)
+  ☐ Timer's use of setInterval is not the best method. Look to other solutions 
   ☐ design decisions for timer and non-alert gifs
   ☐ powertoys window docking - want locked window set ups to toggle
     //installed but need to configure 
@@ -14,7 +15,9 @@ Todo:
   twitch info:
     //make banners based on UI design so it matchs... but get copy up!
     ☐ create better Panel copywrite: Bio - About - Story for below stream
-    ☐ make a profile banner and panel banner graphics
+    ☐ choose how to tip/donate to stream
+    ☐ make a profile banner 
+    ✔ make panel banner graphics @done(22-02-11 16:38)
     ☐ spice up logo for meta data
     ☐ image when offline or recordings
 
@@ -25,7 +28,7 @@ Todo:
 
   Cam/Overlay Ideas:
     ☐ alerts animations tied into interface/overlay with GSAP better easing+yoyo
-    ☐ use StreamElements for sound alerts or bake my own
+    ☐ Find sound files to use html .play() .stop() in js 
     ☐ AFK scene SVG custom for 16:9
     ✔ Better AFK scene - added timer && made svg larger on screen. @done(22-02-11 12:56)
     ☐ Conversation scene - for chatting to chat *visible overlay

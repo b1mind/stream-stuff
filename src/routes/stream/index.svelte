@@ -6,7 +6,7 @@
   import Modes from '$lib/component/Modes.svelte'
   // import TestController from '$lib/component/TestController.svelte'
 
-  let modes = ['chat', 'ghost', 'focus', 'game']
+  let modes = ['chat', 'ghost', 'focus']
   let alertsQue = []
   let initialTimer = 24000 * 60
   let countDown
@@ -100,6 +100,7 @@
       //todo function to check if broadcaster and mod/sub ect.
       const vipList = ['broadcaster', 'moderator', 'vip']
       const cmdList = [...modes, 'raid', 'sub']
+      console.dir(flags)
 
       if (flags.broadcaster && cmdList.includes(command)) {
         runAlert(command, user, message)
@@ -129,6 +130,10 @@
     {#each modes as mode}
       <Modes active={$alerts.mode === mode} modeType={mode} />
     {/each}
+
+    {#if countDown}
+      <b>{countDownMinutes || ''}{`:${countDownSeconds || ''}`}</b>
+    {/if}
   </div>
 
   <section class="alerts-wrap">
@@ -157,9 +162,6 @@
   {#if $alerts.mode}
     <p>
       {$alerts[$alerts.mode].msg}
-      {#if countDown}
-        <b>{countDownMinutes || ''}{`:${countDownSeconds}` || ''}</b>
-      {/if}
     </p>
   {:else}
     <p>No mode: Please set a productivity mode.</p>
@@ -210,7 +212,14 @@
     padding-top: 50px;
     display: grid;
     gap: 20px;
-    place-content: center;
+    place-items: center;
+
+    b {
+      padding: 0.5rem 1rem;
+      align-self: start;
+      justify-self: end;
+      color: var(--clr-primary-bg);
+    }
   }
 
   .alerts-wrap {

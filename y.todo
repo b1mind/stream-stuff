@@ -1,14 +1,5 @@
 //Stream list
 Todo: 
-  ☐ Twitch-Cli mock server working! //so close yet so far.. get help!(Prince?)
-    // stuck here how to I slurp the Post data https://youtu.be/omBzmgAppYQ?t=2109
-    //$ twitch event trigger subscribe -F https://localhost:3000/api/eventsub/
-    Post "https://localhost:3000/api/eventsub/": http: server gave HTTP response to HTTPS client
-
-  ✔ On screen timer baked into overlay & scene. (I see it on 2cnd window?) @done(22-02-11 11:54)
-  ✔ Fix timer bugs | fixmes @done(22-02-11 12:57)
-  ☐ Timer's use of setInterval is not the best method. Look to other solutions 
-  ☐ design decisions for timer and non-alert gifs
   ☐ powertoys window docking - want locked window set ups to toggle
     //installed but need to configure 
 
@@ -17,7 +8,6 @@ Todo:
     ☐ create better Panel copywrite: Bio - About - Story for below stream
     ☐ choose how to tip/donate to stream
     ☐ make a profile banner 
-    ✔ make panel banner graphics @done(22-02-11 16:38)
     ☐ spice up logo for meta data
     ☐ image when offline or recordings
 
@@ -27,12 +17,15 @@ Todo:
     // will require oAuth to work with comfyJS
 
   Cam/Overlay Ideas:
+    ☐ decide where non-alert gifs should go 
+    ☐ timer up sound.ogg for focus timer
     ☐ alerts animations tied into interface/overlay with GSAP better easing+yoyo
+    ☐ main bottom h1/text to display !today / !title / !project info
     ☐ Find sound files to use html .play() .stop() in js 
     ☐ AFK scene SVG custom for 16:9
-    ✔ Better AFK scene - added timer && made svg larger on screen. @done(22-02-11 12:56)
     ☐ Conversation scene - for chatting to chat *visible overlay
     ☐ gaming overlay + scene
+    ☐ Starting soon and ending soon overlay scenes
 
   Chat commands:
     ☐ !project | !today - explain current project as to inform new viewers
@@ -61,15 +54,20 @@ Todo:
     ☐ overlay for QMK or Kris inputs vs cam
       // QMK input checker website?
 
+Tech debt:
+  ☐ check UI on smaller devices to see readability and line smoothness
+  ☐ Timer's use of setInterval is not the best method. Look to other solutions 
+  ☐ Twitch-Cli mock server working! //so close yet so far.. get help!(Prince?)
+    // stuck here how to I slurp the Post data https://youtu.be/omBzmgAppYQ?t=2109
+    //$ twitch event trigger subscribe -F https://localhost:3000/api/eventsub/
+    Post "https://localhost:3000/api/eventsub/": http: server gave HTTP response to HTTPS client
+
 Questions:
   ☐ Mute icon for all scenes? Can I detect mute?
     mute with bind in scene
   ☐ Should !today different than !title ?
-  ☐ Decide on raid gif?
-  ☐ playing sounds via StreamElements or custom?
   ☐ how to save OBS views? popout view for testing?
-  ☐ should I make a mask for keeb cam ?
-  ☐ how to handle gif's for alerts? or just animations?
+  ☐ how am I going to handle chat overlay, popout or full time scene
     // (https://streamparrot.com/ or https://showmy.chat/)
 
 Wishlist:
@@ -89,6 +87,15 @@ Wishlist:
   ☐ look into DIY streamdecks (yt history has good ones?)
   
 Archive:
+  ✔ On screen timer baked into overlay & scene. (I see it on 2cnd window?) @done(22-02-11 11:54) @project(Todo)
+  ✔ Fix timer bugs | fixmes @done(22-02-11 12:57) @project(Todo)
+  ✔ design decisions for timer and @done(22-02-12 14:33) @project(Todo)
+  ✔ make panel banner graphics @done(22-02-11 16:38) @project(Todo.twitch info)
+  ✔ Better AFK scene - added timer && made svg larger on screen. @done(22-02-11 12:56) @project(Todo.Cam/Overlay Ideas)
+  ✔ Decide on raid gif? @done(22-02-12 15:33) @project(Questions)
+  ✔ playing sounds via StreamElements or custom? @done(22-02-12 15:33) @project(Questions)
+  ✔ should I make a mask for keeb cam ? @done(22-02-12 15:33) @project(Questions)
+  ✔ how to handle gif's for alerts? or just animations? @done(22-02-12 15:33) @project(Questions)
   ✔ need queue for alerts to stack https://www.javascripttutorial.net/javascript-queue/ @done(22-02-10 18:35) @project(Todo.Refactor)
   ✔ learn how to do custom overlay alerts using wrapper api of some short @done(22-02-04 21:15) @project(Todo)
   ✔ import comfy.js if browser but in svelte not html dom @done(22-02-05 01:30) @project(Todo)

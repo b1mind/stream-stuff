@@ -100,16 +100,19 @@
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
       // console.dir(extra)
 
-      //todo function to check if broadcaster and mod/sub ect.
-      const vipList = ['broadcaster', 'moderator', 'vip']
+      const vipList = ['broadcaster', 'mod', 'vip']
+      const { broadcaster, mod, vip, founder } = flags
       const cmdList = [...modes, 'raid', 'sub', 'game']
+
+      //todo function to check if broadcaster and mod/sub ect.
+      // vipList.forEach((user) => flags[user] === true)
       console.dir(flags)
 
-      if (flags.broadcaster && cmdList.includes(command)) {
+      if ((broadcaster || mod) && cmdList.includes(command)) {
         runAlert(command, user, message)
       }
 
-      if (flags.broadcaster && command === 'focus') {
+      if (broadcaster && command === 'focus') {
         startTimer(20)
       }
     }
@@ -166,13 +169,13 @@
     {/if}
   </section>
 
-  {#if $alerts.mode}
-    <p>
+  <p>
+    {#if $alerts.mode}
       {$alerts[$alerts.mode].msg}
-    </p>
-  {:else}
-    <p>No mode: Please set a productivity mode.</p>
-  {/if}
+    {:else}
+      No mode: Please set a productivity mode.
+    {/if}
+  </p>
 
   <!-- todo Text for bottom bar -->
   <!-- <h1>Working on making this overlay better. WIP</h1> -->

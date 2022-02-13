@@ -18,6 +18,7 @@ Todo:
     // will require oAuth to work with comfyJS
 
   Cam/Overlay Ideas:
+    ☐ check vipList for alert commands
     ☐ decide where non-alert gifs should go 
     ☐ timer up sound.ogg for focus timer
     ☐ alerts animations tied into interface/overlay with GSAP better easing+yoyo

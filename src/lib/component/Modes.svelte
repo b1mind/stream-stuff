@@ -1,6 +1,6 @@
 <script>
   export let active = false
-  export let modeType = 'chat'
+  export let modeType
 
   let icon = `/mode.svg#${modeType}`
 </script>
@@ -17,6 +17,6 @@
   }
 
   .active {
-    fill: #514b6b;
+    fill: #877fab;
   }
 </style>

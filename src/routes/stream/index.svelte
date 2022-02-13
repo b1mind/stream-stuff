@@ -4,7 +4,7 @@
 
   import { alerts } from '$lib/data/alerts'
   import Modes from '$lib/component/Modes.svelte'
-  // import TestController from '$lib/component/TestController.svelte'
+  import Game from '$lib/component/Game.svelte'
 
   let modes = ['chat', 'ghost', 'focus']
   let alertsQue = []
@@ -16,6 +16,9 @@
   function storeAlert(alert) {
     let { type, user, msg } = alert
     $alerts.type = type
+
+    //fixme conditional slot componenet to not show in each loop?
+    if (type === 'game') $alerts.mode = 'game'
 
     if (modes.includes(type)) {
       $alerts.mode = type
@@ -122,23 +125,27 @@
         AlertTest
         <input bind:checked={$alerts.active} type="checkbox" name="alert" />
       </label>
-      <!-- <TestController /> -->
     </div>
   {/if}
 
   <div class="modes">
-    {#each modes as mode}
-      <Modes active={$alerts.mode === mode} modeType={mode} />
-    {/each}
+    <!-- todo game mode needs improved on check fixme's -->
+    {#if $alerts.mode === 'game'}
+      <Game />
+    {:else}
+      {#each modes as mode}
+        <Modes active={$alerts.mode === mode} modeType={mode} />
+      {/each}
 
-    {#if countDownSeconds}
-      <b in:slide={{ y: '-1rem' }}>{countDownMinutes}{`:${countDownSeconds}`}</b>
+      {#if countDown}
+        <b in:slide={{ y: '-1rem' }}>
+          {countDownMinutes || '00'}{`:${countDownSeconds || '00'}`}
+        </b>
+      {/if}
     {/if}
   </div>
 
   <section class="alerts-wrap">
-    <!-- {#if alertsQue.length > 0} -->
-
     {#if $alerts.active}
       <b in:slide={{ y: '-1rem', delay: 800 }} out:slide={{ y: '1rem', duration: 550 }}>
         {$alerts.type}
@@ -167,11 +174,11 @@
     <p>No mode: Please set a productivity mode.</p>
   {/if}
 
-  <h1>Working on making this overlay better. WIP</h1>
+  <!-- todo Text for bottom bar -->
+  <!-- <h1>Working on making this overlay better. WIP</h1> -->
 </main>
 
 <style lang="scss">
-  h1,
   h2,
   p {
     margin: 0;
@@ -190,13 +197,13 @@
     color: var(--clr-highlight-text);
     font-family: Helvetica, sans-serif;
 
-    h1 {
-      grid-area: msg;
-      max-width: 50ch;
-      place-self: center;
-      font-size: 1.5rem;
-      // text-align: center;
-    }
+    // h1 {
+    //   grid-area: msg;
+    //   max-width: 50ch;
+    //   place-self: center;
+    //   font-size: 1.5rem;
+    //   // text-align: center;
+    // }
 
     p {
       grid-area: info;

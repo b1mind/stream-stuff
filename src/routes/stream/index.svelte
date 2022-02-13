@@ -99,7 +99,7 @@
 
       //todo function to check if broadcaster and mod/sub ect.
       const vipList = ['broadcaster', 'moderator', 'vip']
-      const cmdList = [...modes, 'raid', 'sub']
+      const cmdList = [...modes, 'raid', 'sub', 'game']
       console.dir(flags)
 
       if (flags.broadcaster && cmdList.includes(command)) {
@@ -131,8 +131,8 @@
       <Modes active={$alerts.mode === mode} modeType={mode} />
     {/each}
 
-    {#if countDown}
-      <b>{countDownMinutes || ''}{`:${countDownSeconds || ''}`}</b>
+    {#if countDownSeconds}
+      <b in:slide={{ y: '-1rem' }}>{countDownMinutes}{`:${countDownSeconds}`}</b>
     {/if}
   </div>
 
@@ -215,10 +215,12 @@
     place-items: center;
 
     b {
-      padding: 0.5rem 1rem;
+      padding: 0.2rem 0.7rem;
       align-self: start;
       justify-self: end;
       color: var(--clr-primary-bg);
+      font-size: 1.1rem;
+      font-weight: 900;
     }
   }
 

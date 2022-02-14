@@ -4,13 +4,16 @@ Todo:
     ☐ powertoys window docking - want locked window set ups to toggle
       //installed but need to configure 
 
-  twitch info:
-    //make banners based on UI design so it matchs... but get copy up!
+  twitch settings:
+    ✔ //make banners based on UI design so it matchs... but get copy up! @done(22-02-13 12:47)
+    ✔ change recordings to on (must list to be public) @done(22-02-13 12:08)
     ☐ create better Panel copywrite: Bio - About - Story for below stream
-    ☐ choose how to tip/donate to stream
-    ☐ make a profile banner 
+      //work in progress - could use more + bio/story/donate/commands/rules
+    ☐ choose how to tip/donate to stream Patron or Paypal?
+    ☐ make a profile banner for background
     ☐ spice up logo for meta data
-    ☐ image when offline or recordings
+    ☐ image when offline or recordings/host
+    ☐ setup auto hosting to my fav streamers if I am offline
 
   RedemtionsPoints:
     ☐ think about what to do for redemtion points
@@ -18,20 +21,20 @@ Todo:
     // will require oAuth to work with comfyJS
 
   Cam/Overlay Ideas:
-    ☐ check vipList for alert commands
+    ✔ circle behind icon censored scene @done(22-02-13 12:40)
+    ✔ gaming overlay + scene @done(22-02-13 13:20)
+    ✔ alert commands based on groups vipList ect @done(22-02-13 13:36)
+    ☐ complete the rest of the ComfyJs methods before getting affiliate
     ☐ decide where non-alert gifs should go 
     ☐ timer up sound.ogg for focus timer
+    ☐ Find sound files to use html .play() .stop() in js 
     ☐ alerts animations tied into interface/overlay with GSAP better easing+yoyo
     ☐ main bottom h1/text to display !today / !title / !project info
-    ☐ Find sound files to use html .play() .stop() in js 
-    ☐ AFK scene SVG custom for 16:9
     ☐ Conversation scene - for chatting to chat *visible overlay
-    ☐ gaming overlay + scene
     ☐ Starting soon and ending soon overlay scenes
 
   Chat commands:
     ☐ !project | !today - explain current project as to inform new viewers
-    ☐ !so shout out feature for other Twitch streamers | streamElements or Fossabot can handle
     ☐ !extensions - probably going to ask about nVim and others?
     ☐ !figs - link to bare repo?
     ☐ !tools - "Milwaukee Drills are best"
@@ -43,11 +46,10 @@ Todo:
 
   VIP / Subonly:
     ☐ !yuki (same as highlight but no points?)
-    ☐ !fish // !learn Learning any thing new is hard, like fishing it can take a lifetime
-     // https://media.giphy.com/media/BIDRtK21FsrPG/giphy.gif
-    ☐ !try https://media.giphy.com/media/EC2JvlspR35q8/giphy.gif
-    ☐ !nope - https://media.giphy.com/media/USNlL9p2fxY6Q/giphy.gif
-    ☐ !food https://media.giphy.com/media/11KzOet1ElBDz2/giphy.gif
+    ✔ !fish // !learn Learning any thing new is hard, like fishing it can take a lifetime @done(22-02-14 10:15)
+    ✔ !try https://media.giphy.com/media/EC2JvlspR35q8/giphy.gif @done(22-02-14 10:15)
+    ✔ !nope - https://media.giphy.com/media/USNlL9p2fxY6Q/giphy.gif @done(22-02-14 10:15)
+    ✔ !food https://media.giphy.com/media/11KzOet1ElBDz2/giphy.gif @done(22-02-14 10:15)
 
   AHK / QMK:
     ☐ AHK script like capslock to tell me active scene on main screen
@@ -59,6 +61,9 @@ Todo:
 Tech debt:
   ☐ check UI on smaller devices to see readability and line smoothness
   ☐ Timer's use of setInterval is not the best method. Look to other solutions 
+  ☐ Comfy.js need 0auth secret passed to api endpoint so all needs to be there
+    ☐ get auth working with comfy.js
+    ☐ use comfy to make auto shout out and !so command (needs auth?)
   ☐ Twitch-Cli mock server working! //so close yet so far.. get help!(Prince?)
     // stuck here how to I slurp the Post data https://youtu.be/omBzmgAppYQ?t=2109
     //$ twitch event trigger subscribe -F https://localhost:3000/api/eventsub/
@@ -73,22 +78,26 @@ Questions:
     // (https://streamparrot.com/ or https://showmy.chat/)
 
 Wishlist:
+  ✔ make layer for "streamdeck" in QMK (using omg key) @done(22-02-13 13:22)
+  ☐ Manni's help with floating emoji overlay
+  ☐ Todo list goals for focus mode
   ☐ backgrounds behind Yuki and I (hot,cold, river, underwater, ninja, focus?)
   ☐ Get incoming raid's channel title, not have to ask but can get right to it
   ☐ finish keeb page with captions/text explaining more.. later into blog post
+  ☐ AFK scene SVG custom for 16:9
   ☐ AFK game - something for chat, cats away mice will play
   ☐ custom.Cycle take two vsc commands.. Font for terminal needs ++
-  ☐ setup auto hosting to my fav streamers if I am offline
   ☐ talk with Chantastic about how he does discord voice setup
   ☐ comicate with vsCode via chat commands (call commands!)
   ☐ make socials clickable, learn how to make clickable overlays
   ☐ keyboard io - kris software plug-in for lighting connect to chat?
   ☐ look into snapchat filters (https://snapcamera.snapchat.com)
   ☐ animated SVG based on voice patterns to mimic talking
-  ☐ make layer for "streamdeck" in QMK
+    //exp: https://www.twitch.tv/goki_dev 
   ☐ look into DIY streamdecks (yt history has good ones?)
   
 Archive:
+  ✘ !so shout out feature for other Twitch streamers | streamElements or Fossabot can handle @cancelled(22-02-13 11:40) @project(Todo.QoL)
   ✔ On screen timer baked into overlay & scene. (I see it on 2cnd window?) @done(22-02-11 11:54) @project(Todo)
   ✔ Fix timer bugs | fixmes @done(22-02-11 12:57) @project(Todo)
   ✔ design decisions for timer and @done(22-02-12 14:33) @project(Todo)

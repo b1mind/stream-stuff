@@ -1,6 +1,7 @@
 {
   "name": "bfolio",
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
@@ -23,8 +24,8 @@
     "svelte": "^3.44.0",
     "svelte-preprocess": "^4.10.2"
   },
-  "type": "module",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "tmi.js": "^1.8.5"
   }
 }

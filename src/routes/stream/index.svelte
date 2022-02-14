@@ -17,13 +17,9 @@
     let { type, user, msg } = alert
     $alerts.type = type
 
-    //fixme conditional slot componenet to not show in each loop?
-    if (type === 'game') $alerts.mode = 'game'
-
-    if (modes.includes(type)) {
+    if (modes.includes(type) || type === 'game') {
       $alerts.mode = type
       if (type !== 'focus') countDown = 0
-
       return
     }
 
@@ -83,7 +79,8 @@
     }
 
     ComfyJS.onRaid = (user, viewers, extra) => {
-      console.dir(extra)
+      //todo user get stream title
+      console.dir(user)
 
       let msg = `Raiding with ${viewers} viewers`
       runAlert('raid', user, msg)
@@ -99,21 +96,28 @@
 
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
       // console.dir(extra)
-
-      const vipList = ['broadcaster', 'mod', 'vip']
-      const { broadcaster, mod, vip, founder } = flags
-      const cmdList = [...modes, 'raid', 'sub', 'game']
-
-      //todo function to check if broadcaster and mod/sub ect.
-      // vipList.forEach((user) => flags[user] === true)
       console.dir(flags)
 
-      if ((broadcaster || mod) && cmdList.includes(command)) {
-        runAlert(command, user, message)
+      const { broadcaster, mod, vip, subscriber, founder, highlighted } = flags
+      const vipGroup = ['broadcaster', 'mod', 'vip']
+      const vipCmdList = [...modes, 'raid', 'sub', 'game']
+
+      //fixme subGroup.forEach or better way to check both
+      const subGroup = [...vipGroup, 'subscriber']
+      const subCmdList = ['fish', 'try', 'nope', 'food']
+
+      vipGroup.forEach((level) => {
+        if (flags[level] && vipCmdList.includes(command)) {
+          runAlert(command, user, message)
+        }
+      })
+
+      if ((broadcaster || mod) && command === 'focus') {
+        startTimer(20)
       }
 
-      if (broadcaster && command === 'focus') {
-        startTimer(20)
+      if (subCmdList.includes(command)) {
+        runAlert(command, user, message)
       }
     }
 

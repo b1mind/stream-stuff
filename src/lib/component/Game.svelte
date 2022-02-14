@@ -39,7 +39,10 @@
     /></svg
   >
 
-  <div class="tag">LoadedGamer</div>
+  <div class="tag">
+    <h3>gamer tag</h3>
+    LoadedGamer
+  </div>
   <ul class="icons">
     <li>
       <svg
@@ -116,6 +119,13 @@
     font-size: 1.35rem;
     font-weight: 700;
     letter-spacing: 0.1rem;
+  }
+
+  .tag h3 {
+    margin: 0 0 0 0.35rem;
+    padding-top: 0.15rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.05rem;
   }
 
   .icons {

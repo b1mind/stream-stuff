@@ -38,6 +38,31 @@ const data = {
     url: 'https://cdn.discordapp.com/attachments/698292729960202464/831394648186290176/boom.gif',
     // url: 'https://c.tenor.com/OWa77lYqkmoAAAAd/portal-shot-portal.gif',
   },
+
+  samurai: {
+    msg: '',
+    url: '',
+  },
+
+  fish: {
+    msg: "Teach a person to fish, don't just feed them.",
+    url: 'https://media.giphy.com/media/BIDRtK21FsrPG/giphy.gif',
+  },
+
+  try: {
+    msg: 'Try harder, think smarter',
+    url: 'https://media.giphy.com/media/EC2JvlspR35q8/giphy.gif',
+  },
+
+  nope: {
+    msg: 'Nope, nope, nope, nope',
+    url: 'https://c.tenor.com/DPzxgKQQqX4AAAAd/ein-jumping-cowboy-bebop-ein.gif',
+  },
+
+  food: {
+    msg: 'Need some more food in the belly.',
+    url: 'https://media.giphy.com/media/11KzOet1ElBDz2/giphy.gif',
+  },
 }
 
 export const alerts = writable(data)

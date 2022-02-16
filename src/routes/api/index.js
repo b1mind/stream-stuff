@@ -1,16 +1,19 @@
+import ComfyJS from 'comfy.js'
+
 export async function get({ params, fetch, request }) {
-  //todo get response from twitch-cli server https://localhost:9000/eventSub *
-  //CORs issue? 500 response?
+  //todo get response from twitch-cli mock server https://localhost:8080/eventSub *
 
-  console.log(params, 'params')
-  console.dir(request)
-  const data = request.json
-  console.dir(data)
+  ComfyJS.onCommand = (user, command, message, flags, extra) => {
+    if (flags.broadcaster && command === 'test') {
+      console.log('!test was typed in chat')
+      request = 'testing request'
+    }
+  }
 
-  console.dir(request.headers)
+  ComfyJS.Init('b1mind')
 
   return {
-    body: request,
+    props: request,
   }
 }
 
@@ -25,6 +28,7 @@ export async function post({ params, fetch, request }) {
   console.dir(request.headers)
 
   return {
-    body: request.json,
+    response: response.status,
+    props: request.json,
   }
 }

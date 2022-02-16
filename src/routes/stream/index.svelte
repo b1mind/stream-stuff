@@ -5,13 +5,12 @@
   import { alerts } from '$lib/data/alerts'
   import Modes from '$lib/component/Modes.svelte'
   import Game from '$lib/component/Game.svelte'
+  import Timer from '$lib/component/Timer.svelte'
 
   let modes = ['chat', 'ghost', 'focus']
   let alertsQue = []
-  let initialTimer = 24000 * 60
+  // let initialTimer = 24000 * 60
   let countDown
-  let countDownMinutes
-  let countDownSeconds
 
   function storeAlert(alert) {
     let { type, user, msg } = alert
@@ -51,25 +50,6 @@
       alertCount--
       setTimeout(tick, 13000)
     }, 0)
-  }
-
-  function startTimer(time) {
-    if (time) initialTimer = time * 1000 * 60
-    countDown = initialTimer
-
-    let interval = setInterval(function () {
-      if (countDown <= 0) {
-        clearInterval(interval)
-      } else {
-        countDown -= 1000
-        countDownMinutes = padInt(parseInt(countDown / 1000 / 60))
-        countDownSeconds = padInt(parseInt((countDown / 1000) % 60))
-      }
-    }, 1000)
-  }
-
-  function padInt(int) {
-    return int > 9 ? int : '0' + int
   }
 
   if (browser) {
@@ -113,7 +93,8 @@
       })
 
       if ((broadcaster || mod) && command === 'focus') {
-        startTimer(20)
+        //fixme setTime & needs to refresh if timer still active
+        countDown = 20
       }
 
       if (subCmdList.includes(command)) {
@@ -145,9 +126,7 @@
       {/each}
 
       {#if countDown}
-        <b in:slide={{ y: '-1rem' }}>
-          {countDownMinutes || '00'}{`:${countDownSeconds || '00'}`}
-        </b>
+        <Timer countDown />
       {/if}
     {/if}
   </div>
@@ -227,15 +206,6 @@
     display: grid;
     gap: 20px;
     place-items: center;
-
-    b {
-      padding: 0.2rem 0.7rem;
-      align-self: start;
-      justify-self: end;
-      color: var(--clr-primary-bg);
-      font-size: 1.1rem;
-      font-weight: 900;
-    }
   }
 
   .alerts-wrap {

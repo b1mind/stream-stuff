@@ -25,6 +25,7 @@ Todo:
     ✔ gaming overlay + scene @done(22-02-13 13:20)
     ✔ alert commands based on groups vipList ect @done(22-02-13 13:36)
     ☐ complete the rest of the ComfyJs methods before getting affiliate
+    ☐ sub/reSub/giftSub alerts for each
     ☐ decide where non-alert gifs should go 
     ☐ timer up sound.ogg for focus timer
     ☐ Find sound files to use html .play() .stop() in js 
@@ -45,7 +46,9 @@ Todo:
     ☐ !unmute command
 
   VIP / Subonly:
+     ☐ prevent spam > Toggle commands or Timeout
     ☐ !yuki (same as highlight but no points?)
+    ☐ !marinate (grab letter kenny gif)
     ✔ !fish // !learn Learning any thing new is hard, like fishing it can take a lifetime @done(22-02-14 10:15)
     ✔ !try https://media.giphy.com/media/EC2JvlspR35q8/giphy.gif @done(22-02-14 10:15)
     ✔ !nope - https://media.giphy.com/media/USNlL9p2fxY6Q/giphy.gif @done(22-02-14 10:15)

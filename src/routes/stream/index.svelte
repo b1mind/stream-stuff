@@ -11,6 +11,7 @@
   let alertsQue = []
   // let initialTimer = 24000 * 60
   let countDown
+  let time
 
   function storeAlert(alert) {
     let { type, user, msg } = alert
@@ -94,7 +95,8 @@
 
       if ((broadcaster || mod) && command === 'focus') {
         //fixme setTime & needs to refresh if timer still active
-        countDown = 20
+        countDown = true
+        time = 20
       }
 
       if (subCmdList.includes(command)) {
@@ -126,7 +128,7 @@
       {/each}
 
       {#if countDown}
-        <Timer countDown />
+        <Timer countDown {time} />
       {/if}
     {/if}
   </div>
@@ -206,6 +208,7 @@
     display: grid;
     gap: 20px;
     place-items: center;
+    color: var(--clr-primary-bg);
   }
 
   .alerts-wrap {

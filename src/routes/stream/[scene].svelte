@@ -9,12 +9,13 @@
 </script>
 
 <script>
+  import Timer from '$lib/component/Timer.svelte'
   export let params
 </script>
 
 <main>
   <h1>{params.scene}</h1>
-  <!-- <b>{timer}</b> -->
+  <Timer time="100" />
 </main>
 
 <style lang="scss">

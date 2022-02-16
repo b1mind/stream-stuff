@@ -1,23 +1,23 @@
 <script>
   import { slide } from 'svelte/transition'
-  import { onMount } from 'svelte'
+  import { onMount, afterUpdate } from 'svelte'
 
   export let countDown
+  export let time
   let initialTimer = 24000 * 60
   let countDownMinutes
   let countDownSeconds
 
   // afterUpdate(() => {
-  //   startTimer(countDown)
+  //   startTimer(time)
   // })
 
   onMount(() => {
-    startTimer()
+    startTimer(time)
   })
 
-  function startTimer() {
-    // if (time) initialTimer = time * 1000 * 60
-    // if (!countDown)
+  function startTimer(time) {
+    if (time) initialTimer = time * 1000 * 60
     countDown = initialTimer
 
     let interval = setInterval(function () {
@@ -45,7 +45,6 @@
     padding: 0.2rem 0.7rem;
     align-self: start;
     justify-self: end;
-    color: var(--clr-primary-bg);
     font-size: 1.1rem;
     font-weight: 900;
   }

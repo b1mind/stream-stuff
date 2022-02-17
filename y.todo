@@ -1,6 +1,7 @@
 //Stream list
 Today:
-  ☐ Starting soon and ending soon overlay scenes intro/outro with music 
+  ✔ Starting soon and ending soon overlay scenes @done(22-02-17 13:51)
+  ☐ animated svg for intro/outro scenes (clock like mask on circle)
 
 Todo: 
   QoL: 
@@ -27,7 +28,7 @@ Todo:
     ✔ circle behind icon censored scene @done(22-02-13 12:40)
     ✔ gaming overlay + scene @done(22-02-13 13:20)
     ✔ alert commands based on groups vipList ect @done(22-02-13 13:36)
-    ☐ animated svg for intro/outro scenes (clock like mask on circle)
+    ☐ chat for intro/outro neeeds better placement within UI overlay
     ☐ complete the rest of the ComfyJs methods before getting affiliate
     ☐ sub/reSub/giftSub alerts for each
     ☐ decide where non-alert gifs should go 
@@ -54,10 +55,11 @@ Todo:
     ☐ !marinate (grab letter kenny gif)
     ☐ !typo for mistakes made in the code
     ✔ !fish // !learn Learning any thing new is hard, like fishing it can take a lifetime @done(22-02-14 10:15)
-      ☐ redo the wording
+    ☐ redo the wording for fish
     ✔ !try https://media.giphy.com/media/EC2JvlspR35q8/giphy.gif @done(22-02-14 10:15)
     ✔ !nope - https://media.giphy.com/media/USNlL9p2fxY6Q/giphy.gif @done(22-02-14 10:15)
     ✔ !food https://media.giphy.com/media/11KzOet1ElBDz2/giphy.gif @done(22-02-14 10:15)
+    ☐ food gif needs to be bellpeppers n beef 
 
   AHK / QMK:
     ☐ AHK script like capslock to tell me active scene on main screen
@@ -87,6 +89,7 @@ Questions:
 
 Wishlist:
   ✔ make layer for "streamdeck" in QMK (using omg key) @done(22-02-13 13:22)
+  ☐ intro/outro with music 
   ☐ Manni's help with floating emoji overlay
   ☐ Todo list goals for focus mode
   ☐ backgrounds behind Yuki and I (hot,cold, river, underwater, ninja, focus?)

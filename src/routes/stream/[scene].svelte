@@ -25,8 +25,16 @@
   </article>
 
   <div class="background">
-    <svg viewBox="0 0 50 50">
-      <circle fill="" r="25" cy="25" cx="25" />
+    <svg viewBox="0 0 100 100">
+      <path
+        d="M10 0L5.29412 4.70588L0 9.41177V96.6146L26.4706 71.7647L77.0588 61.7647L100 38.8235L100 0H10Z"
+        fill="#18141F"
+      />
+      <path
+        d="M100 44.7059L78.8235 65.8824L26.4706 80L3.31269 100H100L100 44.7059Z"
+        fill="#242035"
+      />
+      <!-- <circle fill="#18141F" r="50" cy="50" cx="50" /> -->
     </svg>
   </div>
 </main>
@@ -37,7 +45,7 @@
     display: grid;
     grid-template-areas: 'overlay';
     place-content: center;
-    color: whitesmoke;
+    color: var(--clr-white);
     text-align: center;
     font-size: 10rem;
 
@@ -48,14 +56,12 @@
     article {
       display: grid;
       place-content: center;
-      opacity: 99;
       z-index: 69;
     }
 
     svg {
-      width: 100%;
-      height: 100%;
-      opacity: 99;
+      width: 850px;
+      height: 850px;
       z-index: -69;
     }
   }

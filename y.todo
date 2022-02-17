@@ -1,4 +1,7 @@
 //Stream list
+Today:
+  ☐ Starting soon and ending soon overlay scenes intro/outro with music 
+
 Todo: 
   QoL: 
     ☐ powertoys window docking - want locked window set ups to toggle
@@ -24,6 +27,7 @@ Todo:
     ✔ circle behind icon censored scene @done(22-02-13 12:40)
     ✔ gaming overlay + scene @done(22-02-13 13:20)
     ✔ alert commands based on groups vipList ect @done(22-02-13 13:36)
+    ☐ animated svg for intro/outro scenes (clock like mask on circle)
     ☐ complete the rest of the ComfyJs methods before getting affiliate
     ☐ sub/reSub/giftSub alerts for each
     ☐ decide where non-alert gifs should go 
@@ -32,7 +36,6 @@ Todo:
     ☐ alerts animations tied into interface/overlay with GSAP better easing+yoyo
     ☐ main bottom h1/text to display !today / !title / !project info
     ☐ Conversation scene - for chatting to chat *visible overlay
-    ☐ Starting soon and ending soon overlay scenes
 
   Chat commands:
     ☐ !project | !today - explain current project as to inform new viewers
@@ -46,10 +49,12 @@ Todo:
     ☐ !unmute command
 
   VIP / Subonly:
-     ☐ prevent spam > Toggle commands or Timeout
+    ☐ prevent spam > Toggle commands or Timeout
     ☐ !yuki (same as highlight but no points?)
     ☐ !marinate (grab letter kenny gif)
+    ☐ !typo for mistakes made in the code
     ✔ !fish // !learn Learning any thing new is hard, like fishing it can take a lifetime @done(22-02-14 10:15)
+      ☐ redo the wording
     ✔ !try https://media.giphy.com/media/EC2JvlspR35q8/giphy.gif @done(22-02-14 10:15)
     ✔ !nope - https://media.giphy.com/media/USNlL9p2fxY6Q/giphy.gif @done(22-02-14 10:15)
     ✔ !food https://media.giphy.com/media/11KzOet1ElBDz2/giphy.gif @done(22-02-14 10:15)

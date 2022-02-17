@@ -43,9 +43,6 @@
 <style lang="scss">
   b {
     padding: 0.2rem 0.7rem;
-    align-self: start;
-    justify-self: end;
-    font-size: 1.1rem;
     font-weight: 900;
   }
 </style>

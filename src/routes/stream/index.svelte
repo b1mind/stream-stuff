@@ -128,9 +128,10 @@
       {/each}
 
       {#if countDown}
-        <Timer countDown {time} />
+        <Timer {countDown} {time} />
       {/if}
     {/if}
+    <div />
   </div>
 
   <section class="alerts-wrap">
@@ -209,6 +210,12 @@
     gap: 20px;
     place-items: center;
     color: var(--clr-primary-bg);
+
+    & > *:last-child {
+      align-self: start;
+      justify-self: end;
+      font-size: 1.1rem;
+    }
   }
 
   .alerts-wrap {

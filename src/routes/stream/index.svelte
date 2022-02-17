@@ -131,7 +131,6 @@
         <Timer {countDown} {time} />
       {/if}
     {/if}
-    <div />
   </div>
 
   <section class="alerts-wrap">
@@ -167,6 +166,7 @@
   <!-- <h1>Working on making this overlay better. WIP</h1> -->
 </main>
 
+<!-- svelte-ignore css-unused-selector -->
 <style lang="scss">
   h2,
   p {

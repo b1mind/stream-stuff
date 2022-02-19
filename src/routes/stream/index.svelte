@@ -178,8 +178,8 @@
   main {
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 296px 153px;
-    grid-template-rows: 1fr 1fr 54px 92px;
+    grid-template-columns: 420px 1fr 296px 153px;
+    grid-template-rows: 1fr 420px 54px 92px;
     grid-template-areas:
       '. . . modes'
       '. . alerts .'
@@ -216,6 +216,7 @@
     .timer {
       align-self: start;
       justify-self: end;
+      padding: 0.5rem 0.7rem;
       font-size: 1.1rem;
     }
   }

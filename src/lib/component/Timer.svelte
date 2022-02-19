@@ -42,8 +42,8 @@
 
 <style lang="scss">
   b {
-    padding: 0.2rem 0.7rem;
-    font-weight: 900;
-    font-family: monospace;
+    font-weight: 700;
+    font-family: 'Space Mono', monospace;
+    line-height: 1;
   }
 </style>

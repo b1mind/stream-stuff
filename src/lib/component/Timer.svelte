@@ -2,8 +2,8 @@
   import { slide } from 'svelte/transition'
   import { onMount, afterUpdate } from 'svelte'
 
-  export let countDown
   export let time
+  let countDown
   let initialTimer = 24000 * 60
   let countDownMinutes
   let countDownSeconds
@@ -44,5 +44,6 @@
   b {
     padding: 0.2rem 0.7rem;
     font-weight: 900;
+    font-family: monospace;
   }
 </style>

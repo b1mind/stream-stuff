@@ -128,7 +128,9 @@
       {/each}
 
       {#if countDown}
-        <Timer {countDown} {time} />
+        <div class="timer">
+          <Timer {time} />
+        </div>
       {/if}
     {/if}
   </div>
@@ -176,8 +178,8 @@
   main {
     height: 100%;
     display: grid;
-    grid-template-columns: 420px 1fr 296px 153px;
-    grid-template-rows: 1fr 420px 54px 92px;
+    grid-template-columns: 1fr 1fr 296px 153px;
+    grid-template-rows: 1fr 1fr 54px 92px;
     grid-template-areas:
       '. . . modes'
       '. . alerts .'
@@ -211,7 +213,7 @@
     place-items: center;
     color: var(--clr-primary-bg);
 
-    & > *:last-child {
+    .timer {
       align-self: start;
       justify-self: end;
       font-size: 1.1rem;

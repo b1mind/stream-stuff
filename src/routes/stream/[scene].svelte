@@ -15,26 +15,38 @@
 
 <main>
   <article>
-    {#if params.scene === 'start'}
-      <b>Starting <span>Soon</span></b>
-    {:else}
-      <b>Ending <span>Soon</span></b>
-    {/if}
+    <h2>
+      {#if params.scene === 'start'}
+        Starting
+      {:else}
+        Ending
+      {/if}
+    </h2>
+    <b>Soon</b>
 
-    <Timer time="5" />
+    <time datetime="00:05:00">
+      <Timer time="5" />
+    </time>
   </article>
 
   <div class="background">
     <svg viewBox="0 0 100 100">
       <path
-        d="M10 0L5.29412 4.70588L0 9.41177V96.6146L26.4706 71.7647L77.0588 61.7647L100 38.8235L100 0H10Z"
+        d="M24.5 0L0 21V96.6146L26.4706 71.7647L77.0588 61.7647L100 38.8235L100 0H24.5Z"
         fill="#18141F"
       />
       <path
         d="M100 44.7059L78.8235 65.8824L26.4706 80L3.31269 100H100L100 44.7059Z"
         fill="#242035"
       />
-      <!-- <circle fill="#18141F" r="50" cy="50" cx="50" /> -->
+      <path
+        d="M0 40L9.00001 34L10 19L27.2977 4.68484L57.2977 4.68484L62.7975 -0.315159L24.7978 -0.315308L6.59414e-05 21L0 40Z"
+        fill="#514B6B"
+      />
+      <path
+        d="M79.3892 70L100 48L100 44.5L79 65.5L74.9999 67L71.9999 71.5L79.3892 70Z"
+        fill="#514B6B"
+      />
     </svg>
   </div>
 </main>
@@ -44,19 +56,14 @@
     height: 100%;
     display: grid;
     grid-template-areas: 'overlay';
-    place-content: center;
+    place-items: center;
     color: var(--clr-white);
     text-align: center;
     font-size: 10rem;
+    font-family: Helvetica, sans-serif;
 
     & > * {
       grid-area: overlay;
-    }
-
-    article {
-      display: grid;
-      place-content: center;
-      z-index: 69;
     }
 
     svg {
@@ -66,7 +73,26 @@
     }
   }
 
-  span {
-    color: var(--clr-highlight-text);
+  article {
+    width: 850px;
+    height: 850px;
+    padding: 2rem;
+    display: grid;
+    z-index: 69;
+
+    h2 {
+      margin: 0;
+      font-size: inherit;
+      place-self: end;
+    }
+
+    b {
+      place-self: start;
+      color: var(--clr-highlight-text);
+    }
+
+    time {
+      place-self: end;
+    }
   }
 </style>

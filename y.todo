@@ -28,7 +28,9 @@ Todo:
     ✔ circle behind icon censored scene @done(22-02-13 12:40)
     ✔ gaming overlay + scene @done(22-02-13 13:20)
     ✔ alert commands based on groups vipList ect @done(22-02-13 13:36)
-    ☐ chat for intro/outro neeeds better placement within UI overlay
+    ✔ chat for intro/outro neeeds better placement within UI overlay @done(22-02-18 23:24)
+    ☐ better intro/outro svg | animate
+    ☐ raid < 20 champloo gif 20 > faye fish gif (make my own)
     ☐ complete the rest of the ComfyJs methods before getting affiliate
     ☐ sub/reSub/giftSub alerts for each
     ☐ decide where non-alert gifs should go 

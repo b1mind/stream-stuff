@@ -11,7 +11,6 @@
   let alertsQue = []
   // let initialTimer = 24000 * 60
   let countDown
-  let time
 
   function storeAlert(alert) {
     let { type, user, msg } = alert
@@ -63,23 +62,49 @@
       //todo user get stream title
       console.dir(user)
 
+      //todo refactor to use the store? pass in url to storeAlert?
+      if (viewers > 20) {
+        $alerts['raid'].url =
+          'https://c.tenor.com/-QlJHq586eUAAAAd/cowboy-bebop-faye-valentine.gif'
+      }
       let msg = `Raiding with ${viewers} viewers`
       runAlert('raid', user, msg)
     }
 
-    ComfyJS.onSub = (user, message, subTierInfo, extra) => {
-      console.dir(message)
-      console.dir(subTierInfo)
-      console.dir(extra)
+    ComfyJS.onCheer = (user, message, bits, flags, extra) => {
+      console.dir(flags)
+      let msg = `Cheered ${bits} bits!`
+      runAlert('cheer', user, msg)
+    }
 
-      runAlert('sub', user, message || subTierInfo)
+    ComfyJS.onSub = (user, message, subTierInfo, extra) => {
+      console.dir(subTierInfo)
+      let msg = `Tier ${subTierInfo}`
+      runAlert('sub', user, message || msg)
+    }
+
+    ComfyJS.onReSub = (user, streamMonths, cumulativeMonths) => {
+      let msg = `${streamMonths} months on a ${cumulativeMonths} streak`
+      runAlert('reSub', user, msg)
+    }
+
+    ComfyJS.onSubGift = (gifterUser, streakMonths, senderCount, recipientUser) => {
+      let msg = `Gifted ${recipientUser} a subscription!`
+      runAlert('giftSub', gifterUser, msg)
+    }
+
+    //todo find out what type of sub this really is
+    ComfyJS.onSubMysteryGift = (gifterUser, numberOfSubs, senderCount) => {
+      //sender count is a total of gifted
+      let msg = `Gifted ${numberOfSubs} subscriptions!`
+      runAlert('giftMysterySub', gifterUser, msg)
     }
 
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
       // console.dir(extra)
       console.dir(flags)
 
-      const { broadcaster, mod, vip, subscriber, founder, highlighted } = flags
+      const { broadcaster, mod, highlighted } = flags
       const vipGroup = ['broadcaster', 'mod', 'vip']
       const vipCmdList = [...modes, 'raid', 'sub', 'game']
 
@@ -94,13 +119,16 @@
       })
 
       if ((broadcaster || mod) && command === 'focus') {
-        //fixme setTime & needs to refresh if timer still active
-        countDown = true
-        time = 20
+        countDown = 20
       }
 
       if (subCmdList.includes(command)) {
         runAlert(command, user, message)
+      }
+
+      if (highlighted) {
+        //needs tested still with channel points?
+        runAlert('yuki', user, message)
       }
     }
 
@@ -129,7 +157,7 @@
 
       {#if countDown}
         <div class="timer">
-          <Timer {time} />
+          <Timer {countDown} />
         </div>
       {/if}
     {/if}
@@ -216,7 +244,7 @@
     .timer {
       align-self: start;
       justify-self: end;
-      padding: 0.5rem 0.7rem;
+      padding: 0.2rem 0.5rem;
       font-size: 1.1rem;
     }
   }

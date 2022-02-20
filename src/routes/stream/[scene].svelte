@@ -25,7 +25,7 @@
     <b>Soon</b>
 
     <time datetime="00:05:00">
-      <Timer time="5" />
+      <Timer countDown="5" />
     </time>
   </article>
 

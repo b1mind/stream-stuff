@@ -4,18 +4,44 @@ const data = {
   active: false,
   type: 'ghost',
   mode: 'ghost',
+
   raid: {
     user: 'raidTestUser',
     msg: `Raiding with 420 test viewers`,
     url: 'https://c.tenor.com/4g2pk3Cgf70AAAAC/mugen-pt.gif',
+    // url: 'https://c.tenor.com/-QlJHq586eUAAAAd/cowboy-bebop-faye-valentine.gif'
+  },
+
+  cheer: {
+    user: 'cheerUser',
+    msg: `cheered with X00 bits`,
+    url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
   },
 
   sub: {
     user: 'testLongLongSubName',
-    msg: '69 months - 6 month streak',
+    msg: 'some msg user sent',
     url: 'https://media.giphy.com/media/p7QJSVvU4bMWc/giphy.gif',
     //follower gif
     // url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
+  },
+
+  reSub: {
+    user: 'reSub',
+    msg: '69 months - 6 month streak',
+    url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
+  },
+
+  giftSub: {
+    user: 'GifterName',
+    msg: 'Gifted User a sub',
+    url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
+  },
+
+  giftMysterySub: {
+    user: 'GifterName',
+    msg: 'Gifted 5 subs',
+    url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
   },
 
   chat: {
@@ -37,6 +63,11 @@ const data = {
     msg: 'Game mode: Chill stream just gaming and letting my mind breath.',
     url: 'https://cdn.discordapp.com/attachments/698292729960202464/831394648186290176/boom.gif',
     // url: 'https://c.tenor.com/OWa77lYqkmoAAAAd/portal-shot-portal.gif',
+  },
+
+  yuki: {
+    msg: 'Yuki says Meow',
+    url: '',
   },
 
   samurai: {

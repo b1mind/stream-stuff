@@ -1,9 +1,8 @@
 <script>
   import { slide } from 'svelte/transition'
-  import { onMount, afterUpdate } from 'svelte'
+  import { onMount } from 'svelte'
 
-  export let time
-  let countDown
+  export let countDown
   let initialTimer = 24000 * 60
   let countDownMinutes
   let countDownSeconds
@@ -13,7 +12,7 @@
   // })
 
   onMount(() => {
-    startTimer(time)
+    startTimer(countDown)
   })
 
   function startTimer(time) {

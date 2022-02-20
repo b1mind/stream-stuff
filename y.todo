@@ -1,6 +1,9 @@
 //Stream list
 Today:
   ☐ gifs for gifSubs, cheer, reSub
+  ✔ timer color for UI needs change AAA @done(22-02-20 12:51)
+  ☐ alert tag/type needs AA check again (use white like timer?)
+  ☐ mode inactive color needs to be increased
   ☐ animated svg for intro/outro scenes (text animations or masked bg)
   ☐ Find sound files to use html .play() .stop() in js 
   ☐ timer up sound.ogg for focus timer

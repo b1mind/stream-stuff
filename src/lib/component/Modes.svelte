@@ -13,10 +13,10 @@
   svg {
     width: 69px;
     height: 69px;
-    fill: #242035;
+    fill: var(--clr-secondary-alt);
   }
 
   .active {
-    fill: #877fab;
+    fill: var(--clr-highlight-text);
   }
 </style>

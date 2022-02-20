@@ -7,10 +7,16 @@
 :root {
   --clr-primary-bg: #18141F;
   --clr-secondary-bg: #242035;
+  --clr-secondary-alt: #403960;
   --clr-highlight: #514b6b;
   --clr-highlight-text: #877FAB;
   --clr-active: #ff50ff;
   --clr-white: #cecece;
+
+  //todo make the rest of these and ues them
+  --clr-purple-200: #242035;
+  --clr-purple-600: #514b6b;
+  --clr-purple-700: #877FAB;
 }
 
 html {

@@ -61,7 +61,8 @@
       //todo user get stream title
       console.dir(user)
 
-      //todo refactor to use the store? pass in url to storeAlert?
+      //todo refactor to use the store? pass in url to storeAlert
+      //better way like an array to pass url/gifs?
       if (viewers > 20) {
         $alerts['raid'].url =
           'https://c.tenor.com/-QlJHq586eUAAAAd/cowboy-bebop-faye-valentine.gif'
@@ -108,7 +109,7 @@
       const vipGroup = ['broadcaster', 'mod', 'vip']
       const vipCmdList = [...modes, 'raid', 'sub', 'game']
 
-      //fixme subGroup.forEach or better way to check both
+      //todo subGroup.forEach or better way to check both
       const subGroup = [...vipGroup, 'subscriber']
       const subCmdList = ['fish', 'try', 'nope', 'food']
 
@@ -131,6 +132,9 @@
         runAlert('yuki', user, message)
       }
     }
+
+    //note figure out how to use this
+    // ComfyJS.onChat = () => {}
 
     ComfyJS.Init('b1mind')
   }
@@ -163,7 +167,7 @@
     {/if}
   </div>
 
-  <section class="alerts-wrap">
+  <div class="alerts-wrap">
     {#if $alerts.active}
       <b in:slide={{ y: '-1rem', delay: 800 }} out:slide={{ y: '1rem', duration: 550 }}>
         {$alerts.type}
@@ -182,7 +186,7 @@
         <img src={$alerts[$alerts.type].url} alt="Gif for {$alerts.type}" />
       </article>
     {/if}
-  </section>
+  </div>
 
   <p>
     {#if $alerts.mode}
@@ -239,14 +243,14 @@
     display: grid;
     gap: 20px;
     place-items: center;
+  }
 
-    .timer {
-      align-self: start;
-      justify-self: end;
-      padding: 0.35rem 0.5rem;
-      color: var(--clr-primary-bg);
-      font-size: 1.1rem;
-    }
+  .timer {
+    align-self: start;
+    justify-self: end;
+    padding: 0.35rem 0.5rem;
+    color: var(--clr-white);
+    font-size: 1.1rem;
   }
 
   .alerts-wrap {

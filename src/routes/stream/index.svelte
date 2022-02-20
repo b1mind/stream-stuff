@@ -9,7 +9,6 @@
 
   let modes = ['chat', 'ghost', 'focus']
   let alertsQue = []
-  // let initialTimer = 24000 * 60
   let countDown
 
   function storeAlert(alert) {
@@ -67,6 +66,7 @@
         $alerts['raid'].url =
           'https://c.tenor.com/-QlJHq586eUAAAAd/cowboy-bebop-faye-valentine.gif'
       }
+
       let msg = `Raiding with ${viewers} viewers`
       runAlert('raid', user, msg)
     }
@@ -239,12 +239,12 @@
     display: grid;
     gap: 20px;
     place-items: center;
-    color: var(--clr-primary-bg);
 
     .timer {
       align-self: start;
       justify-self: end;
-      padding: 0.2rem 0.5rem;
+      padding: 0.35rem 0.5rem;
+      color: var(--clr-primary-bg);
       font-size: 1.1rem;
     }
   }

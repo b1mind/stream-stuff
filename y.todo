@@ -1,7 +1,10 @@
 //Stream list
 Today:
-  ✔ Starting soon and ending soon overlay scenes @done(22-02-17 13:51)
-  ☐ animated svg for intro/outro scenes (clock like mask on circle)
+  ☐ gifs for gifSubs, cheer, reSub
+  ☐ animated svg for intro/outro scenes (text animations or masked bg)
+  ☐ Find sound files to use html .play() .stop() in js 
+  ☐ timer up sound.ogg for focus timer
+  ☐ test flags.highlighter can be used for yuki chat?
 
 Todo: 
   QoL: 
@@ -9,8 +12,7 @@ Todo:
       //installed but need to configure 
 
   twitch settings:
-    ✔ //make banners based on UI design so it matchs... but get copy up! @done(22-02-13 12:47)
-    ✔ change recordings to on (must list to be public) @done(22-02-13 12:08)
+    ☐ find out what types of subs do what
     ☐ create better Panel copywrite: Bio - About - Story for below stream
       //work in progress - could use more + bio/story/donate/commands/rules
     ☐ choose how to tip/donate to stream Patron or Paypal?
@@ -25,17 +27,6 @@ Todo:
     // will require oAuth to work with comfyJS
 
   Cam/Overlay Ideas:
-    ✔ circle behind icon censored scene @done(22-02-13 12:40)
-    ✔ gaming overlay + scene @done(22-02-13 13:20)
-    ✔ alert commands based on groups vipList ect @done(22-02-13 13:36)
-    ✔ chat for intro/outro neeeds better placement within UI overlay @done(22-02-18 23:24)
-    ☐ better intro/outro svg | animate
-    ☐ raid < 20 champloo gif 20 > faye fish gif (make my own)
-    ☐ complete the rest of the ComfyJs methods before getting affiliate
-    ☐ sub/reSub/giftSub alerts for each
-    ☐ decide where non-alert gifs should go 
-    ☐ timer up sound.ogg for focus timer
-    ☐ Find sound files to use html .play() .stop() in js 
     ☐ alerts animations tied into interface/overlay with GSAP better easing+yoyo
     ☐ main bottom h1/text to display !today / !title / !project info
     ☐ Conversation scene - for chatting to chat *visible overlay
@@ -53,14 +44,11 @@ Todo:
 
   VIP / Subonly:
     ☐ prevent spam > Toggle commands or Timeout
+    ☐ !more commands period maybe get feedback from chat
     ☐ !yuki (same as highlight but no points?)
     ☐ !marinate (grab letter kenny gif)
     ☐ !typo for mistakes made in the code
-    ✔ !fish // !learn Learning any thing new is hard, like fishing it can take a lifetime @done(22-02-14 10:15)
     ☐ redo the wording for fish
-    ✔ !try https://media.giphy.com/media/EC2JvlspR35q8/giphy.gif @done(22-02-14 10:15)
-    ✔ !nope - https://media.giphy.com/media/USNlL9p2fxY6Q/giphy.gif @done(22-02-14 10:15)
-    ✔ !food https://media.giphy.com/media/11KzOet1ElBDz2/giphy.gif @done(22-02-14 10:15)
     ☐ food gif needs to be bellpeppers n beef 
 
   AHK / QMK:
@@ -71,7 +59,6 @@ Todo:
       // QMK input checker website?
 
 Tech debt:
-  ☐ check UI on smaller devices to see readability and line smoothness
   ☐ Timer's use of setInterval is not the best method. Look to other solutions 
   ☐ Comfy.js need 0auth secret passed to api endpoint so all needs to be there
     ☐ get auth working with comfy.js
@@ -82,15 +69,16 @@ Tech debt:
     Post "https://localhost:3000/api/eventsub/": http: server gave HTTP response to HTTPS client
 
 Questions:
+  ✔ should AFK screen have chat overlay? (no) @done(22-02-19 16:25)
   ☐ Mute icon for all scenes? Can I detect mute?
     mute with bind in scene
-  ☐ Should !today different than !title ?
+  ☐ Should !today different than !title ? !project
   ☐ how to save OBS views? popout view for testing?
   ☐ how am I going to handle chat overlay, popout or full time scene
     // (https://streamparrot.com/ or https://showmy.chat/)
 
 Wishlist:
-  ✔ make layer for "streamdeck" in QMK (using omg key) @done(22-02-13 13:22)
+  ☐ rename $alerts['names'] as they are visual too?
   ☐ intro/outro with music 
   ☐ Manni's help with floating emoji overlay
   ☐ Todo list goals for focus mode
@@ -110,6 +98,24 @@ Wishlist:
   ☐ look into DIY streamdecks (yt history has good ones?)
   
 Archive:
+  ✔ decide where non-alert gifs should go @done(22-02-19 16:24) @project(Todo.Cam/Overlay Ideas)
+  ✔ check UI on smaller devices to see readability and line smoothness @done(22-02-19 16:24) @project(Tech debt)
+  ✔ Starting soon and ending soon overlay scenes @done(22-02-17 13:51) @project(Today)
+  ✔ raid < 20 champloo gif 20 > faye fish gif (make my own later) @done(22-02-19 12:32) @project(Today)
+  ✔ complete the rest of the ComfyJs methods before getting affiliate @done(22-02-19 13:09) @project(Today)
+  ✔ sub/reSub/giftSub alerts for each @done(22-02-19 13:09) @project(Today)
+  ✔ make the !so command work with anything at this point @done(22-02-19 13:57) @project(Today)
+  ✔ //make banners based on UI design so it matchs... but get copy up! @done(22-02-13 12:47) @project(Todo.twitch settings)
+  ✔ change recordings to on (must list to be public) @done(22-02-13 12:08) @project(Todo.twitch settings)
+  ✔ circle behind icon censored scene @done(22-02-13 12:40) @project(Todo.Cam/Overlay Ideas)
+  ✔ gaming overlay + scene @done(22-02-13 13:20) @project(Todo.Cam/Overlay Ideas)
+  ✔ alert commands based on groups vipList ect @done(22-02-13 13:36) @project(Todo.Cam/Overlay Ideas)
+  ✔ chat for intro/outro neeeds better placement within UI overlay @done(22-02-18 23:24) @project(Todo.Cam/Overlay Ideas)
+  ✔ !fish // !learn Learning any thing new is hard, like fishing it can take a lifetime @done(22-02-14 10:15) @project(Todo.VIP / Subonly)
+  ✔ !try https://media.giphy.com/media/EC2JvlspR35q8/giphy.gif @done(22-02-14 10:15) @project(Todo.VIP / Subonly)
+  ✔ !nope - https://media.giphy.com/media/USNlL9p2fxY6Q/giphy.gif @done(22-02-14 10:15) @project(Todo.VIP / Subonly)
+  ✔ !food https://media.giphy.com/media/11KzOet1ElBDz2/giphy.gif @done(22-02-14 10:15) @project(Todo.VIP / Subonly)
+  ✔ make layer for "streamdeck" in QMK (using omg key) @done(22-02-13 13:22) @project(Wishlist)
   ✘ !so shout out feature for other Twitch streamers | streamElements or Fossabot can handle @cancelled(22-02-13 11:40) @project(Todo.QoL)
   ✔ On screen timer baked into overlay & scene. (I see it on 2cnd window?) @done(22-02-11 11:54) @project(Todo)
   ✔ Fix timer bugs | fixmes @done(22-02-11 12:57) @project(Todo)

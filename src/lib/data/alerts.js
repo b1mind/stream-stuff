@@ -2,8 +2,8 @@ import { writable } from 'svelte/store'
 
 const data = {
   active: false,
-  type: 'ghost',
-  mode: 'ghost',
+  type: 'chat',
+  mode: 'chat',
 
   raid: {
     user: 'raidTestUser',
@@ -22,6 +22,7 @@ const data = {
     user: 'testLongLongSubName',
     msg: 'some msg user sent',
     url: 'https://media.giphy.com/media/p7QJSVvU4bMWc/giphy.gif',
+    sound: '/sounds/alertSub2.ogg',
     //follower gif
     // url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
   },

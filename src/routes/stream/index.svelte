@@ -10,6 +10,7 @@
   let modes = ['chat', 'ghost', 'focus']
   let alertsQue = []
   let countDown
+  let topic
 
   function storeAlert(alert) {
     let { type, user, msg } = alert
@@ -23,6 +24,13 @@
 
     if (user) $alerts[type].user = user
     if (msg) $alerts[type].msg = msg
+
+    //fixme sound needs to play once and not onCmd
+    if ($alerts[type].sound && !$alerts.active) {
+      let sound = new Audio($alerts[type].sound)
+      console.dir(sound)
+      sound.play()
+    }
   }
 
   function removeAlert(alert) {
@@ -37,6 +45,7 @@
 
     let alertCount = alertsQue.length
     setTimeout(function tick() {
+      // if (alertQue[0] === ???)
       storeAlert(alertsQue[0])
       $alerts.active = true
 
@@ -102,9 +111,6 @@
     }
 
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
-      // console.dir(extra)
-      console.dir(flags)
-
       const { broadcaster, mod, highlighted } = flags
       const vipGroup = ['broadcaster', 'mod', 'vip']
       const vipCmdList = [...modes, 'raid', 'sub', 'game']
@@ -123,7 +129,14 @@
         countDown = 20
       }
 
+      if ((broadcaster || mod) && command === 'topic') {
+        topic = message
+      }
+
       if (subCmdList.includes(command)) {
+        const lastUserCmd = extra.sinceLastCommand.user
+        if (lastUserCmd !== 0 && lastUserCmd < 10000) return
+
         runAlert(command, user, message)
       }
 
@@ -168,6 +181,7 @@
   </div>
 
   <div class="alerts-wrap">
+    <!-- <audio bind:this={sound} preload="auto" src="/sounds/alertSlide.ogg" /> -->
     {#if $alerts.active}
       <b in:slide={{ y: '-1rem', delay: 800 }} out:slide={{ y: '1rem', duration: 550 }}>
         {$alerts.type}
@@ -197,11 +211,18 @@
   </p>
 
   <!-- todo Text for bottom bar -->
-  <!-- <h1>Working on making this overlay better. WIP</h1> -->
+  <h1>
+    {#if topic}
+      {topic}
+    {:else}
+      Working on making this overlay better. WIP
+    {/if}
+  </h1>
 </main>
 
 <!-- svelte-ignore css-unused-selector -->
 <style lang="scss">
+  h1,
   h2,
   p {
     margin: 0;
@@ -220,13 +241,13 @@
     color: var(--clr-highlight-text);
     font-family: Helvetica, sans-serif;
 
-    // h1 {
-    //   grid-area: msg;
-    //   max-width: 50ch;
-    //   place-self: center;
-    //   font-size: 1.5rem;
-    //   // text-align: center;
-    // }
+    h1 {
+      grid-area: msg;
+      max-width: 50ch;
+      place-self: center;
+      font-size: 1.5rem;
+      // text-align: center;
+    }
 
     p {
       grid-area: info;
@@ -263,7 +284,7 @@
     b {
       justify-self: end;
       padding: 0.35rem 0.65rem;
-      color: var(--clr-primary-bg);
+      color: var(--clr-white);
       text-transform: uppercase;
       font-weight: 800;
       background-color: var(--clr-highlight);

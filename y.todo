@@ -1,13 +1,14 @@
 //Stream list
 Today:
-  ☐ gifs for gifSubs, cheer, reSub
   ✔ timer color for UI needs change AAA @done(22-02-20 12:51)
-  ☐ alert tag/type needs AA check again (use white like timer?)
-  ☐ mode inactive color needs to be increased
+  ✔ alert tag/type needs AA check again (use white like timer?) @done(22-02-20 13:52)
+  ✔ mode inactive color needs to be increased @done(22-02-20 13:52)
+  ✔ Conversation scene - for chatting to chat *visible overlay @done(22-02-20 14:16)
+  ✔ main bottom h1/text to display !today / !title / !project info @done(22-02-20 14:56)
+  ☐ gifs for gifSubs, cheer, reSub
   ☐ animated svg for intro/outro scenes (text animations or masked bg)
   ☐ Find sound files to use html .play() .stop() in js 
   ☐ timer up sound.ogg for focus timer
-  ☐ test flags.highlighter can be used for yuki chat?
 
 Todo: 
   QoL: 
@@ -15,6 +16,7 @@ Todo:
       //installed but need to configure 
 
   twitch settings:
+    ☐ obs or twitch bitrate settings or any modifiers for bandwidth
     ☐ find out what types of subs do what
     ☐ create better Panel copywrite: Bio - About - Story for below stream
       //work in progress - could use more + bio/story/donate/commands/rules
@@ -23,6 +25,7 @@ Todo:
     ☐ spice up logo for meta data
     ☐ image when offline or recordings/host
     ☐ setup auto hosting to my fav streamers if I am offline
+    ☐ make some more clips and highlight reels
 
   RedemtionsPoints:
     ☐ think about what to do for redemtion points
@@ -30,9 +33,8 @@ Todo:
     // will require oAuth to work with comfyJS
 
   Cam/Overlay Ideas:
+    ☐ test flags.highlighter can be used for yuki chat?
     ☐ alerts animations tied into interface/overlay with GSAP better easing+yoyo
-    ☐ main bottom h1/text to display !today / !title / !project info
-    ☐ Conversation scene - for chatting to chat *visible overlay
 
   Chat commands:
     ☐ !project | !today - explain current project as to inform new viewers

@@ -5,10 +5,10 @@ Today:
   ✔ mode inactive color needs to be increased @done(22-02-20 13:52)
   ✔ Conversation scene - for chatting to chat *visible overlay @done(22-02-20 14:16)
   ✔ main bottom h1/text to display !today / !title / !project info @done(22-02-20 14:56)
+  ✔ Find sound files to use html .play() in js @done(22-02-21 00:45)
+  ✔ timer up sound.ogg for focus timer @done(22-02-21 00:46)
   ☐ gifs for gifSubs, cheer, reSub
   ☐ animated svg for intro/outro scenes (text animations or masked bg)
-  ☐ Find sound files to use html .play() .stop() in js 
-  ☐ timer up sound.ogg for focus timer
 
 Todo: 
   QoL: 

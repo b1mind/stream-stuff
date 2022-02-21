@@ -9,6 +9,9 @@ const data = {
     user: 'raidTestUser',
     msg: `Raiding with 420 test viewers`,
     url: 'https://c.tenor.com/4g2pk3Cgf70AAAAC/mugen-pt.gif',
+    sound: '/sounds/alertRaid.ogg',
+    // raid > 20
+    // sound: '/sounds/alertRaidLrg.ogg',
     // url: 'https://c.tenor.com/-QlJHq586eUAAAAd/cowboy-bebop-faye-valentine.gif'
   },
 
@@ -16,13 +19,14 @@ const data = {
     user: 'cheerUser',
     msg: `cheered with X00 bits`,
     url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
+    sound: '/sounds/alertBits.ogg',
   },
 
   sub: {
     user: 'testLongLongSubName',
     msg: 'some msg user sent',
     url: 'https://media.giphy.com/media/p7QJSVvU4bMWc/giphy.gif',
-    sound: '/sounds/alertSub2.ogg',
+    sound: '/sounds/alertSub3.ogg',
     //follower gif
     // url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
   },
@@ -31,18 +35,21 @@ const data = {
     user: 'reSub',
     msg: '69 months - 6 month streak',
     url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
+    sound: '/sounds/alertSub2.ogg',
   },
 
   giftSub: {
     user: 'GifterName',
     msg: 'Gifted User a sub',
     url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
+    sound: '/sounds/alertSub3.ogg',
   },
 
   giftMysterySub: {
     user: 'GifterName',
     msg: 'Gifted 5 subs',
     url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
+    sound: '/sounds/alertSub3.ogg',
   },
 
   chat: {
@@ -81,7 +88,7 @@ const data = {
     url: 'https://media.giphy.com/media/BIDRtK21FsrPG/giphy.gif',
   },
 
-  try: {
+  fail: {
     msg: 'Try harder, think smarter',
     url: 'https://media.giphy.com/media/EC2JvlspR35q8/giphy.gif',
   },

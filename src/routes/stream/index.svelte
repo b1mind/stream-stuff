@@ -72,9 +72,10 @@
 
       //todo refactor to use the store? pass in url to storeAlert
       //better way like an array to pass url/gifs?
-      if (viewers > 20) {
+      if (viewers > 10) {
         $alerts['raid'].url =
           'https://c.tenor.com/-QlJHq586eUAAAAd/cowboy-bebop-faye-valentine.gif'
+        $alerts['raid'].sound = '/sounds/alertRaidLrg.ogg'
       }
 
       let msg = `Raiding with ${viewers} viewers`
@@ -117,7 +118,7 @@
 
       //todo subGroup.forEach or better way to check both
       const subGroup = [...vipGroup, 'subscriber']
-      const subCmdList = ['fish', 'try', 'nope', 'food']
+      const subCmdList = ['fish', 'fail', 'nope', 'food']
 
       vipGroup.forEach((level) => {
         if (flags[level] && vipCmdList.includes(command)) {

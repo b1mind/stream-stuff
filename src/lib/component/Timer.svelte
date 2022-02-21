@@ -11,6 +11,7 @@
   //   startTimer(time)
   // })
 
+  //need away to fire startTimer on reset (bubble function up)
   onMount(() => {
     startTimer(countDown)
   })
@@ -21,7 +22,10 @@
 
     let interval = setInterval(function () {
       if (countDown <= 0) {
+        let sound = new Audio('/sounds/alertAlarm.ogg')
         clearInterval(interval)
+
+        return sound.play()
       } else {
         countDown -= 1000
         countDownMinutes = padInt(parseInt(countDown / 1000 / 60))

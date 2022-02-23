@@ -53,7 +53,7 @@ const data = {
   },
 
   chat: {
-    msg: 'Chat mode: Just chating! Ask me questions or help me code.',
+    msg: 'Chat mode: Just chatting! Ask me questions or help me code.',
     url: 'https://c.tenor.com/v3yWYLX8eC4AAAAC/jet-black-cowboy-bebop.gif',
   },
 

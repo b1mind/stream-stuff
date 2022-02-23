@@ -7,17 +7,38 @@ Today:
   ✔ main bottom h1/text to display !today / !title / !project info @done(22-02-20 14:56)
   ✔ Find sound files to use html .play() in js @done(22-02-21 00:45)
   ✔ timer up sound.ogg for focus timer @done(22-02-21 00:46)
+  ✔ chat popup for main scene @done(22-02-21 13:27)
+  ☐ second overlay (obs browser) showchat limit=xx needs its own CSS styles
+  ☐ floating emoji's (tie into fossabot combos) DM Manni
   ☐ gifs for gifSubs, cheer, reSub
-  ☐ animated svg for intro/outro scenes (text animations or masked bg)
+  ☐ !extensions - probably going to ask about nVim and others?
+
+Questions:
+  ✔ should AFK screen have chat overlay? (yes) @done(22-02-19 16:25)
+  ✔ Should !today different than !title ? !project (yes !today h1) @done(22-02-21 01:18)
+  ☐ rename $alerts['names'] as they are visual too?
+  ☐ Mute icon for all scenes? Can I detect mute?
+    mute with bind in scene
+  ☐ how to save OBS views? popout view for testing?
+  ☐ how am I going to handle chat overlay, popout or full time scene
+    // (https://streamparrot.com/ or https://showmy.chat/)
 
 Todo: 
   QoL: 
+    ☐ different browser for stream (edge insiders?)
     ☐ powertoys window docking - want locked window set ups to toggle
       //installed but need to configure 
 
+  Cam/Overlay Ideas:
+    ☐ modes text box needs to rotate information like last sub/follow?/or something.
+    ☐ animated svg for intro/outro scenes (text animations or masked bg)
+    ☐ alerts animations tied into interface/overlay with GSAP better easing+yoyo
+    ☐ test flags.highlighter can be used for yuki chat?
+      //have sound for chat "bubbles"
+
   twitch settings:
     ☐ obs or twitch bitrate settings or any modifiers for bandwidth
-    ☐ find out what types of subs do what
+    ☐ find out wh#18141F;types of subs do what
     ☐ create better Panel copywrite: Bio - About - Story for below stream
       //work in progress - could use more + bio/story/donate/commands/rules
     ☐ choose how to tip/donate to stream Patron or Paypal?
@@ -32,13 +53,8 @@ Todo:
     ☐ highlight alert with msg on screen
     // will require oAuth to work with comfyJS
 
-  Cam/Overlay Ideas:
-    ☐ test flags.highlighter can be used for yuki chat?
-    ☐ alerts animations tied into interface/overlay with GSAP better easing+yoyo
-
   Chat commands:
     ☐ !project | !today - explain current project as to inform new viewers
-    ☐ !extensions - probably going to ask about nVim and others?
     ☐ !figs - link to bare repo?
     ☐ !tools - "Milwaukee Drills are best"
     ☐ !fontUp - vsc cycle.FontToggle
@@ -46,6 +62,9 @@ Todo:
     ☐ !change song
     ☐ !volume of music
     ☐ !unmute command
+    ☐ !banger save song some how or name to add to a playlist
+    ☐ !collab/!fusion dbz merge/fusion gif
+    ☐ !kitty look at the kitty for when you get sidetracked
 
   VIP / Subonly:
     ☐ prevent spam > Toggle commands or Timeout
@@ -53,6 +72,7 @@ Todo:
     ☐ !yuki (same as highlight but no points?)
     ☐ !marinate (grab letter kenny gif)
     ☐ !typo for mistakes made in the code
+    ☐ !wifeBurn when wife gives me shit for something and I am talking about it
     ☐ redo the wording for fish
     ☐ food gif needs to be bellpeppers n beef 
 
@@ -64,27 +84,19 @@ Todo:
       // QMK input checker website?
 
 Tech debt:
+  ☐ improve on chat popup animation and styles
+  ☐ chat needs higher limit or some kinda timer or queue
   ☐ Timer's use of setInterval is not the best method. Look to other solutions 
   ☐ Comfy.js need 0auth secret passed to api endpoint so all needs to be there
     ☐ get auth working with comfy.js
-    ☐ use comfy to make auto shout out and !so command (needs auth?)
+    ✘ use comfy to make auto shout out and !so command (needs auth?) @cancelled(22-02-21 01:17)
   ☐ Twitch-Cli mock server working! //so close yet so far.. get help!(Prince?)
     // stuck here how to I slurp the Post data https://youtu.be/omBzmgAppYQ?t=2109
     //$ twitch event trigger subscribe -F https://localhost:3000/api/eventsub/
     Post "https://localhost:3000/api/eventsub/": http: server gave HTTP response to HTTPS client
 
-Questions:
-  ✔ should AFK screen have chat overlay? (no) @done(22-02-19 16:25)
-  ☐ Mute icon for all scenes? Can I detect mute?
-    mute with bind in scene
-  ☐ Should !today different than !title ? !project
-  ☐ how to save OBS views? popout view for testing?
-  ☐ how am I going to handle chat overlay, popout or full time scene
-    // (https://streamparrot.com/ or https://showmy.chat/)
-
 Wishlist:
-  ☐ rename $alerts['names'] as they are visual too?
-  ☐ intro/outro with music 
+  ☐ intro/outro with music (kenny, or fractal??)
   ☐ Manni's help with floating emoji overlay
   ☐ Todo list goals for focus mode
   ☐ backgrounds behind Yuki and I (hot,cold, river, underwater, ninja, focus?)

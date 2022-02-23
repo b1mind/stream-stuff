@@ -1,0 +1,122 @@
+:root {
+  --twitch-gray: rgb(173 173 184);
+  --twitch-light: #bebebe;
+  --twitch-dark-background: hsl(262 22% 10% / 90%);
+  --twitch-purple: rgb(180 84 255);
+  --twitch-highlight-purple: #514b6b;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  display: grid;
+  align-items: end;
+  background-color: transparent;
+}
+
+[data-twitch-chat] {
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  gap: 3px;
+  align-items: end;
+  color: var(--twitch-light);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  list-style: none;
+}
+
+[data-twitch-message] {
+  min-width: 100%;
+  margin: 0;
+  padding-bottom: 5.625px;
+  padding-left: 22.5px;
+  padding-right: 22.5px;
+  padding-top: 5.625px;
+  line-height: 1.2;
+  background-color: var(--twitch-dark-background);
+  animation: 
+    fade-in-out 15s forwards,
+    slide-out-up .5s forwards;
+}
+
+[data-twitch-message-reply] {
+  color: var(--twitch-gray);
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+[data-twitch-message] .twitch-chat-sender {
+  color: var(--twitch-sender-color, var(--twitch-purple));
+  display: inline;
+  font-weight: 700;
+}
+
+[data-twitch-message][data-twitch-sender-color-lightness='dark']
+  .twitch-chat-sender {
+  filter: brightness(1.3);
+}
+
+[data-twitch-message] .twitch-chat-sender::after {
+  content: ': ';
+  color: var(--twitch-light);
+  font-weight: normal;
+}
+
+[data-twitch-message] .twitch-chat-message {
+  display: inline;
+}
+
+[data-twitch-message-status*='highlighted'] .twitch-chat-message {
+  background-color: var(--twitch-highlight-purple);
+  border: 4px solid var(--twitch-highlight-purple);
+  color: white;
+}
+
+[data-twitch-emote] {
+  width: 1.2em;
+}
+
+[data-twitch-mentioned-user] {
+  background-color: #323239;
+  color: inherit;
+  padding: 0.2rem 0.4rem;
+}
+
+.twitch-chat-command {
+  background-color: transparent;
+  color: inherit;
+}
+
+[data-twitch-message-status*='highlighted'] [data-twitch-mentioned-user] {
+  background-color: transparent;
+}
+
+[data-twitch-message] a {
+  color: var(--twitch-purple);
+  text-decoration: none;
+}
+
+@keyframes fade-in-out {
+  0% { opacity: 0 }
+  5% { opacity: 1 }
+  95% { opacity: 1 }
+  100% { opacity: 0 }
+}
+
+@keyframes slide-out-up {
+  from { transform: translateY(100%) }
+}

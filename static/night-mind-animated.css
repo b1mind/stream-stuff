@@ -49,9 +49,7 @@ body {
   padding-top: 5.625px;
   line-height: 1.2;
   background-color: var(--twitch-dark-background);
-  /* animation: 
-    fade-in-out 15s forwards,
-    slide-out-up .5s forwards; */
+  animation: fade-in-out 15s forwards, slide-out-up 0.5s forwards;
 }
 
 [data-twitch-message-reply] {

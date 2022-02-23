@@ -142,6 +142,7 @@
       }
 
       if (highlighted) {
+        console.log(user)
         //needs tested still with channel points?
         runAlert('yuki', user, message)
       }

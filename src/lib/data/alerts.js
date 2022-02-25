@@ -41,14 +41,14 @@ const data = {
   giftSub: {
     user: 'GifterName',
     msg: 'Gifted User a sub',
-    url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
+    url: 'https://c.tenor.com/EzWoSC-xw34AAAAC/vash-thumbs-up.gif',
     sound: '/sounds/alertSub3.ogg',
   },
 
   giftMysterySub: {
     user: 'GifterName',
     msg: 'Gifted 5 subs',
-    url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
+    url: 'https://c.tenor.com/EzWoSC-xw34AAAAC/vash-thumbs-up.gif',
     sound: '/sounds/alertSub3.ogg',
   },
 

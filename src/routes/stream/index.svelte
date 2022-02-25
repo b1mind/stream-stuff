@@ -112,12 +112,13 @@
     }
 
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
-      const { broadcaster, mod, highlighted } = flags
+      const { broadcaster, mod, highlighted, subscriber } = flags
       const vipGroup = ['broadcaster', 'mod', 'vip']
       const vipCmdList = [...modes, 'raid', 'sub', 'game']
 
       //todo subGroup.forEach or better way to check both
       const subGroup = [...vipGroup, 'subscriber']
+      //currently any one can call these alerts
       const subCmdList = ['fish', 'fail', 'nope', 'food']
 
       vipGroup.forEach((level) => {
@@ -140,16 +141,18 @@
 
         runAlert(command, user, message)
       }
+    }
 
-      if (highlighted) {
+    //note figure out how to use this
+    ComfyJS.onChat = (flags) => {
+      const { highlighted, subscriber } = flags
+      if (highlighted && subscriber) {
         console.log(user)
+        console.dir(extra)
         //needs tested still with channel points?
         runAlert('yuki', user, message)
       }
     }
-
-    //note figure out how to use this
-    // ComfyJS.onChat = () => {}
 
     ComfyJS.Init('b1mind')
   }

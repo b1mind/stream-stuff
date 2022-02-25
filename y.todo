@@ -1,35 +1,37 @@
 //Stream list
 Today:
-  ✔ timer color for UI needs change AAA @done(22-02-20 12:51)
-  ✔ alert tag/type needs AA check again (use white like timer?) @done(22-02-20 13:52)
-  ✔ mode inactive color needs to be increased @done(22-02-20 13:52)
-  ✔ Conversation scene - for chatting to chat *visible overlay @done(22-02-20 14:16)
-  ✔ main bottom h1/text to display !today / !title / !project info @done(22-02-20 14:56)
-  ✔ Find sound files to use html .play() in js @done(22-02-21 00:45)
-  ✔ timer up sound.ogg for focus timer @done(22-02-21 00:46)
-  ✔ chat popup for main scene @done(22-02-21 13:27)
-  ☐ second overlay (obs browser) showchat limit=xx needs its own CSS styles
+  ✔ !extensions - probably going to ask about nVim and others? @done(22-02-24 20:59)
   ☐ floating emoji's (tie into fossabot combos) DM Manni
-  ☐ gifs for gifSubs, cheer, reSub
-  ☐ !extensions - probably going to ask about nVim and others?
+    //stream elements has a thing for it
 
 Questions:
-  ✔ should AFK screen have chat overlay? (yes) @done(22-02-19 16:25)
-  ✔ Should !today different than !title ? !project (yes !today h1) @done(22-02-21 01:18)
-  ☐ rename $alerts['names'] as they are visual too?
+  ☐ clean up store or leave default data?
+  ☐ rename $alerts['names'] as they are better visual name?
   ☐ Mute icon for all scenes? Can I detect mute?
     mute with bind in scene
   ☐ how to save OBS views? popout view for testing?
-  ☐ how am I going to handle chat overlay, popout or full time scene
-    // (https://streamparrot.com/ or https://showmy.chat/)
+  ☐ Can Streamparrot be use for floating emotes?
 
 Todo: 
   QoL: 
+    ✔ powertoys window docking - want locked window set ups to toggle @done(22-02-24 17:34)
     ☐ different browser for stream (edge insiders?)
-    ☐ powertoys window docking - want locked window set ups to toggle
-      //installed but need to configure 
+    ☐ playlists OWN3D, Gamecaster, Bass Rebels, Streambeast(using)
+
+  Affiliate: 
+    ☐ emotes for subs
+    ☐ cheer icons
+    ☐ points icons
+
+  Channel Points:
+    //will need auth for every thing but highlight
+    ☐ get some defaults right off the bat
+    ☐ make a list or mind map for channel point ideas
+    ☐ change song and replay song
+    ☐ highlight alert with msg on screen, hide from chat overlay
 
   Cam/Overlay Ideas:
+    ☐ better transitions for switching between scenes (ask KP or BM)
     ☐ modes text box needs to rotate information like last sub/follow?/or something.
     ☐ animated svg for intro/outro scenes (text animations or masked bg)
     ☐ alerts animations tied into interface/overlay with GSAP better easing+yoyo
@@ -48,26 +50,25 @@ Todo:
     ☐ setup auto hosting to my fav streamers if I am offline
     ☐ make some more clips and highlight reels
 
-  RedemtionsPoints:
-    ☐ think about what to do for redemtion points
-    ☐ highlight alert with msg on screen
-    // will require oAuth to work with comfyJS
-
   Chat commands:
     ☐ !project | !today - explain current project as to inform new viewers
     ☐ !figs - link to bare repo?
     ☐ !tools - "Milwaukee Drills are best"
     ☐ !fontUp - vsc cycle.FontToggle
     ☐ !todo - show chat todo | goals from that todo  
-    ☐ !change song
     ☐ !volume of music
     ☐ !unmute command
     ☐ !banger save song some how or name to add to a playlist
     ☐ !collab/!fusion dbz merge/fusion gif
     ☐ !kitty look at the kitty for when you get sidetracked
+    ☐ !discord link on blog post (wds, kp, feh links?)
+
+  GIFs:
+    ☐ cheer, // no idea https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif
+    ☐ reSub // look for something ^like this one for reSub?
+    ☐ giftSub // Milly Meryl handing donuts to vash
 
   VIP / Subonly:
-    ☐ prevent spam > Toggle commands or Timeout
     ☐ !more commands period maybe get feedback from chat
     ☐ !yuki (same as highlight but no points?)
     ☐ !marinate (grab letter kenny gif)
@@ -80,7 +81,7 @@ Todo:
     ☐ AHK script like capslock to tell me active scene on main screen
     ☐ keybind for mute and with AHK notification
     ☐ cmGriffing mentioned sound and maybe hooking it to AHK or QMK
-    ☐ overlay for QMK or Kris inputs vs cam
+    ☐ Visual key overlay for QMK or Kris inputs vs cam
       // QMK input checker website?
 
 Tech debt:
@@ -89,7 +90,6 @@ Tech debt:
   ☐ Timer's use of setInterval is not the best method. Look to other solutions 
   ☐ Comfy.js need 0auth secret passed to api endpoint so all needs to be there
     ☐ get auth working with comfy.js
-    ✘ use comfy to make auto shout out and !so command (needs auth?) @cancelled(22-02-21 01:17)
   ☐ Twitch-Cli mock server working! //so close yet so far.. get help!(Prince?)
     // stuck here how to I slurp the Post data https://youtu.be/omBzmgAppYQ?t=2109
     //$ twitch event trigger subscribe -F https://localhost:3000/api/eventsub/
@@ -97,7 +97,6 @@ Tech debt:
 
 Wishlist:
   ☐ intro/outro with music (kenny, or fractal??)
-  ☐ Manni's help with floating emoji overlay
   ☐ Todo list goals for focus mode
   ☐ backgrounds behind Yuki and I (hot,cold, river, underwater, ninja, focus?)
   ☐ Get incoming raid's channel title, not have to ask but can get right to it
@@ -115,6 +114,20 @@ Wishlist:
   ☐ look into DIY streamdecks (yt history has good ones?)
   
 Archive:
+  ✔ timer color for UI needs change AAA @done(22-02-20 12:51) @project(Today)
+  ✔ alert tag/type needs AA check again (use white like timer?) @done(22-02-20 13:52) @project(Today)
+  ✔ mode inactive color needs to be increased @done(22-02-20 13:52) @project(Today)
+  ✔ Conversation scene - for chatting to chat *visible overlay @done(22-02-20 14:16) @project(Today)
+  ✔ main bottom h1/text to display !today / !title / !project info @done(22-02-20 14:56) @project(Today)
+  ✔ Find sound files to use html .play() in js @done(22-02-21 00:45) @project(Today)
+  ✔ timer up sound.ogg for focus timer @done(22-02-21 00:46) @project(Today)
+  ✔ chat popup for main scene @done(22-02-21 13:27) @project(Today)
+  ✔ second overlay (obs browser) showchat limit=xx needs its own CSS styles @done(22-02-23 14:29) @project(Today)
+  ✔ should AFK screen have chat overlay? (yes) @done(22-02-19 16:25) @project(Questions)
+  ✔ Should !today different than !title ? !project (yes !today h1) @done(22-02-21 01:18) @project(Questions)
+  ✔ how am I going to handle chat overlay, popout or full time scene @done(22-02-23 15:13) @project(Questions)
+  ✔ prevent spam > Toggle commands or Timeout @done(22-02-23 15:21) @project(Todo.VIP / Subonly)
+  ✘ use comfy to make auto shout out and !so command (needs auth?) @cancelled(22-02-21 01:17) @project(Tech debt)
   ✔ decide where non-alert gifs should go @done(22-02-19 16:24) @project(Todo.Cam/Overlay Ideas)
   ✔ check UI on smaller devices to see readability and line smoothness @done(22-02-19 16:24) @project(Tech debt)
   ✔ Starting soon and ending soon overlay scenes @done(22-02-17 13:51) @project(Today)

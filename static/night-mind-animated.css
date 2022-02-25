@@ -3,8 +3,10 @@
   --twitch-light: #bebebe;
   --twitch-dark-background: hsl(262 22% 10% / 90%);
   --twitch-purple: rgb(180 84 255);
-  --twitch-highlight-purple: #877fab;
-  --clr-active: #ff50ff;
+  --twitch-highlight-purple: #403960;
+  --secondary: #877fab;
+  --secondary-alt: #514b6b;
+  --active: #ff50ff;
 }
 
 *,
@@ -34,9 +36,9 @@ body {
   display: grid;
   gap: 3px;
   align-items: end;
-  color: var(--twitch-light);
+  color: var(--twitch-gray);
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 24px;
+  font-size: 26px;
   list-style: none;
 }
 
@@ -62,20 +64,35 @@ body {
 }
 
 [data-twitch-message] .twitch-chat-sender {
-  color: var(--twitch-highlight-purple, var(--twitch-gray));
-  /* color: var(--twitch-sender-color, var(--twitch-purple)); */
+  color: var(--twitch-light);
   display: inline;
   font-weight: 700;
 }
 
-/* [data-twitch-message][data-twitch-sender-color-lightness='dark'] .twitch-chat-sender {
-  filter: brightness(1.3);
-} */
+[data-twitch-sender-roles~='broadcaster'] .twitch-chat-sender {
+  color: var(--active);
+}
+
+[data-twitch-sender-roles~='mod'] .twitch-chat-sender {
+  color: var(--secondary-alt);
+}
+
+[data-twitch-sender-roles~='subscriber'] .twitch-chat-sender {
+  color: var(--secondary);
+}
 
 [data-twitch-message] .twitch-chat-sender::after {
   content: ': ';
   color: var(--twitch-light);
   font-weight: normal;
+}
+
+[data-twitch-sender-roles~='mod'] .twitch-chat-sender::before {
+  content: '\🔨';
+}
+
+[data-twitch-sender-roles~='subscriber'] .twitch-chat-sender::before {
+  content: '\🧠';
 }
 
 [data-twitch-message] .twitch-chat-message {
@@ -91,7 +108,12 @@ body {
 
 [data-twitch-emote] {
   width: 1.2em;
-  margin-bottom: -0.2em;
+  margin-bottom: -0.3em;
+}
+
+[data-twitch-emote='<3'] {
+  width: 1.6em;
+  margin: -0.6em -0.4em;
 }
 
 [data-twitch-mentioned-user] {
@@ -112,11 +134,6 @@ body {
 [data-twitch-message] a {
   color: var(--twitch-purple);
   text-decoration: none;
-}
-
-[data-twitch-sender-roles~='broadcaster'] .twitch-chat-sender,
-[data-twitch-sender-roles~='mod'] .twitch-chat-sender {
-  color: var(--clr-active);
 }
 
 @keyframes fade-in-out {

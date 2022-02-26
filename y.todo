@@ -1,6 +1,8 @@
 //Stream list
 Today:
   ✔ !extensions - probably going to ask about nVim and others? @done(22-02-24 20:59)
+  ✔ chat fixes VIP color and icon @done(22-02-26 12:19)
+  ☐ timer fix with -time as feature and refactor
   ☐ floating emoji's (tie into fossabot combos) DM Manni
     //stream elements has a thing for it
 

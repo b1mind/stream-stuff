@@ -3,9 +3,9 @@
   --twitch-light: #bebebe;
   --twitch-dark-background: hsl(262 22% 10% / 90%);
   --twitch-purple: rgb(180 84 255);
-  --twitch-highlight-purple: #403960;
+  --twitch-highlight-purple: #514b6b;
   --secondary: #877fab;
-  --secondary-alt: #514b6b;
+  --secondary-alt: #403960;
   --active: #ff50ff;
 }
 
@@ -73,10 +73,8 @@ body {
   color: var(--active);
 }
 
-[data-twitch-sender-roles~='mod'] .twitch-chat-sender {
-  color: var(--secondary-alt);
-}
-
+[data-twitch-sender-roles~='mod'] .twitch-chat-sender,
+[data-twitch-sender-roles~='vip'] .twitch-chat-sender,
 [data-twitch-sender-roles~='subscriber'] .twitch-chat-sender {
   color: var(--secondary);
 }
@@ -93,6 +91,10 @@ body {
 
 [data-twitch-sender-roles~='subscriber'] .twitch-chat-sender::before {
   content: '\🧠';
+}
+
+[data-twitch-sender-roles~='vip'] .twitch-chat-sender::before {
+  content: '\💎';
 }
 
 [data-twitch-message] .twitch-chat-message {
@@ -112,8 +114,8 @@ body {
 }
 
 [data-twitch-emote='<3'] {
-  width: 1.6em;
-  margin: -0.6em -0.4em;
+  width: 1.8em;
+  margin: -0.6em -0.3em;
 }
 
 [data-twitch-mentioned-user] {

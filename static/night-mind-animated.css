@@ -69,14 +69,14 @@ body {
   font-weight: 700;
 }
 
-[data-twitch-sender-roles~='broadcaster'] .twitch-chat-sender {
-  color: var(--active);
-}
-
 [data-twitch-sender-roles~='mod'] .twitch-chat-sender,
 [data-twitch-sender-roles~='vip'] .twitch-chat-sender,
 [data-twitch-sender-roles~='subscriber'] .twitch-chat-sender {
   color: var(--secondary);
+}
+
+[data-twitch-sender-roles~='broadcaster'] .twitch-chat-sender {
+  color: var(--active);
 }
 
 [data-twitch-message] .twitch-chat-sender::after {
@@ -85,16 +85,21 @@ body {
   font-weight: normal;
 }
 
-[data-twitch-sender-roles~='mod'] .twitch-chat-sender::before {
-  content: '\🔨';
+/*todo replace emoji's with proper custom icons */
+[data-twitch-sender-roles~='vip'] .twitch-chat-sender::before {
+  content: '\💎';
 }
 
 [data-twitch-sender-roles~='subscriber'] .twitch-chat-sender::before {
   content: '\🧠';
 }
 
-[data-twitch-sender-roles~='vip'] .twitch-chat-sender::before {
-  content: '\💎';
+[data-twitch-sender-roles~='mod'] .twitch-chat-sender::before {
+  content: '\🔨';
+}
+
+[data-twitch-sender-roles~='broadcaster'] .twitch-chat-sender::before {
+  content: '\👺';
 }
 
 [data-twitch-message] .twitch-chat-message {

@@ -1,12 +1,9 @@
 //Stream list
 Today:
-  ✔ !extensions - probably going to ask about nVim and others? @done(22-02-24 20:59)
-  ✔ chat fixes VIP color and icon @done(22-02-26 12:19)
-  ✔ large raid alert not work (bad sound file name) @done(22-02-26 12:31)
-  ☐ timer fix with -time as feature and refactor
-  ☐ use the same refactor method for alerts animation
-  ☐ floating emoji's (tie into fossabot combos) DM Manni
-    //stream elements has a thing for it
+  ✔ chat overlay broadcaster color active pink @done(22-02-27 12:33)
+  ☐ stash timer refactor as a feature. (moved to tech debt)
+  ☐ !topic/title/today needs to be worked out
+  ☐ push chat changes after timer fix
 
 Questions:
   ☐ clean up store or leave default data?
@@ -18,7 +15,6 @@ Questions:
 
 Todo: 
   QoL: 
-    ✔ powertoys window docking - want locked window set ups to toggle @done(22-02-24 17:34)
     ☐ different browser for stream (edge insiders?)
     ☐ playlists OWN3D, Gamecaster, Bass Rebels, Streambeast(using)
 
@@ -26,6 +22,7 @@ Todo:
     ☐ emotes for subs
     ☐ cheer icons
     ☐ points icons
+    ☐ subMonth icons
 
   Channel Points:
     //will need auth for every thing but highlight
@@ -55,6 +52,7 @@ Todo:
     ☐ make some more clips and highlight reels
 
   Chat commands:
+    ☐ EasterEgg: emote combos with fossabot and alerts or some notification
     ☐ !project | !today - explain current project as to inform new viewers
     ☐ !figs - link to bare repo?
     ☐ !tools - "Milwaukee Drills are best"
@@ -89,6 +87,10 @@ Todo:
       // QMK input checker website?
 
 Tech debt:
+  ☐ timer refactor with -time elapse working
+  ☐ use the same time refactor method for alerts animation
+  ☐ floating emoji's (tie into fossabot combos) DM Manni
+    //stream elements has a thing for it
   ☐ improve on chat popup animation and styles
   ☐ chat needs higher limit or some kinda timer or queue
   ☐ Timer's use of setInterval is not the best method. Look to other solutions 
@@ -118,6 +120,10 @@ Wishlist:
   ☐ look into DIY streamdecks (yt history has good ones?)
   
 Archive:
+  ✔ !extensions - probably going to ask about nVim and others? @done(22-02-24 20:59) @project(Today)
+  ✔ chat fixes VIP color and icon @done(22-02-26 12:19) @project(Today)
+  ✔ large raid alert not work (bad sound file name) @done(22-02-26 12:31) @project(Today)
+  ✔ powertoys window docking - want locked window set ups to toggle @done(22-02-24 17:34) @project(Todo.QoL)
   ✔ timer color for UI needs change AAA @done(22-02-20 12:51) @project(Today)
   ✔ alert tag/type needs AA check again (use white like timer?) @done(22-02-20 13:52) @project(Today)
   ✔ mode inactive color needs to be increased @done(22-02-20 13:52) @project(Today)

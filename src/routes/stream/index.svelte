@@ -9,8 +9,7 @@
 
   let modes = ['chat', 'ghost', 'focus']
   let alertsQue = []
-  let countDown
-  let topic
+  let countDown, topic
 
   function storeAlert(alert) {
     let { type, user, msg } = alert
@@ -144,11 +143,10 @@
     }
 
     //note figure out how to use this
-    ComfyJS.onChat = (flags) => {
-      const { highlighted, subscriber } = flags
-      if (highlighted && subscriber) {
-        console.log(user)
-        console.dir(extra)
+    ComfyJS.onChat = (user, message, flags, self, extra) => {
+      const { highlighted } = flags
+
+      if (highlighted) {
         //needs tested still with channel points?
         runAlert('yuki', user, message)
       }

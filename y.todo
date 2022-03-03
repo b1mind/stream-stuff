@@ -1,17 +1,13 @@
 //Stream list
 Today:
-  ✔ chat overlay broadcaster color active pink @done(22-02-27 12:33)
-  ☐ stash timer refactor as a feature. (moved to tech debt)
-  ☐ !topic/title/today needs to be worked out
-  ☐ push chat changes after timer fix
+  ☐ host gifs on server change the urls (try to macro)
+  ☐ mute icon scene to use with AFK or at any time
 
 Questions:
-  ☐ clean up store or leave default data?
-  ☐ rename $alerts['names'] as they are better visual name?
-  ☐ Mute icon for all scenes? Can I detect mute?
-    mute with bind in scene
-  ☐ how to save OBS views? popout view for testing?
-  ☐ Can Streamparrot be use for floating emotes?
+  ☐ how can you use scenes in scenes (!so finitesingularity)
+  ☐ how to save OBS views? popout view for testing ?
+    //learn how to create backup as part of bare repo
+  ☐ Can Streamparrot be use for floating emotes? (yes? but do I need it?)
 
 Todo: 
   QoL: 
@@ -26,10 +22,9 @@ Todo:
 
   Channel Points:
     //will need auth for every thing but highlight
-    ☐ get some defaults right off the bat
     ☐ make a list or mind map for channel point ideas
     ☐ change song and replay song
-    ☐ highlight alert with msg on screen, hide from chat overlay
+    ☐ banger save song some how or name to add to a playlist
 
   Cam/Overlay Ideas:
     ☐ better transitions for switching between scenes (ask KP or BM)
@@ -53,14 +48,13 @@ Todo:
 
   Chat commands:
     ☐ EasterEgg: emote combos with fossabot and alerts or some notification
+    ☐ !typo for mistakes made in the code
     ☐ !project | !today - explain current project as to inform new viewers
     ☐ !figs - link to bare repo?
     ☐ !tools - "Milwaukee Drills are best"
     ☐ !fontUp - vsc cycle.FontToggle
     ☐ !todo - show chat todo | goals from that todo  
-    ☐ !volume of music
     ☐ !unmute command
-    ☐ !banger save song some how or name to add to a playlist
     ☐ !collab/!fusion dbz merge/fusion gif
     ☐ !kitty look at the kitty for when you get sidetracked
     ☐ !discord link on blog post (wds, kp, feh links?)
@@ -72,9 +66,8 @@ Todo:
 
   VIP / Subonly:
     ☐ !more commands period maybe get feedback from chat
-    ☐ !yuki (same as highlight but no points?)
+    ✔ !yuki (same as highlight but no points?) @done(22-03-03 13:02)
     ☐ !marinate (grab letter kenny gif)
-    ☐ !typo for mistakes made in the code
     ☐ !wifeBurn when wife gives me shit for something and I am talking about it
     ☐ redo the wording for fish
     ☐ food gif needs to be bellpeppers n beef 
@@ -118,8 +111,19 @@ Wishlist:
   ☐ animated SVG based on voice patterns to mimic talking
     //exp: https://www.twitch.tv/goki_dev 
   ☐ look into DIY streamdecks (yt history has good ones?)
-  
+    //exp https://www.touch-portal.com/ 
+    //or https://obsproject.com/forum/resources/lioranboard-2-stream-deck-animator.862/
+
 Archive:
+  ✔ chat overlay broadcaster color active pink @done(22-02-27 12:33) @project(Today)
+  ✔ stash timer refactor as a feature. (moved to tech debt) @done(22-03-03 11:38) @project(Today)
+  ✔ push chat changes after timer fix @done(22-03-03 11:38) @project(Today)
+  ✔ !topic/title/today needs to be worked out @done(22-03-03 11:38) @project(Today)
+  ✔ clean up store or leave default data @done(22-03-03 12:23) @project(Today)
+  ✔ rename $alerts['names'] as they are better visual name @done(22-03-03 12:23) @project(Today)
+  ✔ highlight alert with msg on screen, hide from chat overlay @done(22-03-03 12:49) @project(Today)
+  ✔ Mute icon for all scenes? Can I detect mute? (if its a sene?) @done(22-03-03 11:41) @project(Questions)
+  ✔ get some defaults right off the bat @done(22-03-03 11:41) @project(Todo.Channel Points)
   ✔ !extensions - probably going to ask about nVim and others? @done(22-02-24 20:59) @project(Today)
   ✔ chat fixes VIP color and icon @done(22-02-26 12:19) @project(Today)
   ✔ large raid alert not work (bad sound file name) @done(22-02-26 12:31) @project(Today)

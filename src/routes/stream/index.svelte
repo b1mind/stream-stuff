@@ -90,24 +90,24 @@
     ComfyJS.onSub = (user, message, subTierInfo, extra) => {
       console.dir(subTierInfo)
       let msg = `Tier ${subTierInfo}`
-      runAlert('sub', user, message || msg)
+      runAlert('subscribed', user, message || msg)
     }
 
     ComfyJS.onReSub = (user, streamMonths, cumulativeMonths) => {
       let msg = `${streamMonths} months on a ${cumulativeMonths} streak`
-      runAlert('reSub', user, msg)
+      runAlert('reSubscribed', user, msg)
     }
 
     ComfyJS.onSubGift = (gifterUser, streakMonths, senderCount, recipientUser) => {
       let msg = `Gifted ${recipientUser} a subscription!`
-      runAlert('giftSub', gifterUser, msg)
+      runAlert('giftedSub', gifterUser, msg)
     }
 
     //todo find out what type of sub this really is
     ComfyJS.onSubMysteryGift = (gifterUser, numberOfSubs, senderCount) => {
       //sender count is a total of gifted
       let msg = `Gifted ${numberOfSubs} subscriptions!`
-      runAlert('giftMysterySub', gifterUser, msg)
+      runAlert('mysterygift', gifterUser, msg)
     }
 
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
@@ -200,7 +200,9 @@
           <i>{$alerts[$alerts.type].msg}</i>
         </header>
 
-        <img src={$alerts[$alerts.type].url} alt="Gif for {$alerts.type}" />
+        {#if $alerts[$alerts.type].url}
+          <img src={$alerts[$alerts.type].url} alt="Gif for {$alerts.type}" />
+        {/if}
       </article>
     {/if}
   </div>

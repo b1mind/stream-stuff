@@ -6,8 +6,8 @@ const data = {
   mode: 'chat',
 
   raid: {
-    user: 'raidTestUser',
-    msg: `Raiding with 420 test viewers`,
+    user: 'RaidUser',
+    msg: `Being raided`,
     url: 'https://c.tenor.com/4g2pk3Cgf70AAAAC/mugen-pt.gif',
     sound: '/sounds/alertRaid.ogg',
     // raid > 20
@@ -17,35 +17,35 @@ const data = {
 
   cheer: {
     user: 'cheerUser',
-    msg: `cheered with X00 bits`,
+    msg: `cheered bits`,
     url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
     sound: '/sounds/alertBits.ogg',
   },
 
-  sub: {
-    user: 'testLongLongSubName',
-    msg: 'some msg user sent',
+  subscribed: {
+    user: 'subUser',
+    msg: 'user msg',
     url: 'https://media.giphy.com/media/p7QJSVvU4bMWc/giphy.gif',
     sound: '/sounds/alertSub3.ogg',
     //follower gif
     // url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
   },
 
-  reSub: {
+  resubscribed: {
     user: 'reSub',
-    msg: '69 months - 6 month streak',
+    msg: 'rescubscribed for another month',
     url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
     sound: '/sounds/alertSub2.ogg',
   },
 
-  giftSub: {
+  gifted: {
     user: 'GifterName',
     msg: 'Gifted User a sub',
     url: 'https://c.tenor.com/EzWoSC-xw34AAAAC/vash-thumbs-up.gif',
     sound: '/sounds/alertSub3.ogg',
   },
 
-  giftMysterySub: {
+  mysteryGift: {
     user: 'GifterName',
     msg: 'Gifted 5 subs',
     url: 'https://c.tenor.com/EzWoSC-xw34AAAAC/vash-thumbs-up.gif',

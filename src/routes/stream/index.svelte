@@ -148,7 +148,8 @@
       const { highlighted } = flags
 
       if (user === 'Fossabot' && message.includes('just followed')) {
-        runAlert('followed', user, message)
+        let [msgUser] = message.split(' ')
+        runAlert('followed', msgUser, 'just followed the stream')
       }
 
       if (highlighted) {

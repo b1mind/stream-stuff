@@ -111,9 +111,10 @@
     }
 
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
+      console.log(user)
       const { broadcaster, mod, highlighted, subscriber } = flags
       const vipGroup = ['broadcaster', 'mod', 'vip']
-      const vipCmdList = [...modes, 'raid', 'sub', 'game']
+      const vipCmdList = [...modes, 'raid', 'subscribed', 'game']
 
       //todo subGroup.forEach or better way to check both
       const subGroup = [...vipGroup, 'subscriber']

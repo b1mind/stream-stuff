@@ -31,6 +31,13 @@ const data = {
     // url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
   },
 
+  followed: {
+    user: 'followedUser',
+    msg: 'user msg',
+    url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
+    sound: '/sounds/alertSub2.ogg',
+  },
+
   resubscribed: {
     user: 'reSub',
     msg: 'rescubscribed for another month',

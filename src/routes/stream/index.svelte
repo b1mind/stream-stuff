@@ -146,6 +146,10 @@
     ComfyJS.onChat = (user, message, flags, self, extra) => {
       const { highlighted } = flags
 
+      if (user === 'Fossabot' && message.includes('just followed')) {
+        runAlert('followed', user, message)
+      }
+
       if (highlighted) {
         //needs tested still with channel points?
         runAlert('yuki', user, message)

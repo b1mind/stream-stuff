@@ -1,9 +1,12 @@
 //Stream list
 Today:
+  ✔ start a feature branch for node refactor @done
+  ✔ follow alert work around onChat() @done
   ☐ host gifs on server change the urls (try to macro)
   ☐ mute icon scene to use with AFK or at any time
 
 Questions:
+  ☐ really need to change up !title/topic/today.. decide already!?
   ☐ how can you use scenes in scenes (!so finitesingularity)
   ☐ how to save OBS views? popout view for testing ?
     //learn how to create backup as part of bare repo
@@ -58,6 +61,7 @@ Todo:
     ☐ !collab/!fusion dbz merge/fusion gif
     ☐ !kitty look at the kitty for when you get sidetracked
     ☐ !discord link on blog post (wds, kp, feh links?)
+    ☐ !4am make a gif for studio 60 quote
 
   GIFs:
     ☐ cheer, // no idea https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif

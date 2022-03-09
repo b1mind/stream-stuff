@@ -3,6 +3,7 @@
   import { fly, slide } from 'svelte/transition'
 
   import { alerts } from '$lib/data/alerts'
+  import { activity } from '$lib/data/activity'
   import Modes from '$lib/component/Modes.svelte'
   import Game from '$lib/component/Game.svelte'
   import Timer from '$lib/component/Timer.svelte'
@@ -10,6 +11,13 @@
   let modes = ['chat', 'ghost', 'focus']
   let alertsQue = []
   let countDown, topic
+
+  function storeActivity(alert) {
+    //todo set a limit of 3 or so
+    let { type, user } = alert
+    $activity = [{ type, user }, ...$activity]
+    console.log($activity)
+  }
 
   function storeAlert(alert) {
     let { type, user, msg } = alert
@@ -27,7 +35,6 @@
     //fixme sound needs to play once and not onCmd
     if ($alerts[type].sound && !$alerts.active) {
       let sound = new Audio($alerts[type].sound)
-      console.dir(sound)
       sound.play()
     }
   }
@@ -50,6 +57,7 @@
 
       if (alertCount === 0) {
         $alerts.active = false
+        storeActivity(alertsQue[0])
         removeAlert(alertsQue[0])
         return
       }
@@ -111,7 +119,6 @@
     }
 
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
-      console.log(user)
       const { broadcaster, mod, highlighted, subscriber } = flags
       const vipGroup = ['broadcaster', 'mod', 'vip']
       const vipCmdList = [...modes, 'raid', 'subscribed', 'game']
@@ -146,6 +153,8 @@
     //note figure out how to use this
     ComfyJS.onChat = (user, message, flags, self, extra) => {
       const { highlighted } = flags
+      console.dir(self)
+      console.dir(extra)
 
       if (user === 'Fossabot' && message.includes('just followed')) {
         let [msgUser] = message.split(' ')
@@ -214,7 +223,15 @@
   </div>
 
   <p>
-    {#if $alerts.mode}
+    {#if $activity.length !== 0}
+      <ul>
+        {#each $activity as msg}
+          <li>
+            {msg.type}:<br />{msg.user}
+          </li>
+        {/each}
+      </ul>
+    {:else if $alerts.mode}
       {$alerts[$alerts.mode].msg}
     {:else}
       No mode: Please set a productivity mode.

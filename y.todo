@@ -1,21 +1,22 @@
 //Stream list
 Today:
-  ✔ start a feature branch for node refactor @done
-  ✔ follow alert work around onChat() @done
-  ☐ host gifs on server change the urls (try to macro)
-  ☐ mute icon scene to use with AFK or at any time
+  ☐ add a rotating last sub/follow/raid in mode box
 
 Questions:
   ☐ really need to change up !title/topic/today.. decide already!?
-  ☐ how can you use scenes in scenes (!so finitesingularity)
   ☐ how to save OBS views? popout view for testing ?
     //learn how to create backup as part of bare repo
-  ☐ Can Streamparrot be use for floating emotes? (yes? but do I need it?)
+  ☐ Can Streamparrot/ShowMyChat be use for floating emotes? 
 
 Todo: 
   QoL: 
+    ☐ host gifs on server change the urls (try to macro)
     ☐ different browser for stream (edge insiders?)
     ☐ playlists OWN3D, Gamecaster, Bass Rebels, Streambeast(using)
+    ☐ mute icon scene to use with AFK or at any time
+    ☐ use scenes in scenes (!so finitesingularity)
+    ☐ implement song/artist into overlay with Snip
+      //https://github.com/dlrudie/Snip
 
   Affiliate: 
     ☐ emotes for subs
@@ -70,7 +71,6 @@ Todo:
 
   VIP / Subonly:
     ☐ !more commands period maybe get feedback from chat
-    ✔ !yuki (same as highlight but no points?) @done(22-03-03 13:02)
     ☐ !marinate (grab letter kenny gif)
     ☐ !wifeBurn when wife gives me shit for something and I am talking about it
     ☐ redo the wording for fish
@@ -119,6 +119,10 @@ Wishlist:
     //or https://obsproject.com/forum/resources/lioranboard-2-stream-deck-animator.862/
 
 Archive:
+  ✔ start a feature branch for node refactor @done @project(Today)
+  ✔ follow alert work around onChat() @done @project(Today)
+  ✔ fix emote position in chat overlay @done @project(Today)
+  ✔ !yuki (same as highlight but no points?) @done(22-03-03 13:02) @project(Todo.VIP / Subonly)
   ✔ chat overlay broadcaster color active pink @done(22-02-27 12:33) @project(Today)
   ✔ stash timer refactor as a feature. (moved to tech debt) @done(22-03-03 11:38) @project(Today)
   ✔ push chat changes after timer fix @done(22-03-03 11:38) @project(Today)

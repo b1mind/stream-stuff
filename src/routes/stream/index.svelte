@@ -13,12 +13,15 @@
   let countDown, topic
 
   function storeActivity(alert) {
-    //todo set a limit of 3 or so
     let { type, user } = alert
+    let toStore = ['raid', 'subscribed', 'followed', 'cheer']
+
+    if (!toStore.includes(type)) return
     $activity = [{ type, user }, ...$activity]
     console.log($activity)
   }
 
+  //fixme store gets written excessively
   function storeAlert(alert) {
     let { type, user, msg } = alert
     $alerts.type = type
@@ -153,8 +156,6 @@
     //note figure out how to use this
     ComfyJS.onChat = (user, message, flags, self, extra) => {
       const { highlighted } = flags
-      console.dir(self)
-      console.dir(extra)
 
       if (user === 'Fossabot' && message.includes('just followed')) {
         let [msgUser] = message.split(' ')
@@ -198,6 +199,19 @@
     {/if}
   </div>
 
+  <div class="recent-activity">
+    {#if $activity.length !== 0}
+      {#each $activity.slice(0, 3) as msg}
+        <div>
+          <h2>
+            {msg.type}
+          </h2>
+          {msg.user}
+        </div>
+      {/each}
+    {/if}
+  </div>
+
   <div class="alerts-wrap">
     <!-- <audio bind:this={sound} preload="auto" src="/sounds/alertSlide.ogg" /> -->
     {#if $alerts.active}
@@ -223,15 +237,7 @@
   </div>
 
   <p>
-    {#if $activity.length !== 0}
-      <ul>
-        {#each $activity as msg}
-          <li>
-            {msg.type}:<br />{msg.user}
-          </li>
-        {/each}
-      </ul>
-    {:else if $alerts.mode}
+    {#if $alerts.mode}
       {$alerts[$alerts.mode].msg}
     {:else}
       No mode: Please set a productivity mode.
@@ -252,7 +258,8 @@
 <style lang="scss">
   h1,
   h2,
-  p {
+  p,
+  ul {
     margin: 0;
   }
 
@@ -263,7 +270,7 @@
     grid-template-rows: 1fr 420px 54px 92px;
     grid-template-areas:
       '. . . modes'
-      '. . alerts .'
+      '. . alerts activity'
       '. . . .'
       'info msg . .';
     color: var(--clr-highlight-text);
@@ -292,6 +299,21 @@
     display: grid;
     gap: 20px;
     place-items: center;
+  }
+
+  .recent-activity {
+    grid-area: activity;
+    display: grid;
+    grid-auto-rows: max-content;
+    gap: 0.25rem;
+    justify-self: center;
+    color: var(--clr-white);
+    font-size: 1.1rem;
+
+    h2 {
+      color: var(--clr-highlight-text);
+      font-size: 0.75em;
+    }
   }
 
   .timer {

@@ -1,8 +1,12 @@
 //Stream list
 Today:
-  ☐ add a rotating last sub/follow/raid in mode box
+  ✔ change screencast pos @done
+  ✔ recent activity list right bar @done
+  ✘ add a rotating last sub/follow/raid in mode box @cancelled
+  ☐ style the recent activity list
 
 Questions:
+  ☐ can I grab user img like I would a badge and use it in overlay?
   ☐ really need to change up !title/topic/today.. decide already!?
   ☐ how to save OBS views? popout view for testing ?
     //learn how to create backup as part of bare repo

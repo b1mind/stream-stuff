@@ -17,7 +17,7 @@
     let toStore = ['raid', 'subscribed', 'followed', 'cheer']
 
     if (!toStore.includes(type)) return
-    $activity = [{ type, user }, ...$activity]
+    $activity = [{ type, user }, ...$activity.slice(0, 2)]
     console.log($activity)
   }
 
@@ -200,8 +200,9 @@
   </div>
 
   <div class="recent-activity">
+    <!-- Recent Activity -->
     {#if $activity.length !== 0}
-      {#each $activity.slice(0, 3) as msg}
+      {#each $activity as msg}
         <div>
           <h2>
             {msg.type}
@@ -264,7 +265,7 @@
   }
 
   main {
-    height: 1080px;
+    height: 100%;
     display: grid;
     grid-template-columns: 420px 1fr 296px 153px;
     grid-template-rows: 1fr 1fr 420px 54px 92px;
@@ -304,7 +305,7 @@
 
   .recent-activity {
     grid-area: activity;
-    margin-top: 4rem;
+    margin-top: 5rem;
     display: grid;
     grid-auto-rows: max-content;
     gap: 0.25rem;

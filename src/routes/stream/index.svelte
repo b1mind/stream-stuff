@@ -304,7 +304,7 @@
 
   .recent-activity {
     grid-area: activity;
-    margin-top: 3rem;
+    margin-top: 4rem;
     display: grid;
     grid-auto-rows: max-content;
     gap: 0.25rem;

@@ -264,13 +264,14 @@
   }
 
   main {
-    height: 100%;
+    height: 1080px;
     display: grid;
     grid-template-columns: 420px 1fr 296px 153px;
-    grid-template-rows: 1fr 420px 54px 92px;
+    grid-template-rows: 1fr 1fr 420px 54px 92px;
     grid-template-areas:
       '. . . modes'
-      '. . alerts activity'
+      '. . . activity'
+      '. . alerts .'
       '. . . .'
       'info msg . .';
     color: var(--clr-highlight-text);
@@ -303,6 +304,7 @@
 
   .recent-activity {
     grid-area: activity;
+    margin-top: 3rem;
     display: grid;
     grid-auto-rows: max-content;
     gap: 0.25rem;

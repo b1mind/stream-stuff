@@ -7,7 +7,7 @@ specifiers:
   autoprefixer: ^10.4.2
   comfy.js: ^1.1.13
   dotenv: ^16.0.0
-  gsap: npm:@gsap/shockingly@^3.9.1
+  gsap: ^3.9.1
   postcss: ^8.4.6
   postcss-combine-media-query: ^1.0.1
   prettier: ^2.4.1
@@ -19,6 +19,7 @@ specifiers:
 
 dependencies:
   dotenv: 16.0.0
+  gsap: 3.9.1
   tmi.js: 1.8.5
 
 devDependencies:
@@ -27,7 +28,6 @@ devDependencies:
   '@sveltejs/kit': 1.0.0-next.295_sass@1.49.7+svelte@3.46.3
   autoprefixer: 10.4.2_postcss@8.4.6
   comfy.js: 1.1.13
-  gsap: /@gsap/shockingly/3.9.1
   postcss: 8.4.6
   postcss-combine-media-query: 1.0.1
   prettier: 2.5.1
@@ -37,10 +37,6 @@ devDependencies:
   svelte-preprocess: 4.10.2_b0b9e26372fdc431126a677758c5e1f1
 
 packages:
-
-  /@gsap/shockingly/3.9.1:
-    resolution: {integrity: sha512-F/N8MDvXCFViyIeFiensvEdv/RzO32A3sM+xdLfSWL6dEHOuzTVIo6jthZzIJTFXrvOqwkyEU/TznhpZJwUZjQ==}
-    dev: true
 
   /@iarna/toml/2.2.5:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
@@ -533,6 +529,10 @@ packages:
   /graceful-fs/4.2.9:
     resolution: {integrity: sha512-NtNxqUcXgpW2iMrfqSfR73Glt39K+BLwWsPs94yR63v45T0Wbej7eRmL5cWfwEgqXnmjQp3zaJTshdRW/qC2ZQ==}
     dev: true
+
+  /gsap/3.9.1:
+    resolution: {integrity: sha512-JSGVYoC6da4pIjdF/yxFU6Rz8OojOIDkbooveZlfNg0+JIoFoRruyfWAEi6R/gUeNcuOiTqUIb0gi1nCNrHf8w==}
+    dev: false
 
   /has/1.0.3:
     resolution: {integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==}

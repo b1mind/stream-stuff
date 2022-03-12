@@ -16,6 +16,7 @@
     "@sveltejs/kit": "next",
     "autoprefixer": "^10.4.2",
     "comfy.js": "^1.1.13",
+    "gsap": "file:.script/gsap-bonus.tgz",
     "postcss": "^8.4.6",
     "postcss-combine-media-query": "^1.0.1",
     "prettier": "^2.4.1",

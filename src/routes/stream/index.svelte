@@ -7,6 +7,7 @@
   import Modes from '$lib/component/Modes.svelte'
   import Game from '$lib/component/Game.svelte'
   import Timer from '$lib/component/Timer.svelte'
+  import Activity from '$lib/component/Activity.svelte'
 
   let modes = ['chat', 'ghost', 'focus']
   let alertsQue = []
@@ -16,9 +17,9 @@
     let { type, user } = alert
     let toStore = ['raid', 'subscribed', 'followed', 'cheer']
 
+    //todo change schema to save per type for rotating
     if (!toStore.includes(type)) return
     $activity = [{ type, user }, ...$activity.slice(0, 2)]
-    console.log($activity)
   }
 
   //fixme store gets written excessively
@@ -35,7 +36,6 @@
     if (user) $alerts[type].user = user
     if (msg) $alerts[type].msg = msg
 
-    //fixme sound needs to play once and not onCmd
     if ($alerts[type].sound && !$alerts.active) {
       let sound = new Audio($alerts[type].sound)
       sound.play()
@@ -122,7 +122,7 @@
     }
 
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
-      const { broadcaster, mod, highlighted, subscriber } = flags
+      const { broadcaster, mod } = flags
       const vipGroup = ['broadcaster', 'mod', 'vip']
       const vipCmdList = [...modes, 'raid', 'subscribed', 'game']
 
@@ -145,6 +145,7 @@
         topic = message
       }
 
+      //todo test timout and add subCmdList check
       if (subCmdList.includes(command)) {
         const lastUserCmd = extra.sinceLastCommand.user
         if (lastUserCmd !== 0 && lastUserCmd < 10000) return
@@ -199,20 +200,6 @@
     {/if}
   </div>
 
-  <div class="recent-activity">
-    <!-- Recent Activity -->
-    {#if $activity.length !== 0}
-      {#each $activity as msg}
-        <div>
-          <h2>
-            {msg.type}
-          </h2>
-          {msg.user}
-        </div>
-      {/each}
-    {/if}
-  </div>
-
   <div class="alerts-wrap">
     <!-- <audio bind:this={sound} preload="auto" src="/sounds/alertSlide.ogg" /> -->
     {#if $alerts.active}
@@ -237,13 +224,9 @@
     {/if}
   </div>
 
-  <p>
-    {#if $alerts.mode}
-      {$alerts[$alerts.mode].msg}
-    {:else}
-      No mode: Please set a productivity mode.
-    {/if}
-  </p>
+  <div class="info">
+    <Activity />
+  </div>
 
   <!-- todo Text for bottom bar -->
   <h1>
@@ -265,7 +248,7 @@
   }
 
   main {
-    height: 100%;
+    height: 1070px;
     display: grid;
     grid-template-columns: 420px 1fr 296px 153px;
     grid-template-rows: 1fr 1fr 420px 54px 92px;
@@ -285,13 +268,11 @@
       font-size: 1.5rem;
       // text-align: center;
     }
+  }
 
-    p {
-      grid-area: info;
-      padding: 1.5rem 0 1.5rem 1.75rem;
-      font-size: 1.25rem;
-      font-weight: 700;
-    }
+  .test-controls {
+    position: absolute;
+    z-index: 99;
   }
 
   .modes {
@@ -301,22 +282,6 @@
     display: grid;
     gap: 20px;
     place-items: center;
-  }
-
-  .recent-activity {
-    grid-area: activity;
-    margin-top: 5rem;
-    display: grid;
-    grid-auto-rows: max-content;
-    gap: 0.25rem;
-    justify-self: center;
-    color: var(--clr-white);
-    font-size: 1.1rem;
-
-    h2 {
-      color: var(--clr-highlight-text);
-      font-size: 0.75em;
-    }
   }
 
   .timer {
@@ -376,8 +341,11 @@
     }
   }
 
-  .test-controls {
-    position: absolute;
-    z-index: 99;
+  .info {
+    grid-area: info;
+    padding: 1.5rem 0 1.5rem 1.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    overflow: hidden;
   }
 </style>

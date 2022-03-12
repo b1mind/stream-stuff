@@ -1,15 +1,17 @@
 //Stream list
 Today:
-  ✔ change screencast pos @done
-  ✔ recent activity list right bar @done
-  ✘ add a rotating last sub/follow/raid in mode box @cancelled
-  ☐ style the recent activity list
+  ✔ test local storage and use it for recent activity @done
+  ☐ start obstracting to components where it makes sense
+  ☐ bring in gsap and test rotating recent activity with modes like orig idea
+  ☐ highlighted alert needs its own or make the yuki chat bubble the same?
 
 Questions:
   ☐ can I grab user img like I would a badge and use it in overlay?
   ☐ really need to change up !title/topic/today.. decide already!?
   ☐ how to save OBS views? popout view for testing ?
     //learn how to create backup as part of bare repo
+  ☐ floating emoji's (tie into fossabot combos) DM Manni
+    //stream elements has a thing for it
   ☐ Can Streamparrot/ShowMyChat be use for floating emotes? 
 
 Todo: 
@@ -36,7 +38,6 @@ Todo:
 
   Cam/Overlay Ideas:
     ☐ better transitions for switching between scenes (ask KP or BM)
-    ☐ modes text box needs to rotate information like last sub/follow?/or something.
     ☐ animated svg for intro/outro scenes (text animations or masked bg)
     ☐ alerts animations tied into interface/overlay with GSAP better easing+yoyo
     ☐ test flags.highlighter can be used for yuki chat?
@@ -90,11 +91,7 @@ Todo:
 Tech debt:
   ☐ timer refactor with -time elapse working
   ☐ use the same time refactor method for alerts animation
-  ☐ floating emoji's (tie into fossabot combos) DM Manni
-    //stream elements has a thing for it
-  ☐ improve on chat popup animation and styles
-  ☐ chat needs higher limit or some kinda timer or queue
-  ☐ Timer's use of setInterval is not the best method. Look to other solutions 
+  ☐ timer on focus needs reset if timer === 0
   ☐ Comfy.js need 0auth secret passed to api endpoint so all needs to be there
     ☐ get auth working with comfy.js
   ☐ Twitch-Cli mock server working! //so close yet so far.. get help!(Prince?)
@@ -123,6 +120,14 @@ Wishlist:
     //or https://obsproject.com/forum/resources/lioranboard-2-stream-deck-animator.862/
 
 Archive:
+  ✘ modes text box needs to rotate information like last sub/follow?/or something. @cancelled @project(Todo.Cam/Overlay Ideas)
+  ✔ improve on chat popup animation and styles @done @project(Tech debt)
+  ✔ chat needs higher limit or some kinda timer or queue @done @project(Tech debt)
+  ✔ Timer's use of setInterval is not the best method. Look to other solutions @done @project(Tech debt)
+  ✔ change screencast pos @done @project(Today)
+  ✔ recent activity list right bar @done @project(Today)
+  ✘ add a rotating last sub/follow/raid in mode box @cancelled @project(Today)
+  ✔ style the recent activity list @done @project(Today)
   ✔ start a feature branch for node refactor @done @project(Today)
   ✔ follow alert work around onChat() @done @project(Today)
   ✔ fix emote position in chat overlay @done @project(Today)

@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store'
-let data = []
+import { persistStore } from './persistStore'
+const data = [{}]
 
-export const activity = writable(data)
+export const activity = persistStore('activity', data)

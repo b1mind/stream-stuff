@@ -60,17 +60,17 @@ const data = {
   },
 
   chat: {
-    msg: 'Chat mode: Just chatting! Ask me questions or help me code.',
+    msg: 'Just chatting! Ask me questions or help me code.',
     url: 'https://c.tenor.com/v3yWYLX8eC4AAAAC/jet-black-cowboy-bebop.gif',
   },
 
   ghost: {
-    msg: 'Ghost mode: Mic off cause I need to be quiet, music will be louder.',
+    msg: 'Mic off cause I need to be quiet, music will be louder.',
     url: 'https://c.tenor.com/MyrFCo_WTwIAAAAd/disappear-invisible.gif',
   },
 
   focus: {
-    msg: 'Focus mode: Being productive, might not respond to chat as much.',
+    msg: 'Being productive, might not respond to chat as much.',
     url: 'https://c.tenor.com/CD_F_Qh26z0AAAAC/asimov-solensan-bloody-eye.gif',
   },
 

@@ -12,6 +12,7 @@
   // })
 
   //need away to fire startTimer on reset (bubble function up)
+  //fixme fire timer when count changes period not just onMount
   onMount(() => {
     startTimer(countDown)
   })

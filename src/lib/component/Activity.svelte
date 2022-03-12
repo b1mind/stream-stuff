@@ -9,7 +9,7 @@
     const tl = gsap.timeline({
       repeat: -1,
       defaults: {
-        stagger: 10,
+        stagger: 25,
       },
     })
 

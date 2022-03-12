@@ -7,7 +7,7 @@ specifiers:
   autoprefixer: ^10.4.2
   comfy.js: ^1.1.13
   dotenv: ^16.0.0
-  gsap: file:.script/gsap-bonus.tgz
+  gsap: npm:@gsap/shockingly@^3.9.1
   postcss: ^8.4.6
   postcss-combine-media-query: ^1.0.1
   prettier: ^2.4.1
@@ -27,7 +27,7 @@ devDependencies:
   '@sveltejs/kit': 1.0.0-next.295_sass@1.49.7+svelte@3.46.3
   autoprefixer: 10.4.2_postcss@8.4.6
   comfy.js: 1.1.13
-  gsap: file:.script/gsap-bonus.tgz
+  gsap: /@gsap/shockingly/3.9.1
   postcss: 8.4.6
   postcss-combine-media-query: 1.0.1
   prettier: 2.5.1
@@ -37,6 +37,10 @@ devDependencies:
   svelte-preprocess: 4.10.2_b0b9e26372fdc431126a677758c5e1f1
 
 packages:
+
+  /@gsap/shockingly/3.9.1:
+    resolution: {integrity: sha512-F/N8MDvXCFViyIeFiensvEdv/RzO32A3sM+xdLfSWL6dEHOuzTVIo6jthZzIJTFXrvOqwkyEU/TznhpZJwUZjQ==}
+    dev: true
 
   /@iarna/toml/2.2.5:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
@@ -961,9 +965,3 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
-
-  file:.script/gsap-bonus.tgz:
-    resolution: {integrity: sha512-AkVycF1AK9LzGtuCdIL2ZLI3uMBd64hLkKoKKk4nbFoTsfjF8Sx7jrR/H9tF0qwybsTU+GPXSoIXfBQwDwW79A==, tarball: file:.script/gsap-bonus.tgz}
-    name: gsap
-    version: 3.9.1
-    dev: true

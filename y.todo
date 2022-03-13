@@ -3,6 +3,8 @@ Today:
   ✔ test local storage and use it for recent activity @done
   ✔ start obstracting to components where it makes sense @done
   ✔ bring in gsap and test rotating recent activity with modes like orig idea @done
+  ✔ svg masking for alerts gif @done
+  ☐ svg mask needs some touch up and polish
   ☐ highlighted alert needs its own or make the yuki chat bubble the same?
 
 Questions:
@@ -89,6 +91,7 @@ Todo:
       // QMK input checker website?
 
 Tech debt:
+  ☐ factor ugly if else chain for recent activity
   ☐ timer refactor with -time elapse working
   ☐ use the same time refactor method for alerts animation
   ☐ timer on focus needs reset if timer === 0

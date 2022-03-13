@@ -14,15 +14,23 @@
   let countDown, topic
 
   function storeActivity(alert) {
-    let { type, user } = alert
-    let toStore = ['raid', 'subscribed', 'followed', 'cheer']
+    //todo return sub month values and raid viewer numbers
+    let { type, user, msg, extras } = alert
+    let toStore = ['followed', 'subscribed', 'raid', 'cheer']
 
-    //todo change schema to save per type for rotating
     if (!toStore.includes(type)) return
-    $activity.forEach((type) => {
-      console.log(type)
-    })
-    // $activity = [{ type, user }, ...$activity.slice(0, 2)]
+
+    //this hard coded value works....
+    //todo refactor this ugly shit
+    if (type === 'followed') {
+      return ($activity[0].users = [user, ...$activity[0].users.slice(0, 2)])
+    } else if (type === 'subscribed') {
+      return ($activity[1].users = [user, ...$activity[1].users.slice(0, 2)])
+    } else if (type === 'raid') {
+      return ($activity[2].users = [user, `x${extras || ''} viewers`])
+    } else if (type === 'cheer') {
+      return ($activity[3].users = [user, `x${extras || ''} bits`])
+    }
   }
 
   //fixme store gets written excessively
@@ -51,8 +59,8 @@
     })
   }
 
-  function runAlert(type, user, msg) {
-    let currentAlert = { type: type, user: user, msg: msg }
+  function runAlert(type, user, msg, ...extras) {
+    let currentAlert = { type: type, user: user, msg: msg, extras: [...extras] }
     alertsQue = [...alertsQue, currentAlert]
 
     let alertCount = alertsQue.length
@@ -92,7 +100,7 @@
       }
 
       let msg = `Raiding with ${viewers} viewers`
-      runAlert('raid', user, msg)
+      runAlert('raid', user, msg, viewers)
     }
 
     ComfyJS.onCheer = (user, message, bits, flags, extra) => {
@@ -127,7 +135,7 @@
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
       const { broadcaster, mod } = flags
       const vipGroup = ['broadcaster', 'mod', 'vip']
-      const vipCmdList = [...modes, 'raid', 'subscribed', 'game']
+      const vipCmdList = [...modes, 'followed', 'raid', 'subscribed', 'game']
 
       //todo subGroup.forEach or better way to check both
       const subGroup = [...vipGroup, 'subscriber']
@@ -221,7 +229,36 @@
         </header>
 
         {#if $alerts[$alerts.type].url}
-          <img src={$alerts[$alerts.type].url} alt="Gif for {$alerts.type}" />
+          <!-- fixme make perserve center -->
+
+          <svg
+            width="100%"
+            viewBox="0 10 300 220"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g mask="url(#maskMe)">
+              <image
+                preserveAspectRatio="xMidYMid slice"
+                href={$alerts[$alerts.type].url}
+                alt="Gif for {$alerts.type}"
+              />
+            </g>
+
+            <path
+              d="M3 10.3557V2.99998L297 3V40.5703L278.079 25.1339L277.251 24.4584H276.182H18.8765L3 10.3557Z"
+              fill="#18141F"
+              stroke="#403960"
+              stroke-width="6"
+            />
+
+            <mask id="maskMe">
+              <path
+                d="M18.584 240L0 217.141V11.5536L18 27.2727H276L300 46.3636V240H18.584Z"
+                fill="white"
+              />
+            </mask>
+          </svg>
         {/if}
       </article>
     {/if}
@@ -322,7 +359,8 @@
       padding: 0.6rem;
       color: var(--clr-white);
       text-align: right;
-      border: 9px solid var(--clr-secondary-bg);
+      border: 6px solid var(--clr-highlight-text);
+      border-bottom: none;
       background-color: var(--clr-primary-bg);
 
       h2 {
@@ -332,15 +370,16 @@
       }
     }
 
-    img {
+    svg {
       justify-self: center;
-      display: block;
       max-width: 100%;
       height: 220px;
-      object-fit: cover;
-      // max-width: 292px;
-      // aspect-ratio: 16/9;
-      border: 9px solid var(--clr-primary-bg);
+    }
+
+    image {
+      width: 100%;
+      height: 220px;
+      object-fit: center;
     }
   }
 

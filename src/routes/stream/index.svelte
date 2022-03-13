@@ -19,7 +19,8 @@
 
     //todo change schema to save per type for rotating
     if (!toStore.includes(type)) return
-    $activity = [{ type, user }, ...$activity.slice(0, 2)]
+    $activity[type] = [user, ...$activity[type].slice(0, 2)]
+    // $activity = [{ type, user }, ...$activity.slice(0, 2)]
   }
 
   //fixme store gets written excessively
@@ -288,7 +289,7 @@
     align-self: start;
     justify-self: end;
     padding: 0.35rem 0.5rem;
-    color: var(--clr-white);
+    color: var(--clr-primary-bg);
     font-size: 1.1rem;
   }
 
@@ -302,10 +303,10 @@
     b {
       justify-self: end;
       padding: 0.35rem 0.65rem;
-      color: var(--clr-white);
+      color: var(--clr-primary-bg);
       text-transform: uppercase;
       font-weight: 800;
-      background-color: var(--clr-highlight);
+      background-color: var(--clr-highlight-text);
       z-index: 99;
     }
   }

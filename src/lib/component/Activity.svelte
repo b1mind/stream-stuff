@@ -9,14 +9,15 @@
     const tl = gsap.timeline({
       repeat: -1,
       defaults: {
-        stagger: 25,
+        stagger: { amount: 25, ease: 'none' },
       },
     })
 
     //prettier-ignore
     tl
+      // .fromTo(toAnimate, { autoAlpha: 0, y: '2rem'}, { autoAlpha:1, y: 0})
       .from(toAnimate, { autoAlpha: 0, y: '2rem'})
-      .to(toAnimate, { autoAlpha: 0, y: '-2rem' }, '-=0.75')
+      .to(toAnimate, { autoAlpha: 0, y: '-2rem' }, '-=18')
   })
 </script>
 
@@ -33,20 +34,29 @@
     {/if}
   </div>
 
-  <div>
+  {#each $activity as activityType}
+    {#if activityType.users.length !== 0}
+      <div>
+        <b>Recent {activityType.type}: </b>
+        {[...activityType.users]}
+      </div>
+    {/if}
+  {/each}
+
+  <!-- <div>
     {#if $activity.length !== 0}
       <b> Recent Activity: </b>
       {#each $activity as msg}
         {msg.user}:{msg.type}, {'\n'}
       {/each}
     {/if}
-  </div>
+  </div> -->
 </div>
 
 <style lang="scss">
   .anime-wrapper {
     display: grid;
-    place-items: center;
+    // place-items: center;
     color: var(--clr-white);
     font-size: 1.1rem;
 
@@ -58,7 +68,7 @@
   b {
     margin: 0;
     color: var(--clr-highlight-text);
-    font-size: 0.75em;
+    // font-size: 0.75em;
     text-transform: capitalize;
   }
 </style>

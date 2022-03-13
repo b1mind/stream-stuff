@@ -39,7 +39,7 @@
     {#if activityType.users.length !== 0}
       <div>
         <b>Recent {activityType.type}: </b>
-        {[...activityType.users]}
+        {[activityType.users].toString().split(',').join(', ')}
       </div>
     {/if}
   {/each}

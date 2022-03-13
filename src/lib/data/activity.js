@@ -2,7 +2,7 @@ import { persistStore } from './persistStore'
 const data = [
   {
     type: 'followed',
-    users: ['dungeoneer3', 'dota2attitude', 'MistressStarr'],
+    users: ['devcajaye', 'x_Egoist', 'dungeoneer3'],
   },
   {
     type: 'subscribed',
@@ -18,4 +18,4 @@ const data = [
   },
 ]
 
-export const activity = persistStore('recent', data)
+export const activity = persistStore('recentActivity', data)

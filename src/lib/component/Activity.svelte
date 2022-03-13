@@ -17,7 +17,7 @@
     tl
       // .fromTo(toAnimate, { autoAlpha: 0, y: '2rem'}, { autoAlpha:1, y: 0})
       .from(toAnimate, { autoAlpha: 0, y: '2rem'})
-      .to(toAnimate, { autoAlpha: 0, y: '-2rem' }, '-=18')
+      .to(toAnimate, { autoAlpha: 0, y: '-2rem' }, '-=20')
   })
 </script>
 

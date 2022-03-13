@@ -4,7 +4,8 @@ Today:
   ✔ start obstracting to components where it makes sense @done
   ✔ bring in gsap and test rotating recent activity with modes like orig idea @done
   ✔ svg masking for alerts gif @done
-  ☐ svg mask needs some touch up and polish
+  ✔ svg mask needs some touch up and polish @done
+  ☐ playlists OWN3D, Gamecaster, Bass Rebels, Streambeast(using)
   ☐ highlighted alert needs its own or make the yuki chat bubble the same?
 
 Questions:
@@ -20,7 +21,6 @@ Todo:
   QoL: 
     ☐ host gifs on server change the urls (try to macro)
     ☐ different browser for stream (edge insiders?)
-    ☐ playlists OWN3D, Gamecaster, Bass Rebels, Streambeast(using)
     ☐ mute icon scene to use with AFK or at any time
     ☐ use scenes in scenes (!so finitesingularity)
     ☐ implement song/artist into overlay with Snip

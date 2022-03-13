@@ -33,7 +33,6 @@ body {
   min-width: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   display: grid;
   gap: 3px;
   align-items: end;
@@ -67,10 +66,18 @@ body {
   position: absolute;
   bottom: 0;
   width: 1.2em;
-  /* line-height: 1em; */
-  vertical-align: middle;
-  /* margin-bottom: -0.3em; */
+  margin: 1em;
+  opacity: 0;
   animation: float-y 15s forwards linear, fade-in-out 15s forwards linear;
+  z-index: 99;
+}
+
+[data-twitch-emote]:nth-child(2n - 1) {
+  animation-delay: 2s;
+}
+
+[data-twitch-emote]:nth-child(3n + 1) {
+  animation-delay: 3s;
 }
 
 [data-twitch-emote='<3'] {
@@ -109,12 +116,12 @@ body {
     transform: translate(100%, 100%);
   }
   25% {
-    transform: translate(-50%, -250%);
+    transform: translate(-50%, -200%);
   }
   75% {
-    transform: translate(100%, -350%);
+    transform: translate(100%, -400%);
   }
   100% {
-    transform: translate(-50%, -500%);
+    transform: translate(-50%, -600%);
   }
 }

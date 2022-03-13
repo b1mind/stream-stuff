@@ -1,0 +1,120 @@
+:root {
+  --twitch-gray: rgb(173 173 184);
+  --twitch-light: #bebebe;
+  --twitch-dark-background: hsl(262 22% 10% / 93%);
+  --twitch-purple: rgb(180 84 255);
+  --twitch-highlight-purple: #514b6b;
+  --secondary: #877fab;
+  --secondary-alt: #403960;
+  --active: #ff50ff;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  display: grid;
+  align-items: end;
+  background-color: transparent;
+}
+
+[data-twitch-chat] {
+  width: 175px;
+  min-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: grid;
+  gap: 3px;
+  align-items: end;
+  color: var(--twitch-gray);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 28px;
+  list-style: none;
+}
+
+[data-twitch-message] {
+  visibility: collapse;
+  min-width: 100%;
+  margin: 0;
+}
+
+[data-twitch-message-reply] {
+  display: none;
+  /* color: var(--twitch-gray);
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; */
+}
+
+[data-twitch-message] .twitch-chat-sender {
+  display: none;
+}
+
+[data-twitch-emote] {
+  visibility: visible;
+  position: absolute;
+  bottom: 0;
+  width: 1.2em;
+  /* line-height: 1em; */
+  vertical-align: middle;
+  /* margin-bottom: -0.3em; */
+  animation: float-y 15s forwards linear, fade-in-out 15s forwards linear;
+}
+
+[data-twitch-emote='<3'] {
+  width: 1.8em;
+  margin: -0.6em -0.3em;
+}
+
+[data-twitch-mentioned-user] {
+  background-color: #323239;
+  color: inherit;
+  padding: 0.2rem 0.4rem;
+}
+
+.twitch-chat-command {
+  background-color: transparent;
+  color: inherit;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes float-y {
+  0% {
+    transform: translate(100%, 100%);
+  }
+  25% {
+    transform: translate(-50%, -250%);
+  }
+  75% {
+    transform: translate(100%, -350%);
+  }
+  100% {
+    transform: translate(-50%, -500%);
+  }
+}

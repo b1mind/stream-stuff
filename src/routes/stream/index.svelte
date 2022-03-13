@@ -19,7 +19,9 @@
 
     //todo change schema to save per type for rotating
     if (!toStore.includes(type)) return
-    $activity[type] = [user, ...$activity[type].slice(0, 2)]
+    $activity.forEach((type) => {
+      console.log(type)
+    })
     // $activity = [{ type, user }, ...$activity.slice(0, 2)]
   }
 

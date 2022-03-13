@@ -18,4 +18,4 @@ const data = [
   },
 ]
 
-export const activity = persistStore('activity', data)
+export const activity = persistStore('recent', data)

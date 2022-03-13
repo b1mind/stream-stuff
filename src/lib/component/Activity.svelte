@@ -6,18 +6,19 @@
 
   onMount(() => {
     const toAnimate = gsap.utils.toArray('.anime-wrapper > *')
+
     const tl = gsap.timeline({
       repeat: -1,
       defaults: {
-        stagger: { amount: 25, ease: 'none' },
+        stagger: { each: 20 },
+        ease: 'none',
       },
     })
 
     //prettier-ignore
     tl
-      // .fromTo(toAnimate, { autoAlpha: 0, y: '2rem'}, { autoAlpha:1, y: 0})
       .from(toAnimate, { autoAlpha: 0, y: '2rem'})
-      .to(toAnimate, { autoAlpha: 0, y: '-2rem' }, '-=20')
+      .to(toAnimate, { autoAlpha: 0, y: '-2rem' }, '-=61')
   })
 </script>
 
@@ -56,7 +57,7 @@
 <style lang="scss">
   .anime-wrapper {
     display: grid;
-    // place-items: center;
+    align-items: center;
     color: var(--clr-white);
     font-size: 1.1rem;
 

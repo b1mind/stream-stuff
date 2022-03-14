@@ -5,17 +5,16 @@ Today:
   ✔ bring in gsap and test rotating recent activity with modes like orig idea @done
   ✔ svg masking for alerts gif @done
   ✔ svg mask needs some touch up and polish @done
-  ☐ playlists OWN3D, Gamecaster, Bass Rebels, Streambeast(using)
-  ☐ highlighted alert needs its own or make the yuki chat bubble the same?
+  ✔ floating chat overlay @done
+  ✔ can I grab user img like I would a badge and use it in overlay? (not w/comfy) @done
 
 Questions:
-  ☐ can I grab user img like I would a badge and use it in overlay?
+  ☐ highlighted alert needs its own or make the yuki chat bubble the same?
   ☐ really need to change up !title/topic/today.. decide already!?
   ☐ how to save OBS views? popout view for testing ?
     //learn how to create backup as part of bare repo
-  ☐ floating emoji's (tie into fossabot combos) DM Manni
-    //stream elements has a thing for it
-  ☐ Can Streamparrot/ShowMyChat be use for floating emotes? 
+  ✔ floating emoji's (tie into fossabot combos) DM Manni @done
+  ✔ Can Streamparrot/ShowMyChat be use for floating emotes? @done
 
 Todo: 
   QoL: 
@@ -23,6 +22,8 @@ Todo:
     ☐ different browser for stream (edge insiders?)
     ☐ mute icon scene to use with AFK or at any time
     ☐ use scenes in scenes (!so finitesingularity)
+    ☐ playlists OWN3D, Gamecaster, Bass Rebels, Streambeast(using)
+      //revisit but none really jumped out at me
     ☐ implement song/artist into overlay with Snip
       //https://github.com/dlrudie/Snip
 

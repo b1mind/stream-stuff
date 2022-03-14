@@ -23,9 +23,9 @@
     //this hard coded value works....
     //todo refactor this ugly shit
     if (type === 'followed') {
-      return ($activity[0].users = [user, ...$activity[0].users.slice(0, 2)])
+      return ($activity[0].users = [user, ...$activity[0].users.slice(0, 3)])
     } else if (type === 'subscribed') {
-      return ($activity[1].users = [user, ...$activity[1].users.slice(0, 2)])
+      return ($activity[1].users = [user, ...$activity[1].users.slice(0, 3)])
     } else if (type === 'raid') {
       return ($activity[2].users = [user, `x${extras || ''} viewers`])
     } else if (type === 'cheer') {
@@ -168,6 +168,7 @@
     //note figure out how to use this
     ComfyJS.onChat = (user, message, flags, self, extra) => {
       const { highlighted } = flags
+      console.dir(extra)
 
       if (user === 'Fossabot' && message.includes('just followed')) {
         let [msgUser] = message.split(' ')

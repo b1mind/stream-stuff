@@ -66,15 +66,15 @@ body {
   margin: 1em;
   font-size: 34px;
   opacity: 0;
-  animation: float-left 5s forwards linear, fade-in-out 5s forwards linear;
+  animation: float-left 10s forwards linear, fade-in-out 10s forwards linear;
   z-index: 99;
 }
 
 [data-twitch-emote]:nth-child(3n - 1) {
   left: 15px;
   bottom: 0;
-  animation-delay: 1.75s !important;
-  animation: float-right 5s forwards linear, fade-in-out 5s forwards linear;
+  animation-delay: 1.25s !important;
+  animation: float-right 10s forwards linear, fade-in-out 10s forwards linear;
 }
 
 [data-twitch-emote]:nth-child(3n + 1) {
@@ -99,7 +99,7 @@ body {
   left: 35px;
   bottom: -5px;
   animation-delay: 2.25s !important;
-  animation: float-right 5s forwards linear, fade-in-out 5s forwards linear;
+  animation: float-right 10s forwards linear, fade-in-out 10s forwards linear;
 }
 
 [data-twitch-emote]:nth-child(5n + 1) {
@@ -115,7 +115,7 @@ body {
 }
 
 /* [data-twitch-emote]:nth-child(even) {
-  animation: float-right 5s forwards linear, fade-in-out 5s forwards linear;
+  animation: float-right 10s forwards linear, fade-in-out 10s forwards linear;
 } */
 
 [data-twitch-emote='<3'] {

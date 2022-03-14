@@ -47,7 +47,7 @@
 <style lang="scss">
   b {
     font-weight: 700;
-    font-family: 'Space Mono', monospace;
+    font-family: 'Roboto Mono', monospace;
     line-height: 1;
   }
 </style>

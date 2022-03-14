@@ -6,19 +6,19 @@
 
   onMount(() => {
     const toAnimate = gsap.utils.toArray('.anime-wrapper > *')
+    console.dir(toAnimate.length)
 
     const tl = gsap.timeline({
       repeat: -1,
       defaults: {
         stagger: { each: 20 },
-        ease: 'none',
       },
     })
 
     //prettier-ignore
     tl
-      .from(toAnimate, { autoAlpha: 0, y: '2rem'})
-      .to(toAnimate, { autoAlpha: 0, y: '-2rem' }, '-=61')
+      .from(toAnimate, { autoAlpha: 0, y: '2.5rem', ease: 'bounce.out(2)', })
+      .to(toAnimate, { autoAlpha: 0, y: '-2.5rem' , ease: 'bounce.in(2)'}, '-=60.75')
   })
 </script>
 

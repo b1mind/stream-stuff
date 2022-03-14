@@ -270,13 +270,11 @@
   </div>
 
   <!-- todo Text for bottom bar -->
-  <h1>
-    {#if topic}
+  {#if topic}
+    <h1>
       {topic}
-    {:else}
-      Working on making this overlay better. WIP
-    {/if}
-  </h1>
+    </h1>
+  {/if}
 </main>
 
 <!-- svelte-ignore css-unused-selector -->

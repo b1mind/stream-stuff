@@ -34,12 +34,10 @@ body {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 3px;
   align-items: end;
-  color: var(--twitch-gray);
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 28px;
+  font-size: 5px;
   list-style: none;
+  overflow: hidden;
 }
 
 [data-twitch-message] {
@@ -64,43 +62,42 @@ body {
 [data-twitch-emote] {
   visibility: visible;
   position: absolute;
-  left: 0px;
-  bottom: 0;
   width: 1.2em;
   margin: 1em;
+  font-size: 34px;
   opacity: 0;
   animation: float-left 15s forwards linear, fade-in-out 15s forwards linear;
   z-index: 99;
 }
 
 [data-twitch-emote]:nth-child(3n - 1) {
-  left: 80px;
+  left: 15px;
   bottom: 0;
-  animation-delay: 3s !important;
+  animation-delay: 1.25s !important;
   animation: float-right 15s forwards linear, fade-in-out 15s forwards linear;
 }
 
 [data-twitch-emote]:nth-child(3n + 1) {
-  left: -40;
+  left: -20;
   bottom: -10px;
-  animation-delay: 1.5s !important;
+  animation-delay: 1s !important;
 }
 
 [data-twitch-emote]:nth-child(4n - 1) {
-  left: 50px;
+  left: -10px;
   bottom: 30px;
-  animation-delay: 2s !important;
+  animation-delay: 3s !important;
 }
 
 [data-twitch-emote]:nth-child(4n + 1) {
-  left: -10px;
+  left: -25px;
   bottom: 15px;
   animation-delay: 1.5s !important;
 }
 
 [data-twitch-emote]:nth-child(5n - 1) {
-  left: -25px;
-  bottom: -40px;
+  left: 35px;
+  bottom: -5px;
   animation-delay: 2.25s !important;
   animation: float-right 15s forwards linear, fade-in-out 15s forwards linear;
 }
@@ -112,9 +109,9 @@ body {
 }
 
 [data-twitch-emote]:nth-child(6n + 1) {
-  left: 37px;
-  bottom: -65px;
-  animation-delay: 1.25s !important;
+  left: inherit;
+  bottom: 20px;
+  animation-delay: 0.25s !important;
 }
 
 /* [data-twitch-emote]:nth-child(even) {

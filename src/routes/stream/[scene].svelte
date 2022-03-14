@@ -24,8 +24,8 @@
     </h2>
     <b>Soon</b>
 
-    <time datetime="00:05:00">
-      <Timer countDown="5" />
+    <time datetime="00:10:00">
+      <Timer countDown="10" />
     </time>
   </article>
 

@@ -135,7 +135,7 @@
     ComfyJS.onCommand = (user, command, message, flags, extra) => {
       const { broadcaster, mod } = flags
       const vipGroup = ['broadcaster', 'mod', 'vip']
-      const vipCmdList = [...modes, 'followed', 'raid', 'subscribed', 'game']
+      const vipCmdList = [...modes, 'game']
 
       //todo subGroup.forEach or better way to check both
       const subGroup = [...vipGroup, 'subscriber']
@@ -149,7 +149,7 @@
       })
 
       if ((broadcaster || mod) && command === 'focus') {
-        countDown = 20
+        countDown = 25
       }
 
       if ((broadcaster || mod) && command === 'topic') {

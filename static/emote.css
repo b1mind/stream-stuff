@@ -29,7 +29,7 @@ body {
 }
 
 [data-twitch-chat] {
-  width: 175px;
+  width: 150px;
   min-width: 100%;
   margin: 0;
   padding: 0;
@@ -64,31 +64,67 @@ body {
 [data-twitch-emote] {
   visibility: visible;
   position: absolute;
+  left: 0px;
   bottom: 0;
   width: 1.2em;
   margin: 1em;
   opacity: 0;
-  animation: float-y 15s forwards linear, fade-in-out 15s forwards linear;
+  animation: float-left 15s forwards linear, fade-in-out 15s forwards linear;
   z-index: 99;
 }
 
-[data-twitch-emote]:nth-child(2n - 1) {
-  animation-delay: 2s;
+[data-twitch-emote]:nth-child(3n - 1) {
+  left: 120px;
+  bottom: 0;
+  animation-delay: 3s !important;
+  animation: float-right 15s forwards linear, fade-in-out 15s forwards linear;
 }
 
 [data-twitch-emote]:nth-child(3n + 1) {
-  animation-delay: 3s;
+  left: -40;
+  bottom: -10px;
+  animation-delay: 1.5s !important;
 }
+
+[data-twitch-emote]:nth-child(4n - 1) {
+  left: 64px;
+  bottom: 30px;
+  animation-delay: 2s !important;
+  animation: float-right 15s forwards linear, fade-in-out 15s forwards linear;
+}
+
+[data-twitch-emote]:nth-child(4n + 1) {
+  left: -10px;
+  bottom: 15px;
+  animation-delay: 1.5s !important;
+}
+
+[data-twitch-emote]:nth-child(5n - 1) {
+  left: 95px;
+  bottom: -40px;
+  animation-delay: 2.25s !important;
+  animation: float-right 15s forwards linear, fade-in-out 15s forwards linear;
+}
+
+[data-twitch-emote]:nth-child(5n + 1) {
+  left: 85px;
+  bottom: 10px;
+  animation-delay: 2.5s !important;
+}
+
+[data-twitch-emote]:nth-child(6n + 1) {
+  left: 37px;
+  bottom: -65px;
+  animation-delay: 1.25s !important;
+}
+
+/* [data-twitch-emote]:nth-child(even) {
+  animation: float-right 15s forwards linear, fade-in-out 15s forwards linear;
+} */
 
 [data-twitch-emote='<3'] {
   width: 1.8em;
   margin: -0.6em -0.3em;
-}
-
-[data-twitch-mentioned-user] {
-  background-color: #323239;
-  color: inherit;
-  padding: 0.2rem 0.4rem;
 }
 
 .twitch-chat-command {
@@ -111,17 +147,38 @@ body {
   }
 }
 
-@keyframes float-y {
+@keyframes float-left {
   0% {
     transform: translate(100%, 100%);
   }
   25% {
     transform: translate(-50%, -200%);
   }
-  75% {
+  50% {
     transform: translate(100%, -400%);
   }
-  100% {
+  75% {
     transform: translate(-50%, -600%);
+  }
+  100% {
+    transform: translate(100%, -800%);
+  }
+}
+
+@keyframes float-right {
+  0% {
+    transform: translate(-50%, 100%);
+  }
+  25% {
+    transform: translate(100%, -200%);
+  }
+  50% {
+    transform: translate(-50%, -400%);
+  }
+  75% {
+    transform: translate(100%, -600%);
+  }
+  100% {
+    transform: translate(-50%, -800%);
   }
 }

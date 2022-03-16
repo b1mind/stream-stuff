@@ -1,8 +1,8 @@
 //Stream list
 Today:
-  ☐ MUST obstract into its own project/repo
-  ☐ set up hosting on vps
-  ☐ configure auto deploy with github repo
+  ✔ MUST obstract into its own project/repo @done
+  ✔ set up hosting on vps @done
+  ✔ configure auto deploy with github repo @done
 
 backburner:
   ☐ clean up animations for floating emotes

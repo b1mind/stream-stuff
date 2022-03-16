@@ -1,7 +1,7 @@
 :root {
   --twitch-gray: rgb(173 173 184);
   --twitch-light: #bebebe;
-  --twitch-dark-background: hsl(262 22% 10% / 93%);
+  --twitch-dark-background: hsl(262 22% 10% / 95%);
   --twitch-purple: rgb(180 84 255);
   --twitch-highlight-purple: #514b6b;
   --secondary: #877fab;
@@ -51,6 +51,7 @@ body {
   padding-top: 5.625px;
   line-height: 1.2;
   background-color: var(--twitch-dark-background);
+  /* animation: fade-in 0.5s forwards, slide-out-up 0.5s forwards; */
   animation: fade-in-out 15s forwards, slide-out-up 0.5s forwards;
 }
 
@@ -147,6 +148,15 @@ li[data-twitch-message-status*='highlighted'] {
 [data-twitch-message] a {
   color: var(--twitch-purple);
   text-decoration: none;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fade-in-out {

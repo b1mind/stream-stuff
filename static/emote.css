@@ -64,9 +64,9 @@ body {
   position: absolute;
   width: 1.2em;
   margin: 1em;
-  font-size: 34px;
+  font-size: 42px;
   opacity: 0;
-  animation: float-left 10s forwards linear, fade-in-out 10s forwards linear;
+  animation: float-left 7.5s forwards linear, fade-in-out 7.5s forwards linear;
   z-index: 99;
 }
 
@@ -74,7 +74,7 @@ body {
   left: 15px;
   bottom: 0;
   animation-delay: 1.25s !important;
-  animation: float-right 10s forwards linear, fade-in-out 10s forwards linear;
+  animation: float-right 7.5s forwards linear, fade-in-out 7.5s forwards linear;
 }
 
 [data-twitch-emote]:nth-child(3n + 1) {
@@ -99,7 +99,7 @@ body {
   left: 35px;
   bottom: -5px;
   animation-delay: 2.25s !important;
-  animation: float-right 10s forwards linear, fade-in-out 10s forwards linear;
+  animation: float-right 7.5s forwards linear, fade-in-out 7.5s forwards linear;
 }
 
 [data-twitch-emote]:nth-child(5n + 1) {
@@ -115,7 +115,7 @@ body {
 }
 
 /* [data-twitch-emote]:nth-child(even) {
-  animation: float-right 10s forwards linear, fade-in-out 10s forwards linear;
+  animation: float-right 7.5s forwards linear, fade-in-out 7.5s forwards linear;
 } */
 
 [data-twitch-emote='<3'] {
@@ -135,7 +135,7 @@ body {
   10% {
     opacity: 1;
   }
-  95% {
+  55% {
     opacity: 1;
   }
   100% {
@@ -148,16 +148,16 @@ body {
     transform: translate(100%, 100%);
   }
   25% {
-    transform: translate(-50%, -200%);
+    transform: translate(-50%, -150%);
   }
   50% {
-    transform: translate(100%, -400%);
+    transform: translate(100%, -300%);
   }
   75% {
-    transform: translate(-50%, -600%);
+    transform: translate(-50%, -450%);
   }
   100% {
-    transform: translate(100%, -800%);
+    transform: translate(100%, -600%);
   }
 }
 
@@ -166,15 +166,15 @@ body {
     transform: translate(-50%, 100%);
   }
   25% {
-    transform: translate(100%, -200%);
+    transform: translate(100%, -150%);
   }
   50% {
-    transform: translate(-50%, -400%);
+    transform: translate(-50%, -300%);
   }
   75% {
-    transform: translate(100%, -600%);
+    transform: translate(100%, -450%);
   }
   100% {
-    transform: translate(-50%, -800%);
+    transform: translate(-50%, -600%);
   }
 }

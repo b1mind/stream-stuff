@@ -27,7 +27,8 @@ html {
 
 body {
   margin: 0;
-  background-color: #1b1b1b;
+  color: var(--clr-white);
+  background-color: hsl(260, 24%, 10%);
   // overflow: hidden;
 }
 

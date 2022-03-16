@@ -23,9 +23,9 @@
     //this hard coded value works....
     //todo refactor this ugly shit
     if (type === 'followed') {
-      return ($activity[0].users = [user, ...$activity[0].users.slice(0, 3)])
+      return ($activity[0].users = [user, ...$activity[0].users.slice(0, 4)])
     } else if (type === 'subscribed') {
-      return ($activity[1].users = [user, ...$activity[1].users.slice(0, 3)])
+      return ($activity[1].users = [user, ...$activity[1].users.slice(0, 4)])
     } else if (type === 'raid') {
       return ($activity[2].users = [user, `x${extras || ''} viewers`])
     } else if (type === 'cheer') {
@@ -93,7 +93,7 @@
 
       //todo refactor to use the store? pass in url to storeAlert
       //better way like an array to pass url/gifs?
-      if (viewers > 10) {
+      if (viewers > 20) {
         $alerts['raid'].url =
           'https://c.tenor.com/-QlJHq586eUAAAAd/cowboy-bebop-faye-valentine.gif'
         $alerts['raid'].sound = '/sounds/alertRaidLrg.ogg'
@@ -161,7 +161,7 @@
         const lastUserCmd = extra.sinceLastCommand.user
         if (lastUserCmd !== 0 && lastUserCmd < 10000) return
 
-        runAlert(command, user, message)
+        runAlert(command, (user = ''), message)
       }
     }
 
@@ -176,7 +176,7 @@
       }
 
       if (highlighted) {
-        //needs tested still with channel points?
+        //todo figure out how to do the chat bubble vs run alert
         runAlert('yuki', user, message)
       }
     }

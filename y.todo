@@ -1,20 +1,21 @@
 //Stream list
 Today:
-  ✔ test local storage and use it for recent activity @done
-  ✔ start obstracting to components where it makes sense @done
-  ✔ bring in gsap and test rotating recent activity with modes like orig idea @done
-  ✔ svg masking for alerts gif @done
-  ✔ svg mask needs some touch up and polish @done
-  ✔ floating chat overlay @done
-  ✔ can I grab user img like I would a badge and use it in overlay? (not w/comfy) @done
+  ☐ MUST obstract into its own project/repo
+  ☐ set up hosting on vps
+  ☐ configure auto deploy with github repo
+
+backburner:
+  ☐ clean up animations for floating emotes
+  ☐ fix unicode emotes to work with floating theme
+  ☐ spotify intergration investigation
+  ☐ implement song/artist into overlay with Snip
+    //https://github.com/dlrudie/Snip
 
 Questions:
   ☐ highlighted alert needs its own or make the yuki chat bubble the same?
   ☐ really need to change up !title/topic/today.. decide already!?
   ☐ how to save OBS views? popout view for testing ?
     //learn how to create backup as part of bare repo
-  ✔ floating emoji's (tie into fossabot combos) DM Manni @done
-  ✔ Can Streamparrot/ShowMyChat be use for floating emotes? @done
 
 Todo: 
   QoL: 
@@ -24,8 +25,6 @@ Todo:
     ☐ use scenes in scenes (!so finitesingularity)
     ☐ playlists OWN3D, Gamecaster, Bass Rebels, Streambeast(using)
       //revisit but none really jumped out at me
-    ☐ implement song/artist into overlay with Snip
-      //https://github.com/dlrudie/Snip
 
   Affiliate: 
     ☐ emotes for subs
@@ -124,6 +123,15 @@ Wishlist:
     //or https://obsproject.com/forum/resources/lioranboard-2-stream-deck-animator.862/
 
 Archive:
+  ✔ test local storage and use it for recent activity @done @project(Today)
+  ✔ start obstracting to components where it makes sense @done @project(Today)
+  ✔ bring in gsap and test rotating recent activity with modes like orig idea @done @project(Today)
+  ✔ svg masking for alerts gif @done @project(Today)
+  ✔ svg mask needs some touch up and polish @done @project(Today)
+  ✔ floating chat overlay @done @project(Today)
+  ✔ can I grab user img like I would a badge and use it in overlay? (not w/comfy) @done @project(Today)
+  ✔ floating emoji's (tie into fossabot combos) DM Manni @done @project(Questions)
+  ✔ Can Streamparrot/ShowMyChat be use for floating emotes? @done @project(Questions)
   ✘ modes text box needs to rotate information like last sub/follow?/or something. @cancelled @project(Todo.Cam/Overlay Ideas)
   ✔ improve on chat popup animation and styles @done @project(Tech debt)
   ✔ chat needs higher limit or some kinda timer or queue @done @project(Tech debt)

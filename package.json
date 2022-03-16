@@ -1,6 +1,6 @@
 {
-  "name": "bfolio",
-  "version": "0.0.1",
+  "name": "stream-stuff",
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "dev": "svelte-kit dev",

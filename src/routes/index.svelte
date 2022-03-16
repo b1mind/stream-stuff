@@ -287,7 +287,7 @@
   }
 
   main {
-    height: 100%;
+    height: 1070px;
     display: grid;
     grid-template-columns: 420px 1fr 296px 153px;
     grid-template-rows: 1fr 1fr 420px 54px 92px;

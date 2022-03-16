@@ -23,9 +23,9 @@
     //this hard coded value works....
     //todo refactor this ugly shit
     if (type === 'followed') {
-      return ($activity[0].users = [user, ...$activity[0].users.slice(0, 4)])
+      return ($activity[0].users = [user, ...$activity[0].users.slice(0, 3)])
     } else if (type === 'subscribed') {
-      return ($activity[1].users = [user, ...$activity[1].users.slice(0, 4)])
+      return ($activity[1].users = [user, ...$activity[1].users.slice(0, 3)])
     } else if (type === 'raid') {
       return ($activity[2].users = [user, `x${extras || ''} viewers`])
     } else if (type === 'cheer') {
@@ -287,7 +287,7 @@
   }
 
   main {
-    height: 1070px;
+    height: 100%;
     display: grid;
     grid-template-columns: 420px 1fr 296px 153px;
     grid-template-rows: 1fr 1fr 420px 54px 92px;

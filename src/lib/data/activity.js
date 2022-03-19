@@ -10,7 +10,7 @@ const data = [
   },
   {
     type: 'raid',
-    users: ['Stoney_Eagle', 'x9 viewers'],
+    users: ['Stoney_Eagle', 'x19 viewers'],
   },
   {
     type: 'cheer',

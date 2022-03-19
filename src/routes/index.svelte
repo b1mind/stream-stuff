@@ -12,6 +12,7 @@
   let modes = ['chat', 'ghost', 'focus']
   let alertsQue = []
   let countDown, topic
+  let massGifter = ''
 
   function storeActivity(alert) {
     //todo return sub month values and raid viewer numbers
@@ -44,6 +45,9 @@
       return
     }
 
+    //move to this code or keep with defaults from store
+    // user ? $alerts[type].user : ''
+    // msg ? $alerts[type].msg : ''
     if (user) $alerts[type].user = user
     if (msg) $alerts[type].msg = msg
 
@@ -111,25 +115,42 @@
 
     ComfyJS.onSub = (user, message, subTierInfo, extra) => {
       console.dir(subTierInfo)
-      let msg = `Tier ${subTierInfo}`
-      runAlert('subscribed', user, message || msg)
+      //fixme subTierInfo is an object need to spread or call key
+      // let msg = `Tier ${subTierInfo}`
+      runAlert('subscribed', user, message || msg || '')
     }
 
     ComfyJS.onReSub = (user, streamMonths, cumulativeMonths) => {
-      let msg = `${streamMonths} months on a ${cumulativeMonths} streak`
+      let msg = `${streamMonths} months on a ${cumulativeMonths} month streak`
       runAlert('reSubscribed', user, msg)
     }
 
-    ComfyJS.onSubGift = (gifterUser, streakMonths, senderCount, recipientUser) => {
-      let msg = `Gifted ${recipientUser} a subscription!`
-      runAlert('giftedSub', gifterUser, msg)
+    ComfyJS.onSubGift = (gifterUser, streakMonths, recipientUser, senderCount) => {
+      //testFix to handle gif and random gift (mystery)
+      //https://github.com/SomeAnticsDev/scenes/blob/main/_includes/scripts/chat.html#L144-L187
+
+      //prevent gifted sub loop for 1 > subs : credit BenDMyers
+      if (gifterUser !== massGifter) {
+        let msg = `Gifted ${recipientUser} a subscription!`
+        runAlert('giftedSub', gifterUser, msg)
+      }
     }
 
-    //todo find out what type of sub this really is
     ComfyJS.onSubMysteryGift = (gifterUser, numberOfSubs, senderCount) => {
       //sender count is a total of gifted
-      let msg = `Gifted ${numberOfSubs} subscriptions!`
-      runAlert('mysterygift', gifterUser, msg)
+
+      //if only one sub let onSubGift handle
+      if (numberOfSubs > 1) {
+        massGifter = gifterUser
+        setTimeout(() => {
+          if (massGifter === gifterUser) {
+            massGifter = ''
+          }
+        }, 500)
+
+        let msg = `Gifted ${numberOfSubs} subscriptions!`
+        runAlert('mysteryGift', gifterUser, msg)
+      }
     }
 
     ComfyJS.onCommand = (user, command, message, flags, extra) => {

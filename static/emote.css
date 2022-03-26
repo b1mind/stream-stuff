@@ -64,7 +64,7 @@ body {
   position: absolute;
   width: 1.2em;
   margin: 1em;
-  font-size: 42px;
+  font-size: 2.75rem;
   opacity: 0;
   animation: float-left 7.5s forwards linear, fade-in-out 7.5s forwards linear;
   z-index: 99;
@@ -147,14 +147,8 @@ body {
   0% {
     transform: translate(100%, 100%);
   }
-  25% {
-    transform: translate(-50%, -150%);
-  }
   50% {
-    transform: translate(100%, -300%);
-  }
-  75% {
-    transform: translate(-50%, -450%);
+    transform: translate(-50%, -350%);
   }
   100% {
     transform: translate(100%, -600%);
@@ -165,16 +159,10 @@ body {
   0% {
     transform: translate(-50%, 100%);
   }
-  25% {
-    transform: translate(100%, -150%);
-  }
   50% {
-    transform: translate(-50%, -300%);
-  }
-  75% {
     transform: translate(100%, -450%);
   }
   100% {
-    transform: translate(-50%, -600%);
+    transform: translate(-50%, -700%);
   }
 }

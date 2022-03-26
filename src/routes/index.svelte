@@ -117,11 +117,12 @@
     ComfyJS.onSub = (user, message, subTierInfo, extra) => {
       console.dir(subTierInfo)
       //fixme subTierInfo is an object need to spread or call key
-      // let msg = `Tier ${subTierInfo}`
-      runAlert('subscribed', user, message || msg || '')
+
+      let msg = `Tier ${subTierInfo.plan / 1000}`
+      runAlert('subscribed', user, message || msg)
     }
 
-    ComfyJS.onReSub = (user, streamMonths, cumulativeMonths) => {
+    ComfyJS.onReSub = (user, message, streamMonths, cumulativeMonths) => {
       let msg = `${streamMonths} months on a ${cumulativeMonths} month streak`
       runAlert('reSubscribed', user, msg)
     }
@@ -190,7 +191,7 @@
     //note figure out how to use this
     ComfyJS.onChat = (user, message, flags, self, extra) => {
       const { highlighted } = flags
-      console.dir(extra)
+      // console.dir(extra)
 
       if (user === 'Fossabot' && message.includes('just followed')) {
         let [msgUser] = message.split(' ')

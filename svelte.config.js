@@ -9,6 +9,9 @@ const config = {
     // hydrate the <div id="svelte"> element in src/app.html
     adapter: adapter(),
   },
+  files: {
+    exclude: ['/twitchAbout/*.md'],
+  },
   preprocess: [
     preprocess({
       postcss: { plugins: [autoprefixer(), postcssCombineMediaQuery()] },

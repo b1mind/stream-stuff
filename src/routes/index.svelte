@@ -4,6 +4,7 @@
 
   import { alerts } from '$lib/data/alerts'
   import { activity } from '$lib/data/activity'
+
   import Modes from '$lib/component/Modes.svelte'
   import Game from '$lib/component/Game.svelte'
   import Timer from '$lib/component/Timer.svelte'
@@ -110,7 +111,7 @@
     ComfyJS.onCheer = (user, message, bits, flags, extra) => {
       console.dir(flags)
       let msg = `Cheered ${bits} bits!`
-      runAlert('cheer', user, msg)
+      runAlert('cheer', user, msg, bits)
     }
 
     ComfyJS.onSub = (user, message, subTierInfo, extra) => {

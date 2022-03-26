@@ -124,7 +124,7 @@
 
     ComfyJS.onReSub = (user, message, streamMonths, cumulativeMonths) => {
       let msg = `${streamMonths} months on a ${cumulativeMonths} month streak`
-      runAlert('reSubscribed', user, msg)
+      runAlert('reSubscribed', user, message || msg)
     }
 
     ComfyJS.onSubGift = (gifterUser, streakMonths, recipientUser, senderCount) => {

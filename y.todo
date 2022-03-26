@@ -1,18 +1,13 @@
 //Stream list
 Today:
-  ✔ MUST obstract into its own project/repo @done
-  ✔ set up hosting on vps @done
-  ✔ configure auto deploy with github repo @done
-
-backburner:
-  ☐ clean up animations for floating emotes
-  ☐ fix unicode emotes to work with floating theme
+  ☐ intro/outro needs work... redesign time (think animations) 
   ☐ spotify intergration investigation
   ☐ implement song/artist into overlay with Snip
     //https://github.com/dlrudie/Snip
 
 Questions:
   ☐ highlighted alert needs its own or make the yuki chat bubble the same?
+  ☐ make a different overlay for commands seperated from alerts?
   ☐ really need to change up !title/topic/today.. decide already!?
   ☐ how to save OBS views? popout view for testing ?
     //learn how to create backup as part of bare repo
@@ -23,7 +18,6 @@ Todo:
     ☐ host gifs on server change the urls (try to macro)
     ☐ different browser for stream (edge insiders?)
     ☐ mute icon scene to use with AFK or at any time
-    ☐ use scenes in scenes (!so finitesingularity)
     ☐ playlists OWN3D, Gamecaster, Bass Rebels, Streambeast(using)
       //revisit but none really jumped out at me
 
@@ -62,6 +56,7 @@ Todo:
     ☐ EasterEgg: emote combos with fossabot and alerts or some notification
     ☐ !typo for mistakes made in the code
     ☐ !project | !today - explain current project as to inform new viewers
+    ☐ !lurk - msg to in chat + overlay if sub
     ☐ !figs - link to bare repo?
     ☐ !tools - "Milwaukee Drills are best"
     ☐ !fontUp - vsc cycle.FontToggle
@@ -124,6 +119,13 @@ Wishlist:
     //or https://obsproject.com/forum/resources/lioranboard-2-stream-deck-animator.862/
 
 Archive:
+  ✔ use scenes in scenes (!so finitesingularity) @done @project(Today)
+  ✔ censored/blurred scene needs to have cam blocker. @done @project(Today)
+  ✔ MUST obstract into its own project/repo @done @project(Today)
+  ✔ set up hosting on vps @done @project(Today)
+  ✔ configure auto deploy with github repo @done @project(Today)
+  ✔ clean up animations for floating emotes @done @project(Today)
+  ✘ fix unicode emotes to work with floating theme @cancelled @project(Today)
   ✔ test local storage and use it for recent activity @done @project(Today)
   ✔ start obstracting to components where it makes sense @done @project(Today)
   ✔ bring in gsap and test rotating recent activity with modes like orig idea @done @project(Today)

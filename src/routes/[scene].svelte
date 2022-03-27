@@ -107,8 +107,6 @@
 
   <svg
     id="mountains"
-    width="1502"
-    height="379"
     viewBox="0 0 1502 379"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +128,7 @@
 
 <style lang="scss">
   main {
-    width: 1502px;
+    width: 100%;
     height: 1080px;
     display: grid;
     grid-template-areas: 'overlay';

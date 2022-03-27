@@ -147,11 +147,13 @@
     text-align: center;
     font-size: 10rem;
     font-family: Helvetica, sans-serif;
-    background: hsl(251, 25%, 17%);
+    // background: hsl(251, 25%, 17%);
+    // background: linear-gradient(180deg, hsl(251, 25%, 17%, 1) 62%, #ff50ff);
+    background: rgb(36, 32, 53);
     background: linear-gradient(
-      180deg,
-      hsl(251, 25%, 17%, 1) 72%,
-      hsl(251, 21%, 58%, 1) 100%
+      173deg,
+      rgba(36, 32, 53, 1) 54%,
+      rgba(255, 80, 255, 1) 98%
     );
 
     & > * {
@@ -175,8 +177,11 @@
 
   time {
     place-self: end;
+    padding-left: 2.25rem;
     padding-right: 2.25rem;
+    color: var(--clr-primary-bg);
     font-size: 7.8125rem;
+    background-color: var(--clr-highlight-text);
   }
 
   article {

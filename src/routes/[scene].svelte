@@ -20,7 +20,7 @@
     gsap
       .timeline({
         repeat: -1,
-        repeatDelay: 1.5,
+        // repeatDelay: 0.5,
         defaults: {
           duration: 0.75,
           x: 150,
@@ -28,15 +28,25 @@
           ease: 'back.in',
         },
       })
-      // .from('.lines-top > *', {})
       .from('.lines-top > *:last-child', { x: 300, ease: 'back' }, 0)
       .from('.lines-bottom > *:last-child', { x: 300, ease: 'back' }, 0)
       .from('.lines-top > *:not(:last-child)', { stagger: 0.1 }, '>-=0.5')
       .from('.lines-bottom > *:not(:last-child)', { stagger: 0.1 }, '<')
-      .to('.lines-top > *:last-child', { duration: 3, x: -500, ease: 'power3.out' }, '>')
+
+      .to('.lines-top > *:last-child', { duration: 3, x: -700, ease: 'power3.out' }, '>')
       .to(
         '.lines-bottom > *:last-child',
-        { duration: 3, x: -500, ease: 'power3.out' },
+        { duration: 3, x: -700, ease: 'power3.out' },
+        '<',
+      )
+      .to(
+        '.lines-top > *:not(:last-child)',
+        { x: -250, stagger: 0.1, ease: 'bounce.out' },
+        '>-=1.5',
+      )
+      .to(
+        '.lines-bottom > *:not(:last-child)',
+        { x: -250, stagger: 0.1, ease: 'bounce.out' },
         '<',
       )
   })

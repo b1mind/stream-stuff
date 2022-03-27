@@ -5,6 +5,11 @@ Today:
   ☐ implement song/artist into overlay with Snip
     //https://github.com/dlrudie/Snip
 
+Intro/Outro:
+  ☐ make the gradient glow
+  ☐ different sound for intro/outro
+  ☐ better bounding width for intro/outro to center text
+
 Questions:
   ☐ look back into a new screenkey caster away from vsc?
   ☐ should AFK show chat ? (currently does not)

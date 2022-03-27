@@ -251,22 +251,18 @@
         </header>
 
         {#if $alerts[$alerts.type].url}
-          <svg
-            width="100%"
-            viewBox="0 10 300 220"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          <svg viewBox="0 7 296 231" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g mask="url(#maskMe)">
               <image
                 preserveAspectRatio="xMidYMid slice"
+                y="13"
                 href={$alerts[$alerts.type].url}
                 alt="Gif for {$alerts.type}"
               />
             </g>
 
             <path
-              d="M3 10.3557V2.99998L297 3V40.5703L278.079 25.1339L277.251 24.4584H276.182H18.8765L3 10.3557Z"
+              d="M3 7.12019V3.5L293 3.50002V35.8202L274.356 21.1428L273.539 20.5H272.5H18.6098L3 7.12019Z"
               fill="#18141F"
               stroke="#403960"
               stroke-width="6"
@@ -274,7 +270,7 @@
 
             <mask id="maskMe">
               <path
-                d="M18.584 240L0 217.141V11.5536L18 27.2727H276L300 46.3636V240H18.584Z"
+                d="M23.4689 231L6 209.236V13.5L18 23.5H272.5L288 35.5V231H23.4689Z"
                 fill="white"
               />
             </mask>
@@ -390,13 +386,12 @@
 
     svg {
       justify-self: center;
-      max-width: 100%;
-      height: 220px;
+      width: 100%;
     }
 
     image {
       width: 100%;
-      height: 235px;
+      height: 265px;
     }
   }
 

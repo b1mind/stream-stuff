@@ -116,7 +116,6 @@
 
     ComfyJS.onSub = (user, message, subTierInfo, extra) => {
       console.dir(subTierInfo)
-      //fixme subTierInfo is an object need to spread or call key
 
       let msg = `Tier ${subTierInfo.plan / 1000}`
       runAlert('subscribed', user, message || msg)
@@ -188,7 +187,6 @@
       }
     }
 
-    //note figure out how to use this
     ComfyJS.onChat = (user, message, flags, self, extra) => {
       const { highlighted } = flags
       // console.dir(extra)
@@ -253,8 +251,6 @@
         </header>
 
         {#if $alerts[$alerts.type].url}
-          <!-- fixme make perserve center -->
-
           <svg
             width="100%"
             viewBox="0 10 300 220"

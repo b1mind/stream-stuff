@@ -20,18 +20,25 @@
     gsap
       .timeline({
         repeat: -1,
-        repeatDelay: 3,
+        repeatDelay: 1.5,
         defaults: {
           duration: 0.75,
-          x: -150,
+          x: 150,
           opacity: 0,
-          stagger: 0.1,
-          ease: 'power4.out',
+          ease: 'back.in',
         },
       })
       // .from('.lines-top > *', {})
-      .from('.lines-top > *:not(:last-child)', {})
-      .from('.lines-bottom > *:not(:last-child)', {}, '<')
+      .from('.lines-top > *:last-child', { x: 300, ease: 'back' }, 0)
+      .from('.lines-bottom > *:last-child', { x: 300, ease: 'back' }, 0)
+      .from('.lines-top > *:not(:last-child)', { stagger: 0.1 }, '>-=0.5')
+      .from('.lines-bottom > *:not(:last-child)', { stagger: 0.1 }, '<')
+      .to('.lines-top > *:last-child', { duration: 3, x: -500, ease: 'power3.out' }, '>')
+      .to(
+        '.lines-bottom > *:last-child',
+        { duration: 3, x: -500, ease: 'power3.out' },
+        '<',
+      )
   })
 </script>
 
@@ -172,6 +179,9 @@
   .lines-top {
     justify-self: end;
     align-self: start;
+  }
+
+  .lines-bottom {
     transform: rotate(180deg);
   }
 

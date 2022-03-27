@@ -21,7 +21,15 @@
     const lineBottomLong = document.querySelector('use > *:last-child')
     const linesTop = gsap.utils.toArray('#lines > *:not(:last-child)')
     const linesBottom = gsap.utils.toArray('use > *:not(:last-child)')
-    console.dir(linesTop)
+    const main = document.querySelector('main')
+    gsap.from(main, {
+      duration: 2.5,
+      '--gradient-op': '89%',
+      '--gradient-deg': '167deg',
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+    })
 
     gsap
       .timeline({
@@ -128,6 +136,8 @@
 
 <style lang="scss">
   main {
+    --gradient-op: 98%;
+    --gradient-deg: 165deg;
     width: 100%;
     height: 1080px;
     display: grid;
@@ -139,11 +149,12 @@
     font-family: Helvetica, sans-serif;
     // background: hsl(251, 25%, 17%);
     // background: linear-gradient(180deg, hsl(251, 25%, 17%, 1) 62%, #ff50ff);
-    background: rgb(36, 32, 53);
+    background: hsl(251, 25%, 17%);
     background: linear-gradient(
-      173deg,
-      rgba(36, 32, 53, 1) 69%,
-      rgba(255, 80, 255, 1) 98%
+      var(--gradient-deg),
+      hsl(251, 25%, 10%) 44%,
+      hsl(251, 25%, 14%) 53%,
+      hsl(300, 100%, 66%) var(--gradient-op)
     );
 
     & > * {

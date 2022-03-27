@@ -48,7 +48,7 @@
       .from(linesTop, { stagger: 0.1 }, '>-=0.5')
       .from(linesBottom, { stagger: 0.1 }, '<')
 
-      .to(lineTopLong, { duration: 3, x: -700, ease: 'power3.out' }, '>')
+      .to(lineTopLong, { duration: 3, x: -700, ease: 'power3.out' }, '>+=0.5')
       .to(lineBottomLong, { duration: 3, x: -700, ease: 'power3.out' }, '<')
       .to(linesTop, { x: -250, stagger: 0.1, ease: 'bounce.out' }, '>-=1.5')
       .to(linesBottom, { x: -250, stagger: 0.1, ease: 'bounce.out' }, '<')

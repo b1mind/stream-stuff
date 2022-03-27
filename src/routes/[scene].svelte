@@ -175,8 +175,7 @@
 
   time {
     place-self: end;
-    padding-right: 2rem;
-    padding-bottom: 0.5rem;
+    padding-right: 2.25rem;
     font-size: 7.8125rem;
   }
 

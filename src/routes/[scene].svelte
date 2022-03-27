@@ -17,6 +17,12 @@
   export let params
 
   onMount(() => {
+    const lineTopLong = document.querySelector('#lines > *:last-child')
+    const lineBottomLong = document.querySelector('use > *:last-child')
+    const linesTop = gsap.utils.toArray('#lines > *:not(:last-child)')
+    const linesBottom = gsap.utils.toArray('use > *:not(:last-child)')
+    console.dir(linesTop)
+
     gsap
       .timeline({
         repeat: -1,
@@ -28,27 +34,16 @@
           ease: 'back.in',
         },
       })
-      .from('.lines-top > *:last-child', { x: 300, ease: 'back' }, 0)
-      .from('.lines-bottom > *:last-child', { x: 300, ease: 'back' }, 0)
-      .from('.lines-top > *:not(:last-child)', { stagger: 0.1 }, '>-=0.5')
-      .from('.lines-bottom > *:not(:last-child)', { stagger: 0.1 }, '<')
 
-      .to('.lines-top > *:last-child', { duration: 3, x: -700, ease: 'power3.out' }, '>')
-      .to(
-        '.lines-bottom > *:last-child',
-        { duration: 3, x: -700, ease: 'power3.out' },
-        '<',
-      )
-      .to(
-        '.lines-top > *:not(:last-child)',
-        { x: -250, stagger: 0.1, ease: 'bounce.out' },
-        '>-=1.5',
-      )
-      .to(
-        '.lines-bottom > *:not(:last-child)',
-        { x: -250, stagger: 0.1, ease: 'bounce.out' },
-        '<',
-      )
+      .from(lineTopLong, { x: 300, ease: 'back' }, 0)
+      .from(lineBottomLong, { x: 300, ease: 'back' }, 0)
+      .from(linesTop, { stagger: 0.1 }, '>-=0.5')
+      .from(linesBottom, { stagger: 0.1 }, '<')
+
+      .to(lineTopLong, { duration: 3, x: -700, ease: 'power3.out' }, '>')
+      .to(lineBottomLong, { duration: 3, x: -700, ease: 'power3.out' }, '<')
+      .to(linesTop, { x: -250, stagger: 0.1, ease: 'bounce.out' }, '>-=1.5')
+      .to(linesBottom, { x: -250, stagger: 0.1, ease: 'bounce.out' }, '<')
   })
 </script>
 
@@ -62,29 +57,31 @@
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path
-        d="M389.526 -5.35111e-05L375.442 16.4316H330.842L344.926 -5.35111e-05H389.526Z"
-        fill="#877FAB"
-      />
+      <g id="lines">
+        <path
+          d="M389.526 -5.35111e-05L375.442 16.4316H330.842L344.926 -5.35111e-05H389.526Z"
+          fill="#877FAB"
+        />
 
-      <path
-        d="M331.022 -5.35111e-05L316.938 16.4316H272.337L286.422 -5.35111e-05H331.022Z"
-        fill="#877FAB"
-      />
+        <path
+          d="M331.022 -5.35111e-05L316.938 16.4316H272.337L286.422 -5.35111e-05H331.022Z"
+          fill="#877FAB"
+        />
 
-      <path
-        d="M272.297 -5.38826e-05L258.213 16.4316H213.612L227.697 -5.38826e-05H272.297Z"
-        fill="#877FAB"
-      />
+        <path
+          d="M272.297 -5.38826e-05L258.213 16.4316H213.612L227.697 -5.38826e-05H272.297Z"
+          fill="#877FAB"
+        />
 
-      <path
-        d="M213.612 -5.38826e-05L199.528 16.4316H154.927L169.012 -5.38826e-05H213.612Z"
-        fill="#877FAB"
-      />
-      <path
-        d="M150.233 -5.38826e-05L136.148 16.4316H3.05176e-05L14.0843 -5.38826e-05H150.233Z"
-        fill="#877FAB"
-      />
+        <path
+          d="M213.612 -5.38826e-05L199.528 16.4316H154.927L169.012 -5.38826e-05H213.612Z"
+          fill="#877FAB"
+        />
+        <path
+          d="M150.233 -5.38826e-05L136.148 16.4316H3.05176e-05L14.0843 -5.38826e-05H150.233Z"
+          fill="#877FAB"
+        />
+      </g>
     </svg>
 
     <h2>
@@ -104,29 +101,7 @@
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path
-        d="M389.526 -5.35111e-05L375.442 16.4316H330.842L344.926 -5.35111e-05H389.526Z"
-        fill="#877FAB"
-      />
-      <path
-        d="M331.022 -5.35111e-05L316.938 16.4316H272.337L286.422 -5.35111e-05H331.022Z"
-        fill="#877FAB"
-      />
-
-      <path
-        d="M272.297 -5.38826e-05L258.213 16.4316H213.612L227.697 -5.38826e-05H272.297Z"
-        fill="#877FAB"
-      />
-
-      <path
-        d="M213.612 -5.38826e-05L199.528 16.4316H154.927L169.012 -5.38826e-05H213.612Z"
-        fill="#877FAB"
-      />
-
-      <path
-        d="M150.233 -5.38826e-05L136.148 16.4316H3.05176e-05L14.0843 -5.38826e-05H150.233Z"
-        fill="#877FAB"
-      />
+      <use href="#lines" />
     </svg>
   </article>
 

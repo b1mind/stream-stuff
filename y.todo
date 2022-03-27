@@ -1,11 +1,15 @@
 //Stream list
 Today:
-  ☐ intro/outro needs work... redesign time (think animations) 
+  ✔ intro/outro needs work... redesign time (think animations) @done
+  ☐ alerts gif mask/boarder needs added/improved 
+  ☐ !typo for mistakes made in the code
   ☐ spotify intergration investigation
   ☐ implement song/artist into overlay with Snip
     //https://github.com/dlrudie/Snip
 
 Questions:
+  ☐ look back into a new screenkey caster away from vsc?
+  ☐ should AFK show chat ? (currently does not)
   ☐ highlighted alert needs its own or make the yuki chat bubble the same?
   ☐ make a different overlay for commands seperated from alerts?
   ☐ really need to change up !title/topic/today.. decide already!?
@@ -14,11 +18,11 @@ Questions:
 
 Todo: 
   QoL: 
-    ✔ Bring Twitch about md panels into file(s) fo ease of edit @done
     ☐ host gifs on server change the urls (try to macro)
     ☐ different browser for stream (edge insiders?)
     ☐ mute icon scene to use with AFK or at any time
-    ☐ playlists OWN3D, Gamecaster, Bass Rebels, Streambeast(using)
+    ☐ admin type panel to insert into OBS (w/chat?)
+    ☐ playlists mubert, OWN3D, Gamecaster, Bass Rebels, Streambeast(using)
       //revisit but none really jumped out at me
 
   Affiliate: 
@@ -54,7 +58,6 @@ Todo:
 
   Chat commands:
     ☐ EasterEgg: emote combos with fossabot and alerts or some notification
-    ☐ !typo for mistakes made in the code
     ☐ !project | !today - explain current project as to inform new viewers
     ☐ !lurk - msg to in chat + overlay if sub
     ☐ !figs - link to bare repo?
@@ -119,6 +122,7 @@ Wishlist:
     //or https://obsproject.com/forum/resources/lioranboard-2-stream-deck-animator.862/
 
 Archive:
+  ✔ Bring Twitch about md panels into file(s) fo ease of edit @done @project(Todo.QoL)
   ✔ use scenes in scenes (!so finitesingularity) @done @project(Today)
   ✔ censored/blurred scene needs to have cam blocker. @done @project(Today)
   ✔ MUST obstract into its own project/repo @done @project(Today)

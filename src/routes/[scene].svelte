@@ -159,7 +159,7 @@
     background: rgb(36, 32, 53);
     background: linear-gradient(
       173deg,
-      rgba(36, 32, 53, 1) 54%,
+      rgba(36, 32, 53, 1) 69%,
       rgba(255, 80, 255, 1) 98%
     );
 

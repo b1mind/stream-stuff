@@ -1,7 +1,5 @@
 //Stream list
 Today:
-  ✔ intro/outro needs work... redesign time (think animations) @done
-  ☐ alerts gif mask/boarder needs added/improved 
   ☐ !typo for mistakes made in the code
   ☐ spotify intergration investigation
   ☐ implement song/artist into overlay with Snip
@@ -122,6 +120,8 @@ Wishlist:
     //or https://obsproject.com/forum/resources/lioranboard-2-stream-deck-animator.862/
 
 Archive:
+  ✔ intro/outro needs work... redesign time (think animations) @done @project(Today)
+  ✔ alerts gif mask/boarder needs added/improved @done @project(Today)
   ✔ Bring Twitch about md panels into file(s) fo ease of edit @done @project(Todo.QoL)
   ✔ use scenes in scenes (!so finitesingularity) @done @project(Today)
   ✔ censored/blurred scene needs to have cam blocker. @done @project(Today)

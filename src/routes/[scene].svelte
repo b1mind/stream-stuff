@@ -18,23 +18,24 @@
 
   onMount(() => {
     const lineTopLong = document.querySelector('#lines > *:last-child')
-    const lineBottomLong = document.querySelector('use > *:last-child')
     const linesTop = gsap.utils.toArray('#lines > *:not(:last-child)')
-    const linesBottom = gsap.utils.toArray('use > *:not(:last-child)')
+    // const lineBottomLong = document.querySelector('use > *:last-child')
+    // const linesBottom = gsap.utils.toArray('use > *:not(:last-child)')
     const main = document.querySelector('main')
+
     gsap.from(main, {
       duration: 2.5,
-      '--gradient-op': '89%',
+      '--gradient-op': '69%',
       '--gradient-deg': '167deg',
       repeat: -1,
       yoyo: true,
-      ease: 'sine.inOut',
+      ease: 'sine.in',
     })
 
     gsap
       .timeline({
         repeat: -1,
-        // repeatDelay: 0.5,
+        repeatDelay: -0.5,
         defaults: {
           duration: 0.75,
           x: 150,
@@ -44,14 +45,13 @@
       })
 
       .from(lineTopLong, { x: 300, ease: 'back' }, 0)
-      .from(lineBottomLong, { x: 300, ease: 'back' }, 0)
-      .from(linesTop, { stagger: 0.1 }, '>-=0.5')
-      .from(linesBottom, { stagger: 0.1 }, '<')
-
+      // .from(lineBottomLong, { x: 300, ease: 'back' }, 0)
+      .from(linesTop, { stagger: 0.1 }, '>-=1.25')
+      // .from(linesBottom, { stagger: 0.1 }, '<')
       .to(lineTopLong, { duration: 3, x: -700, ease: 'power3.out' }, '>+=0.5')
-      .to(lineBottomLong, { duration: 3, x: -700, ease: 'power3.out' }, '<')
-      .to(linesTop, { x: -250, stagger: 0.1, ease: 'bounce.out' }, '>-=1.5')
-      .to(linesBottom, { x: -250, stagger: 0.1, ease: 'bounce.out' }, '<')
+      // .to(lineBottomLong, { duration: 3, x: -700, ease: 'power3.out' }, '<')
+      .to(linesTop, { x: -350, stagger: { amount: 0.1 }, ease: 'power3.in' }, '>-=1.5')
+    // .to(linesBottom, { x: -350, stagger: 0.1, ease: 'bounce.in' }, '<')
   })
 </script>
 
@@ -136,8 +136,8 @@
 
 <style lang="scss">
   main {
-    --gradient-op: 98%;
-    --gradient-deg: 165deg;
+    --gradient-op: 68%;
+    --gradient-deg: 164deg;
     width: 100%;
     height: 1080px;
     display: grid;
@@ -147,14 +147,13 @@
     text-align: center;
     font-size: 10rem;
     font-family: Helvetica, sans-serif;
-    // background: hsl(251, 25%, 17%);
-    // background: linear-gradient(180deg, hsl(251, 25%, 17%, 1) 62%, #ff50ff);
-    background: hsl(251, 25%, 17%);
+    background: hsl(251, 25%, 10%);
     background: linear-gradient(
       var(--gradient-deg),
-      hsl(251, 25%, 10%) 44%,
-      hsl(251, 25%, 14%) 53%,
-      hsl(300, 100%, 66%) var(--gradient-op)
+      hsl(251, 25%, 10%) 50%,
+      hsl(251, 25%, 14%) 60%,
+      hsl(251, 25%, 20%) var(--gradient-op),
+      hsl(300, 100%, 66%) 99%
     );
 
     & > * {
@@ -191,8 +190,7 @@
   article {
     align-self: start;
     width: 950px;
-    // height: 850px;
-    margin-top: 10rem;
+    margin-top: 9rem;
     display: grid;
     z-index: 69;
 

@@ -25,7 +25,7 @@
 
     gsap.from(main, {
       duration: 2.5,
-      '--gradient-op': '69%',
+      '--gradient-op': '65%',
       '--gradient-deg': '167deg',
       repeat: -1,
       yoyo: true,
@@ -136,7 +136,7 @@
 
 <style lang="scss">
   main {
-    --gradient-op: 68%;
+    --gradient-op: 63%;
     --gradient-deg: 164deg;
     width: 100%;
     height: 1080px;
@@ -150,8 +150,8 @@
     background: hsl(251, 25%, 10%);
     background: linear-gradient(
       var(--gradient-deg),
-      hsl(251, 25%, 10%) 50%,
-      hsl(251, 25%, 14%) 60%,
+      hsl(251, 25%, 10%) 48%,
+      hsl(251, 25%, 14%) 58%,
       hsl(251, 25%, 20%) var(--gradient-op),
       hsl(300, 100%, 66%) 99%
     );

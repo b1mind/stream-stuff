@@ -41,8 +41,8 @@ const data = {
   resubscribed: {
     user: 'reSub',
     msg: 'rescubscribed for another month',
-    url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
-    sound: '/sounds/alertSub2.ogg',
+    url: 'https://c.tenor.com/DPzxgKQQqX4AAAAd/ein-jumping-cowboy-bebop-ein.gif',
+    sound: '/sounds/alertSub3.ogg',
   },
 
   gifted: {

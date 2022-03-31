@@ -21,9 +21,8 @@
     let toStore = ['followed', 'subscribed', 'raid', 'cheer']
 
     if (!toStore.includes(type)) return
-
     //this hard coded value works....
-    //todo refactor this ugly shit
+    //todo refactor this ugly shit (toStore.forEach()??)
     if (type === 'followed') {
       return ($activity[0].users = [user, ...$activity[0].users.slice(0, 3)])
     } else if (type === 'subscribed') {
@@ -70,6 +69,8 @@
 
     let alertCount = alertsQue.length
     setTimeout(function tick() {
+      //fixme func callBack storesAlert more than once to store
+
       // if (alertQue[0] === ???)
       storeAlert(alertsQue[0])
       $alerts.active = true
@@ -121,7 +122,7 @@
       runAlert('subscribed', user, message || msg)
     }
 
-    ComfyJS.onReSub = (user, message, streamMonths, cumulativeMonths) => {
+    ComfyJS.onResub = (user, message, streamMonths, cumulativeMonths) => {
       let msg = `${streamMonths} months on a ${cumulativeMonths} month streak`
       runAlert('reSubscribed', user, message || msg)
     }

@@ -17,7 +17,7 @@
 
   function storeActivity(alert) {
     //todo return sub month values and raid viewer numbers
-    let { type, user, msg, extras } = alert
+    let { type, user, msg, extra } = alert
     let toStore = ['followed', 'subscribed', 'raid', 'cheer']
 
     if (!toStore.includes(type)) return
@@ -28,9 +28,9 @@
     } else if (type === 'subscribed') {
       return ($activity[1].users = [user, ...$activity[1].users.slice(0, 3)])
     } else if (type === 'raid') {
-      return ($activity[2].users = [user, `x${extras || ''} viewers`])
+      return ($activity[2].users = [user, `x${extra || ''} viewers`])
     } else if (type === 'cheer') {
-      return ($activity[3].users = [user, `x${extras || ''} bits`])
+      return ($activity[3].users = [user, `x${extra || ''} bits`])
     }
   }
 
@@ -63,8 +63,8 @@
     })
   }
 
-  function runAlert(type, user, msg, ...extras) {
-    let currentAlert = { type: type, user: user, msg: msg, extras: [...extras] }
+  function runAlert(type, user, msg, extra) {
+    let currentAlert = { type: type, user: user, msg: msg, extra: extra }
     alertsQue = [...alertsQue, currentAlert]
 
     let alertCount = alertsQue.length
@@ -110,7 +110,6 @@
     }
 
     ComfyJS.onCheer = (user, message, bits, flags, extra) => {
-      console.dir(flags)
       let msg = `Cheered ${bits} bits!`
       runAlert('cheer', user, msg, bits)
     }

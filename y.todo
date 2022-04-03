@@ -1,104 +1,105 @@
 //Stream list
 Today:
-  ☐ !typo for mistakes made in the code
+  ☐ allow !focus accept a time param to pass into component
+  ☐ bring overlay.html/afk.html and other static local files into project (keep local)
   ☐ spotify intergration investigation
   ☐ implement song/artist into overlay with Snip
     //https://github.com/dlrudie/Snip
 
 Intro/Outro:
-  ☐ make the gradient glow
-  ☐ different sound for intro/outro
-  ☐ better bounding width for intro/outro to center text
+  ✔ better bounding width for intro/outro to center text @done
+  ✔ refactor lines svg to use use @done
+  ✔ make the gradient glow @done
+  ☐ different sound for intro/outro timer up/end
 
 Questions:
+  ☐ how to get twitch overlay dark/light mode button?
+  ☐ better transitions for switching between scenes (ask KP or BM)
   ☐ look back into a new screenkey caster away from vsc?
-  ☐ should AFK show chat ? (currently does not)
-  ☐ highlighted alert needs its own or make the yuki chat bubble the same?
+  ✘ should AFK show chat ? (currently does not) @cancelled
   ☐ make a different overlay for commands seperated from alerts?
   ☐ really need to change up !title/topic/today.. decide already!?
   ☐ how to save OBS views? popout view for testing ?
-    //learn how to create backup as part of bare repo
+  ✔ learn how to create backup as part of bare repo @done
 
-Todo: 
-  QoL: 
-    ☐ host gifs on server change the urls (try to macro)
-    ☐ different browser for stream (edge insiders?)
-    ☐ mute icon scene to use with AFK or at any time
-    ☐ admin type panel to insert into OBS (w/chat?)
-    ☐ playlists mubert, OWN3D, Gamecaster, Bass Rebels, Streambeast(using)
-      //revisit but none really jumped out at me
+QoL: 
+  ☐ find out what best bitrate or any changes to OBS for net quality (and call cable guy)
+  ☐ host gifs on server change the urls (try to macro)
+  ☐ different browser for stream (edge insiders?)
+  ☐ mute icon scene to use with AFK or at any time
+  ☐ admin type panel to insert into OBS (w/chat?) crutchCorn is making this
+  ☐ playlists mubert, OWN3D, Gamecaster, Bass Rebels, Streambeast(using)
+    //revisit but none really jumped out at me
 
-  Affiliate: 
-    ☐ emotes for subs
-    ☐ cheer icons
-    ☐ points icons
-    ☐ subMonth icons
+Affiliate: 
+  ☐ emotes for subs
+  ☐ cheer icons
+  ☐ points icons
+  ☐ subMonth icons
 
-  Channel Points:
-    //will need auth for every thing but highlight
-    ☐ make a list or mind map for channel point ideas
-    ☐ change song and replay song
-    ☐ banger save song some how or name to add to a playlist
+Channel Points:
+  //will need auth for every thing but highlight
+  ☐ highlighted alert chat bubble for yuki 
+  ☐ make a list or mind map for channel point ideas
+  ☐ change song and replay song
+  ☐ banger save song some how or name to add to a playlist
 
-  Cam/Overlay Ideas:
-    ☐ better transitions for switching between scenes (ask KP or BM)
-    ☐ animated svg for intro/outro scenes (text animations or masked bg)
-    ☐ alerts animations tied into interface/overlay with GSAP better easing+yoyo
-    ☐ test flags.highlighter can be used for yuki chat?
-      //have sound for chat "bubbles"
+Cam/Overlay Ideas:
+  ✔ animated svg for intro/outro scenes (text animations or masked bg) @done
+  ✔ test flags.highlighter can be used for yuki chat? @done
 
-  twitch settings:
-    ☐ obs or twitch bitrate settings or any modifiers for bandwidth
-    ☐ find out what types of subs do what i.e. reSub giftSub mysterySub
-    ☐ create better Panel copywrite: Bio - About - Story for below stream
-      //work in progress - could use more + bio/story/donate/commands/rules
-    ☐ choose how to tip/donate to stream Patron or Paypal?
-    ☐ make a profile banner for background
-    ☐ spice up logo for meta data
-    ☐ image when offline or recordings/host
-    ☐ setup auto hosting to my fav streamers if I am offline
-    ☐ make some more clips and highlight reels
+twitch settings:
+  ✔ create better Panel copywrite: Bio - About - Story for below stream @done
+  ✔ image when offline or recordings/host @done
+  ✔ setup auto hosting to my fav streamers if I am offline @done
+  ☐ obs or twitch bitrate settings or any modifiers for bandwidth
+  ☐ find out what types of subs do what i.e. reSub giftSub mysterySub
+  ☐ choose how to tip/donate to stream Patron or Paypal?
+  ☐ make a profile banner for background
+  ☐ spice up logo for meta data
+  ☐ make some more clips and highlight reels
 
-  Chat commands:
-    ☐ EasterEgg: emote combos with fossabot and alerts or some notification
-    ☐ !project | !today - explain current project as to inform new viewers
-    ☐ !lurk - msg to in chat + overlay if sub
-    ☐ !figs - link to bare repo?
-    ☐ !tools - "Milwaukee Drills are best"
-    ☐ !fontUp - vsc cycle.FontToggle
-    ☐ !todo - show chat todo | goals from that todo  
-    ☐ !unmute command
-    ☐ !collab/!fusion dbz merge/fusion gif
-    ☐ !kitty look at the kitty for when you get sidetracked
-    ☐ !discord link on blog post (wds, kp, feh links?)
-    ☐ !4am make a gif for studio 60 quote
+Chat commands:
+  ☐ !typo for mistakes made in the code
+  ☐ EasterEgg: emote combos with fossabot and alerts or some notification
+  ☐ !project | !today - explain current project as to inform new viewers
+  ☐ !lurk - msg to in chat + overlay if sub
+  ☐ !figs - link to bare repo?
+  ☐ !tools - "Milwaukee Drills are best"
+  ☐ !fontUp - vsc cycle.FontToggle
+  ☐ !todo - show chat todo | goals from that todo  
+  ☐ !unmute command
+  ☐ !collab/!fusion dbz merge/fusion gif
+  ☐ !kitty look at the kitty for when you get sidetracked
+  ☐ !discord link on blog post (wds, kp, feh links?)
+  ☐ !4am make a gif for studio 60 quote
 
-  GIFs:
-    ☐ cheer, // no idea https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif
-    ☐ reSub // look for something ^like this one for reSub?
-    ☐ giftSub // Milly Meryl handing donuts to vash
+GIFs:
+  ☐ cheer, // no idea 
+  ✔ reSub // look for something to complement sub gif @done
+  ☐ giftSub // make gif of Milly Meryl handing donuts to vash
 
-  VIP / Subonly:
-    ☐ !more commands period maybe get feedback from chat
-    ☐ !marinate (grab letter kenny gif)
-    ☐ !wifeBurn when wife gives me shit for something and I am talking about it
-    ☐ redo the wording for fish
-    ☐ food gif needs to be bellpeppers n beef 
+VIP / Subonly:
+  ☐ !more commands period maybe get feedback from chat
+  ☐ !marinate (grab letter kenny gif)
+  ☐ !wifeBurn when wife gives me shit for something and I am talking about it
+  ☐ redo the wording for fish
+  ☐ food gif needs to be bellpeppers n beef 
 
-  AHK / QMK:
-    ☐ AHK script like capslock to tell me active scene on main screen
-    ☐ keybind for mute and with AHK notification
-    ☐ cmGriffing mentioned sound and maybe hooking it to AHK or QMK
-    ☐ Visual key overlay for QMK or Kris inputs vs cam
-      // QMK input checker website?
+AHK / QMK:
+  ☐ AHK script like capslock to tell me active scene on main screen
+  ☐ keybind for mute and with AHK notification
+  ☐ cmGriffing mentioned sound and maybe hooking it to AHK or QMK
+  ☐ Visual key overlay for QMK or Kris inputs vs cam
+    // QMK input checker website?
 
 Tech debt:
+  ☐ alerts animations tied into interface/overlay with GSAP better easing+yoyo
   ☐ factor ugly if else chain for recent activity
   ☐ timer refactor with -time elapse working
   ☐ use the same time refactor method for alerts animation
   ☐ timer on focus needs reset if timer === 0
-  ☐ Comfy.js need 0auth secret passed to api endpoint so all needs to be there
-    ☐ get auth working with comfy.js
+  ☐ get auth working with comfy.js
   ☐ Twitch-Cli mock server working! //so close yet so far.. get help!(Prince?)
     // stuck here how to I slurp the Post data https://youtu.be/omBzmgAppYQ?t=2109
     //$ twitch event trigger subscribe -F https://localhost:3000/api/eventsub/

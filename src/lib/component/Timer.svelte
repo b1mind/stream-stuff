@@ -43,11 +43,3 @@
 <b in:slide={{ y: '-1rem' }}>
   {countDownMinutes || '00'}{`:${countDownSeconds || '00'}`}
 </b>
-
-<style lang="scss">
-  b {
-    font-weight: 700;
-    font-family: 'Roboto Mono', monospace;
-    line-height: 1;
-  }
-</style>

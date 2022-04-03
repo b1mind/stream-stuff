@@ -17,10 +17,8 @@
   export let params
 
   onMount(() => {
-    const lineTopLong = document.querySelector('#lines > *:last-child')
-    const linesTop = gsap.utils.toArray('#lines > *:not(:last-child)')
-    // const lineBottomLong = document.querySelector('use > *:last-child')
-    // const linesBottom = gsap.utils.toArray('use > *:not(:last-child)')
+    const lineLong = document.querySelector('#lines > *:last-child')
+    const lines = gsap.utils.toArray('#lines > *:not(:last-child)')
     const main = document.querySelector('main')
 
     gsap.from(main, {
@@ -44,14 +42,10 @@
         },
       })
 
-      .from(lineTopLong, { x: 300, ease: 'back' }, 0)
-      // .from(lineBottomLong, { x: 300, ease: 'back' }, 0)
-      .from(linesTop, { stagger: 0.1 }, '>-=1.25')
-      // .from(linesBottom, { stagger: 0.1 }, '<')
-      .to(lineTopLong, { duration: 3, x: -700, ease: 'power3.out' }, '>+=0.5')
-      // .to(lineBottomLong, { duration: 3, x: -700, ease: 'power3.out' }, '<')
-      .to(linesTop, { x: -350, stagger: { amount: 0.1 }, ease: 'power3.in' }, '>-=1.5')
-    // .to(linesBottom, { x: -350, stagger: 0.1, ease: 'bounce.in' }, '<')
+      .from(lineLong, { x: 300, ease: 'back' }, 0)
+      .from(lines, { stagger: 0.1 }, '>-=1.25')
+      .to(lineLong, { duration: 3, x: -700, ease: 'power3.out' }, '>+=0.5')
+      .to(lines, { x: -350, stagger: { amount: 0.1 }, ease: 'power3.in' }, '>-=1.5')
   })
 </script>
 
@@ -127,7 +121,7 @@
 
   <time datetime="00:10:00">
     {#if dev}
-      69:69
+      04:20
     {:else}
       <Timer countDown={params.scene === 'end' ? 5 : 10} />
     {/if}
@@ -162,6 +156,8 @@
   }
 
   svg {
+    width: min(100%, 100vw);
+    grid-template-columns: minmax(100%, 100vw);
     overflow: visible;
   }
 
@@ -184,6 +180,10 @@
     padding-right: 2.25rem;
     color: var(--clr-primary-bg);
     font-size: 7.8125rem;
+    font-weight: 700;
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
     background-color: var(--clr-highlight-text);
   }
 

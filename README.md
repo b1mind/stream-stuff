@@ -1,3 +1,3 @@
-# Portfolio of Brent 'b1mind'
+# Stream Overlay OBS stuffs
 
 Lets get this ball rolling

@@ -16,18 +16,19 @@
   let massGifter = ''
 
   function storeActivity(alert) {
-    //todo return sub month values and raid viewer numbers
     let { type, user, msg, extra } = alert
     let toStore = ['followed', 'subscribed', 'raid', 'cheer']
 
     if (!toStore.includes(type)) return
+
     //this hard coded value works....
     //todo refactor this ugly shit (toStore.forEach()??)
+    //todo add gifter to activity
     if (type === 'followed') {
       return ($activity[0].users = [user, ...$activity[0].users.slice(0, 3)])
-    } else if (type === 'subscribed') {
+    } else if (type === 'subscribed' || type === 'resubbed') {
       return ($activity[1].users = [user, ...$activity[1].users.slice(0, 3)])
-    } else if (type === 'raid') {
+    } else if (type === 'raid' || type === 'bigRaid') {
       return ($activity[2].users = [user, `x${extra || ''} viewers`])
     } else if (type === 'cheer') {
       return ($activity[3].users = [user, `x${extra || ''} bits`])
@@ -90,22 +91,20 @@
   if (browser) {
     ;async () => {
       //!! working promise just looks unused
+      //fixme having to import in script tag in app.html?!?! better way?
       const ComfyJS = await import('comfy.js/dist/comfy.min.js')
     }
 
     ComfyJS.onRaid = (user, viewers, extra) => {
       //todo user get stream title
       console.dir(user)
+      let msg = `Raiding with ${viewers} viewers`
 
-      //todo refactor to use the store? pass in url to storeAlert
-      //better way like an array to pass url/gifs?
-      if (viewers > 20) {
-        $alerts['raid'].url =
-          'https://c.tenor.com/-QlJHq586eUAAAAd/cowboy-bebop-faye-valentine.gif'
-        $alerts['raid'].sound = '/sounds/alertRaidLrg.ogg'
+      if (viewers > 30) {
+        runAlert('bigRaid', user, msg, viewers)
+        return
       }
 
-      let msg = `Raiding with ${viewers} viewers`
       runAlert('raid', user, msg, viewers)
     }
 
@@ -117,13 +116,13 @@
     ComfyJS.onSub = (user, message, subTierInfo, extra) => {
       console.dir(subTierInfo)
 
-      let msg = `Tier ${subTierInfo.plan / 1000}`
+      let msg = `Subscribed Tier ${subTierInfo.plan / 1000}`
       runAlert('subscribed', user, message || msg)
     }
 
     ComfyJS.onResub = (user, message, streamMonths, cumulativeMonths) => {
       let msg = `${streamMonths} months on a ${cumulativeMonths} month streak`
-      runAlert('reSubscribed', user, message || msg)
+      runAlert('resubbed', user, message || msg)
     }
 
     ComfyJS.onSubGift = (gifterUser, streakMonths, recipientUser, senderCount) => {
@@ -132,13 +131,14 @@
 
       //prevent gifted sub loop for 1 > subs : credit BenDMyers
       if (gifterUser !== massGifter) {
+        console.log(massGifter, gifterUser)
         let msg = `Gifted ${recipientUser} a subscription!`
-        runAlert('giftedSub', gifterUser, msg)
+        runAlert('gifted', gifterUser, msg)
       }
     }
 
     ComfyJS.onSubMysteryGift = (gifterUser, numberOfSubs, senderCount) => {
-      //sender count is a total of gifted
+      //sender count is a total of
 
       //if only one sub let onSubGift handle
       if (numberOfSubs > 1) {
@@ -150,7 +150,7 @@
         }, 500)
 
         let msg = `Gifted ${numberOfSubs} subscriptions!`
-        runAlert('mysteryGift', gifterUser, msg)
+        runAlert('gifts', gifterUser, msg)
       }
     }
 
@@ -217,7 +217,6 @@
   {/if}
 
   <div class="modes">
-    <!-- todo game mode needs improved on check fixme's -->
     {#if $alerts.mode === 'game'}
       <Game />
     {:else}
@@ -284,7 +283,6 @@
     <Activity />
   </div>
 
-  <!-- todo Text for bottom bar -->
   {#if topic}
     <h1>
       {topic}

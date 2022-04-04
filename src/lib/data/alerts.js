@@ -5,19 +5,31 @@ const data = {
   type: 'chat',
   mode: 'chat',
 
+  followed: {
+    user: 'followedUser',
+    msg: 'user msg',
+    url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
+    sound: '/sounds/alertsFollow.ogg',
+  },
+
   raid: {
     user: 'RaidUser',
     msg: `Being raided`,
     url: 'https://c.tenor.com/4g2pk3Cgf70AAAAC/mugen-pt.gif',
     sound: '/sounds/alertRaid.ogg',
-    // raid > 20
-    // sound: '/sounds/alertRaidLrg.ogg',
-    // url: 'https://c.tenor.com/-QlJHq586eUAAAAd/cowboy-bebop-faye-valentine.gif'
+  },
+
+  bigRaid: {
+    user: 'LargeRaidUser',
+    msg: `Being raided big!`,
+    url: 'https://c.tenor.com/-QlJHq586eUAAAAd/cowboy-bebop-faye-valentine.gif',
+    sound: '/sounds/alertRaidLrg.ogg',
   },
 
   cheer: {
     user: 'cheerUser',
     msg: `cheered bits`,
+    //todo need to change this gif to a better one
     url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
     sound: '/sounds/alertBits.ogg',
   },
@@ -27,18 +39,9 @@ const data = {
     msg: 'user msg',
     url: 'https://media.giphy.com/media/p7QJSVvU4bMWc/giphy.gif',
     sound: '/sounds/alertSub3.ogg',
-    //follower gif
-    // url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
   },
 
-  followed: {
-    user: 'followedUser',
-    msg: 'user msg',
-    url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
-    sound: '/sounds/alertSub2.ogg',
-  },
-
-  resubscribed: {
+  resubbed: {
     user: 'reSub',
     msg: 'rescubscribed for another month',
     url: 'https://c.tenor.com/DPzxgKQQqX4AAAAd/ein-jumping-cowboy-bebop-ein.gif',
@@ -52,7 +55,7 @@ const data = {
     sound: '/sounds/alertSub3.ogg',
   },
 
-  mysteryGift: {
+  gifts: {
     user: 'GifterName',
     msg: 'Gifted 5 subs',
     url: 'https://c.tenor.com/EzWoSC-xw34AAAAC/vash-thumbs-up.gif',
@@ -80,6 +83,7 @@ const data = {
     // url: 'https://c.tenor.com/OWa77lYqkmoAAAAd/portal-shot-portal.gif',
   },
 
+  //note finding another way to do this
   yuki: {
     msg: 'Yuki says Meow',
     url: '',

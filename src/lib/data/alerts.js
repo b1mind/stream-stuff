@@ -9,7 +9,7 @@ const data = {
     user: 'followedUser',
     msg: 'user msg',
     url: 'https://media.giphy.com/media/Y6QIbWeGMypig/giphy.gif',
-    sound: '/sounds/alertsFollow.ogg',
+    sound: '/sounds/alertFollow.ogg',
   },
 
   raid: {

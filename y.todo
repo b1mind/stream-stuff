@@ -1,5 +1,6 @@
 //Stream list
-Today:
+Todo:
+  ☐ gifted users to activity list
   ☐ allow !focus accept a time param to pass into component
   ☐ bring overlay.html/afk.html and other static local files into project (keep local)
   ☐ spotify intergration investigation
@@ -11,6 +12,7 @@ Intro/Outro:
   ✔ refactor lines svg to use use @done
   ✔ make the gradient glow @done
   ☐ different sound for intro/outro timer up/end
+
 
 Questions:
   ☐ how to get twitch overlay dark/light mode button?

@@ -116,7 +116,9 @@
     ComfyJS.onSub = (user, message, subTierInfo, extra) => {
       console.dir(subTierInfo)
 
-      let msg = `Subscribed Tier ${subTierInfo.plan / 1000}`
+      let msg = isNaN(subTierInfo.plan)
+        ? `Subscribed with Prime`
+        : `Subscribed Tier ${subTierInfo.plan / 1000}`
       runAlert('subscribed', user, message || msg)
     }
 

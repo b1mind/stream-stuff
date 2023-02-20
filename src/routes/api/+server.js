@@ -1,6 +1,6 @@
 import ComfyJS from 'comfy.js'
 
-export async function get({ params, fetch, request }) {
+export async function GET({ params, fetch, request }) {
   //todo get response from twitch-cli mock server https://localhost:8080/eventSub *
 
   ComfyJS.onCommand = (user, command, message, flags, extra) => {
@@ -12,12 +12,10 @@ export async function get({ params, fetch, request }) {
 
   ComfyJS.Init('b1mind')
 
-  return {
-    props: request,
-  }
+  return new Response(undefined)
 }
 
-export async function post({ params, fetch, request }) {
+export async function POST({ params, fetch, request }) {
   //CORs issue? 500 response?
 
   console.log(params, 'params')
@@ -27,8 +25,5 @@ export async function post({ params, fetch, request }) {
 
   console.dir(request.headers)
 
-  return {
-    response: response.status,
-    props: request.json,
-  }
+  return new Response(undefined)
 }

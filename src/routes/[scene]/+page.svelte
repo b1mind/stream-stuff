@@ -1,13 +1,3 @@
-<script context="module">
-  export async function load({ params }) {
-    return {
-      props: {
-        params: params,
-      },
-    }
-  }
-</script>
-
 <script>
   import { dev } from '$app/env'
   import { onMount } from 'svelte'
